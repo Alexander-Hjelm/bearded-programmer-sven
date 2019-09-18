@@ -1,0 +1,465 @@
+{
+    "version": {
+        "major": 5,
+        "minor": 1
+    },
+    "project": {
+        "format": {
+            "extension": "png"
+        },
+        "camera": {
+            "width": 512,
+            "height": 512,
+            "field": 0,
+            "framerate": 24.0,
+            "pixelaspectratio": 1.0,
+            "antialiasing": 1
+        },
+        "clip": {
+            "name": "IDLE_MERGED",
+            "width": 512,
+            "height": 512,
+            "framerate": 24.0,
+            "pixelaspectratio": 1.0,
+            "image-count": 6,
+            "bg": {
+                "red": 92,
+                "green": 92,
+                "blue": 92
+            },
+            "markin": {
+                "status": false,
+                "value": 0
+            },
+            "markout": {
+                "status": false,
+                "value": 0
+            },
+            "camera": {
+                "mode": 2,
+                "profile": "2 0 1 0 0 1 1 ",
+                "motion-blur": 0.0,
+                "lock-all": false,
+                "lock-x": false,
+                "lock-y": false,
+                "lock-angle": false,
+                "lock-scale": false,
+                "points": [],
+                "positions": [
+                    {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    }
+                ]
+            },
+            "layers": [
+                {
+                    "name": "ArmLeft",
+                    "visible": true,
+                    "position": 0,
+                    "opacity": 255,
+                    "start": 0,
+                    "end": 1,
+                    "pre-behavior": 0,
+                    "post-behavior": 1,
+                    "blending-mode": "Color",
+                    "group": {
+                        "red": 71,
+                        "green": 142,
+                        "blue": 165
+                    },
+                    "link": [
+                        {
+                            "instance-index": 0,
+                            "instance-name": "1",
+                            "file": "[000] ArmLeft/[0000] ArmLeft.png",
+                            "images": [
+                                0
+                            ]
+                        },
+                        {
+                            "instance-index": 1,
+                            "instance-name": "2",
+                            "file": "[000] ArmLeft/[0001] ArmLeft.png",
+                            "images": [
+                                1
+                            ]
+                        }
+                    ],
+                    "repeat": []
+                },
+                {
+                    "name": "BEARD",
+                    "visible": true,
+                    "position": 1,
+                    "opacity": 255,
+                    "start": 0,
+                    "end": 1,
+                    "pre-behavior": 0,
+                    "post-behavior": 1,
+                    "blending-mode": "Color",
+                    "group": {
+                        "red": 167,
+                        "green": 55,
+                        "blue": 55
+                    },
+                    "link": [
+                        {
+                            "instance-index": 0,
+                            "instance-name": "1",
+                            "file": "[001] BEARD/[0000] BEARD.png",
+                            "images": [
+                                0
+                            ]
+                        },
+                        {
+                            "instance-index": 1,
+                            "instance-name": "2",
+                            "file": "[001] BEARD/[0001] BEARD.png",
+                            "images": [
+                                1
+                            ]
+                        }
+                    ],
+                    "repeat": []
+                },
+                {
+                    "name": "Glasses",
+                    "visible": true,
+                    "position": 2,
+                    "opacity": 255,
+                    "start": 0,
+                    "end": 1,
+                    "pre-behavior": 0,
+                    "post-behavior": 1,
+                    "blending-mode": "Color",
+                    "group": {
+                        "red": 0,
+                        "green": 0,
+                        "blue": 0
+                    },
+                    "link": [
+                        {
+                            "instance-index": 0,
+                            "instance-name": "1",
+                            "file": "[002] Glasses/[0000] Glasses.png",
+                            "images": [
+                                0
+                            ]
+                        },
+                        {
+                            "instance-index": 1,
+                            "instance-name": "2",
+                            "file": "[002] Glasses/[0001] Glasses.png",
+                            "images": [
+                                1
+                            ]
+                        }
+                    ],
+                    "repeat": []
+                },
+                {
+                    "name": "Brows",
+                    "visible": true,
+                    "position": 3,
+                    "opacity": 255,
+                    "start": 0,
+                    "end": 1,
+                    "pre-behavior": 0,
+                    "post-behavior": 1,
+                    "blending-mode": "Color",
+                    "group": {
+                        "red": 0,
+                        "green": 0,
+                        "blue": 0
+                    },
+                    "link": [
+                        {
+                            "instance-index": 0,
+                            "instance-name": "1",
+                            "file": "[003] Brows/[0000] Brows.png",
+                            "images": [
+                                0
+                            ]
+                        },
+                        {
+                            "instance-index": 1,
+                            "instance-name": "2",
+                            "file": "[003] Brows/[0001] Brows.png",
+                            "images": [
+                                1
+                            ]
+                        }
+                    ],
+                    "repeat": []
+                },
+                {
+                    "name": "EYES",
+                    "visible": true,
+                    "position": 4,
+                    "opacity": 255,
+                    "start": 0,
+                    "end": 5,
+                    "pre-behavior": 0,
+                    "post-behavior": 1,
+                    "blending-mode": "Color",
+                    "group": {
+                        "red": 0,
+                        "green": 0,
+                        "blue": 0
+                    },
+                    "link": [
+                        {
+                            "instance-index": 0,
+                            "instance-name": "1",
+                            "file": "[004] EYES/[0000] EYES.png",
+                            "images": [
+                                0
+                            ]
+                        },
+                        {
+                            "instance-index": 1,
+                            "instance-name": "2",
+                            "file": "[004] EYES/[0001] EYES.png",
+                            "images": [
+                                1
+                            ]
+                        },
+                        {
+                            "instance-index": 2,
+                            "instance-name": "3",
+                            "file": "[004] EYES/[0002] EYES.png",
+                            "images": [
+                                2
+                            ]
+                        },
+                        {
+                            "instance-index": 3,
+                            "instance-name": "4",
+                            "file": "[004] EYES/[0003] EYES.png",
+                            "images": [
+                                3
+                            ]
+                        },
+                        {
+                            "instance-index": 4,
+                            "instance-name": "5",
+                            "file": "[004] EYES/[0004] EYES.png",
+                            "images": [
+                                4
+                            ]
+                        },
+                        {
+                            "instance-index": 5,
+                            "instance-name": "6",
+                            "file": "[004] EYES/[0005] EYES.png",
+                            "images": [
+                                5
+                            ]
+                        }
+                    ],
+                    "repeat": []
+                },
+                {
+                    "name": "HEAD",
+                    "visible": true,
+                    "position": 5,
+                    "opacity": 255,
+                    "start": 0,
+                    "end": 1,
+                    "pre-behavior": 0,
+                    "post-behavior": 1,
+                    "blending-mode": "Color",
+                    "group": {
+                        "red": 195,
+                        "green": 115,
+                        "blue": 40
+                    },
+                    "link": [
+                        {
+                            "instance-index": 0,
+                            "instance-name": "1",
+                            "file": "[005] HEAD/[0000] HEAD.png",
+                            "images": [
+                                0
+                            ]
+                        },
+                        {
+                            "instance-index": 1,
+                            "instance-name": "2",
+                            "file": "[005] HEAD/[0001] HEAD.png",
+                            "images": [
+                                1
+                            ]
+                        }
+                    ],
+                    "repeat": []
+                },
+                {
+                    "name": "ArmRight_Front",
+                    "visible": true,
+                    "position": 7,
+                    "opacity": 255,
+                    "start": 0,
+                    "end": 1,
+                    "pre-behavior": 0,
+                    "post-behavior": 1,
+                    "blending-mode": "Color",
+                    "group": {
+                        "red": 82,
+                        "green": 157,
+                        "blue": 79
+                    },
+                    "link": [
+                        {
+                            "instance-index": 0,
+                            "instance-name": "1",
+                            "file": "[007] ArmRight_Front/[0000] ArmRight_Front.png",
+                            "images": [
+                                0
+                            ]
+                        },
+                        {
+                            "instance-index": 1,
+                            "instance-name": "2",
+                            "file": "[007] ArmRight_Front/[0001] ArmRight_Front.png",
+                            "images": [
+                                1
+                            ]
+                        }
+                    ],
+                    "repeat": []
+                },
+                {
+                    "name": "Torso",
+                    "visible": true,
+                    "position": 9,
+                    "opacity": 255,
+                    "start": 0,
+                    "end": 1,
+                    "pre-behavior": 0,
+                    "post-behavior": 1,
+                    "blending-mode": "Color",
+                    "group": {
+                        "red": 64,
+                        "green": 103,
+                        "blue": 172
+                    },
+                    "link": [
+                        {
+                            "instance-index": 0,
+                            "instance-name": "1",
+                            "file": "[009] Torso/[0000] Torso.png",
+                            "images": [
+                                0
+                            ]
+                        },
+                        {
+                            "instance-index": 1,
+                            "instance-name": "2",
+                            "file": "[009] Torso/[0001] Torso.png",
+                            "images": [
+                                1
+                            ]
+                        }
+                    ],
+                    "repeat": []
+                },
+                {
+                    "name": "Legs",
+                    "visible": true,
+                    "position": 10,
+                    "opacity": 255,
+                    "start": 0,
+                    "end": 1,
+                    "pre-behavior": 0,
+                    "post-behavior": 1,
+                    "blending-mode": "Color",
+                    "group": {
+                        "red": 214,
+                        "green": 183,
+                        "blue": 22
+                    },
+                    "link": [
+                        {
+                            "instance-index": 0,
+                            "instance-name": "1",
+                            "file": "[010] Legs/[0000] Legs.png",
+                            "images": [
+                                0
+                            ]
+                        },
+                        {
+                            "instance-index": 1,
+                            "instance-name": "2",
+                            "file": "[010] Legs/[0001] Legs.png",
+                            "images": [
+                                1
+                            ]
+                        }
+                    ],
+                    "repeat": []
+                },
+                {
+                    "name": "SHADOW",
+                    "visible": true,
+                    "position": 11,
+                    "opacity": 129,
+                    "start": 0,
+                    "end": 1,
+                    "pre-behavior": 0,
+                    "post-behavior": 1,
+                    "blending-mode": "Color",
+                    "group": {
+                        "red": 108,
+                        "green": 66,
+                        "blue": 170
+                    },
+                    "link": [
+                        {
+                            "instance-index": 0,
+                            "instance-name": "1",
+                            "file": "[011] SHADOW/[0000] SHADOW.png",
+                            "images": [
+                                0
+                            ]
+                        }
+                    ],
+                    "repeat": []
+                }
+            ]
+        }
+    }
+}
