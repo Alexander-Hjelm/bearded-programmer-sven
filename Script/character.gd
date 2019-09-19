@@ -28,8 +28,6 @@ func _init(name: String, base_stats: Dictionary, item_names_by_slot: Dictionary)
 	for element in ElementDatabase.Element.values():
 		_base_stats["element_attack_" + element] = 0.0
 		_base_stats["element_resist_" + element] = 0.0
-	
-	# TODO: Defined stats
 
 func deep_copy() -> Character:
 	# Copy base stats
