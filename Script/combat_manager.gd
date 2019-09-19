@@ -23,6 +23,7 @@ func create_combat_encounter(characters_team_0: Array, characters_team_1: Array)
 
 func register_character(character: Character, team: int):
 	characters_by_team[team].append(character)
+	# TODO: Use the AnimatedActor node instead of Node2D
 	var character_visual_node = Node2D.new().instance()
 	add_child(character_visual_node)
 	visual_character_representations[character] = character_visual_node
@@ -37,7 +38,7 @@ func tick():
 func tick_character(character: Character, team: int):
 	_character_timers[character] = _character_timers[character] - 1.0
 	if _character_timers[character] <= 0.0:
-		# TODO: if the active character is in team 1, show ui
+		# TODO: if the active character is in team 0, show ui
 		
 		# AI: Pick a random character on the other team to attack
 		var other_team: int = 0
