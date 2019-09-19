@@ -17,6 +17,18 @@ var _permanent_stat_offsets: Dictionary
 func _init(name: String, item_names_by_slot: Dictionary):
 	_name = name
 	_item_names_by_slot = item_names_by_slot
+	
+	# Initialize base stats
+	_base_stats["hp"] = 0.0
+	_base_stats["mp"] = 0.0
+	_base_stats["speed"] = 0.0
+	
+	# Add element attack and resistances
+	for element in ElementDatabase.Element.values():
+		_base_stats["element_attack_" + element] = 0.0
+		_base_stats["element_resist_" + element] = 0.0
+	
+	# TODO: Defined stats
 
 func deep_copy() -> Character:
 	var item_names_by_slot_copy: Dictionary
@@ -32,10 +44,16 @@ func tick():
 
 # Get the base value of a stat
 func get_base_value_for_stat(stat: String):
+	# first make sure that the base stat exists on the character
+	if not _base_stats.has(stat):
+		_base_stats[stat] = 0.0
 	return _base_stats[stat]
 
 # Get the current value of a stat, adjusted for any effects
-func get_current_value_for_stat(stat: String):
+func get_current_value_for_stat(stat: String) -> float:
+	# first make sure that the base stat exists on the character
+	if not _base_stats.has(stat):
+		_base_stats[stat] = 0.0
 	var current_value: float = _base_stats[stat]
 	# Add any stat offsets due to equipped items
 	for item_name in _item_names_by_slot.values():
@@ -55,7 +73,28 @@ func get_current_value_for_stat(stat: String):
 			current_value = current_value + stat_effects[stat]
 	return current_value
 
-func add_effect(effect: Effect):
+func add_effect(effect: Effect, src_actor_element_attack: float):
+	var element: int = effect.get_element()
+
+	# Check the source actor's element damage against the target actor's element defense	
+	# If the target actor's element resist is less than source actor's element attack,
+	# do not apply the effect
+	if src_actor_element_attack <= get_element_resist(element):
+		return
+	
+	# The element factor decides how much of the incoming effect is resisted
+	var element_factor: float = (src_actor_element_attack - get_element_resist(element))/100
+	element_factor = max(element_factor, 1.0)
+	element_factor = min(element_factor, 0.0)
+	
+	# Deep copy the incoming effect and apply the element factor to it,
+	# reducing any incoming stat damage
+	var effect_copy = effect.deep_copy()
+	var stat_effects: Dictionary = effect_copy.get_stat_effects()
+	for stat in stat_effects.keys():
+		if stat_effects[stat] < 0.0:
+			stat_effects[stat] = stat_effects[stat] * element_factor
+	
 	if effect.is_permanent():
 		for stat in effect.get_stat_effects().keys():
 			add_permanent_stat_offset(stat, effect.get_stat_effects()[stat])
@@ -74,10 +113,8 @@ func add_permanent_stat_offset(stat: String, value: float):
 		if _permanent_stat_offsets[stat] > 0:
 			_permanent_stat_offsets[stat] = 0
 
-#TODO: Element enum
-#TODO: Each effect has an element assigned to it
-#TODO: Upon evaluating if an effect should be applied to an actor, check the source actor's element damage against the target actor's element defense
-#      if the difference is greater than some threshold, do not inflict the status
-#TODO: Upon getting a current stat and base stat, return 0 if it does not exist
-#TODO: Speed stat that determines how often the actor attacks
-#TODO: Stat enum + usage
+func get_element_attack(element: int) -> float:
+	return get_current_value_for_stat("element_attack_" + ElementDatabase.Element.values()[element])
+	
+func get_element_resist(element: int) -> float:
+	return get_current_value_for_stat("element_resist_" + ElementDatabase.Element.values()[element])
