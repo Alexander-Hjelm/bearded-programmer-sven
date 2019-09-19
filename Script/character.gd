@@ -16,7 +16,6 @@ var _permanent_stat_offsets: Dictionary
 
 func _init(name: String, base_stats: Dictionary, item_names_by_slot: Dictionary):
 	_name = name
-	_base_stats = base_stats
 	_item_names_by_slot = item_names_by_slot
 	
 	# Initialize base stats
@@ -28,6 +27,10 @@ func _init(name: String, base_stats: Dictionary, item_names_by_slot: Dictionary)
 	for element in ElementDatabase.Element.values():
 		_base_stats["element_attack_" + element] = 0.0
 		_base_stats["element_resist_" + element] = 0.0
+	
+	# Initialize any specified stats
+	for stat in base_stats.keys():
+		_base_stats[stat] = base_stats[stat]
 
 func deep_copy() -> Character:
 	# Copy base stats
@@ -116,6 +119,9 @@ func add_permanent_stat_offset(stat: String, value: float):
 	if stat == "hp" or stat == "mp":
 		if _permanent_stat_offsets[stat] > 0:
 			_permanent_stat_offsets[stat] = 0
+
+func get_weapon() -> Item:
+	# TODO: Implement
 
 func get_element_attack(element: int) -> float:
 	return get_current_value_for_stat("element_attack_" + ElementDatabase.Element.values()[element])
