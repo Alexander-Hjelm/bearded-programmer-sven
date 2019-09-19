@@ -15,28 +15,31 @@ var _active_effects: Array
 var _permanent_stat_offsets: Dictionary
 
 func _init(name: String, base_stats: Dictionary, item_names_by_slot: Dictionary):
-	_name = name
-	_item_names_by_slot = item_names_by_slot
+	self._name = name
+	self._base_stats = {}
+	self._item_names_by_slot = item_names_by_slot
 	
 	# Initialize base stats
-	_base_stats["hp"] = 0.0
-	_base_stats["mp"] = 0.0
-	_base_stats["speed"] = 0.0
+	self._base_stats["hp"] = 0.0
+	self._base_stats["mp"] = 0.0
+	self._base_stats["speed"] = 0.0
 	
 	# Add element attack and resistances
-	for element in ElementDatabase.Element.values():
-		_base_stats["element_attack_" + str(element)] = 0.0
-		_base_stats["element_resist_" + str(element)] = 0.0
+	for element in ElementDatabase.Element.keys():
+		self._base_stats["element_attack_" + str(element)] = 0.0
+		self._base_stats["element_resist_" + str(element)] = 0.0
+	
+	print(base_stats.keys())
 	
 	# Initialize any specified stats
 	for stat in base_stats.keys():
-		_base_stats[stat] = base_stats[stat]
+		self._base_stats[stat] = base_stats[stat]
 
 func deep_copy() -> Character:
 	# Copy base stats
 	var base_stats_copy: Dictionary
 	for stat in base_stats_copy:
-		base_stats_copy[stat] = _base_stats[stat]
+		base_stats_copy[stat] = self._base_stats[stat]
 	# Copy item names
 	var item_names_by_slot_copy: Dictionary
 	for item_name in _item_names_by_slot:
@@ -48,6 +51,9 @@ func tick():
 		effect.tick()
 		if effect.is_completed():
 			_active_effects.remove(effect)
+
+func get_name() -> String:
+	return _name
 
 # Get the base value of a stat
 func get_base_value_for_stat(stat: String):
@@ -85,6 +91,7 @@ func add_effect(effect: Effect, element: int, src_actor_element_attack: float):
 	# If the target actor's element resist is less than source actor's element attack,
 	# do not apply the effect
 	if src_actor_element_attack <= get_element_resist(element):
+		print("The attack was deflected")
 		return
 	
 	# The element factor decides how much of the incoming effect is resisted
@@ -123,7 +130,7 @@ func get_weapon() -> Item:
 	return item_database.items[weapon_name]
 
 func get_element_attack(element: int) -> float:
-	return get_current_value_for_stat("element_attack_" + str(ElementDatabase.Element.values()[element]))
+	return get_current_value_for_stat("element_attack_" + str(ElementDatabase.Element.keys()[element]))
 	
 func get_element_resist(element: int) -> float:
-	return get_current_value_for_stat("element_resist_" + str(ElementDatabase.Element.values()[element]))
+	return get_current_value_for_stat("element_resist_" + str(ElementDatabase.Element.keys()[element]))
