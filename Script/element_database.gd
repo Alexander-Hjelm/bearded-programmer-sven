@@ -1,4 +1,4 @@
-class_name ElementDatabase
+class_name ElementDatabase extends Node2D
 
 enum Element{
 	glitch,

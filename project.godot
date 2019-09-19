@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/character.gd"
 }, {
-"base": "Reference",
+"base": "Node2D",
 "class": "CharacterDatabase",
 "language": "GDScript",
 "path": "res://Script/character_database.gd"
@@ -29,7 +29,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/effect.gd"
 }, {
-"base": "Reference",
+"base": "Node2D",
 "class": "ElementDatabase",
 "language": "GDScript",
 "path": "res://Script/element_database.gd"
@@ -39,7 +39,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/item.gd"
 }, {
-"base": "Reference",
+"base": "Node2D",
 "class": "ItemDatabase",
 "language": "GDScript",
 "path": "res://Script/item_database.gd"
@@ -59,6 +59,12 @@ _global_script_class_icons={
 config/name="bearded-programmer-sven"
 run/main_scene="res://MainScene.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+item_database="*res://Script/item_database.gd"
+character_database="*res://Script/character_database.gd"
+element_database="*res://Script/element_database.gd"
 
 [rendering]
 

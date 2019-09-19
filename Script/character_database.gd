@@ -1,7 +1,7 @@
-class_name CharacterDatabase
+class_name CharacterDatabase extends Node2D
 
 # Available items. Type: <String, Item>
-var _characters : Dictionary = {
+var characters : Dictionary = {
 	# Bearded Programmer Sven
 	"Bearded Programmer Sven": Character.new("Bearded Programmer Sven",
 		{
@@ -50,6 +50,3 @@ var _characters : Dictionary = {
 		}
 	)
 }
-
-static func get_character_by_name(name: String) -> Character:
-	return _characters[name]

@@ -12,27 +12,27 @@ var _character_timers: Dictionary
 
 func _init():
 	# Initialize team structures
-	characters_by_team[0] = []
-	characters_by_team[1] = []
+	_characters_by_team[0] = []
+	_characters_by_team[1] = []
 
 func create_combat_encounter(characters_team_0: Array, characters_team_1: Array):
 	for character in characters_team_0:
-		register_character(character)
+		register_character(character, 0)
 	for character in characters_team_1:
-		register_character(character)
+		register_character(character, 1)
 
 func register_character(character: Character, team: int):
-	characters_by_team[team].append(character)
+	_characters_by_team[team].append(character)
 	# TODO: Use the AnimatedActor node instead of Node2D
-	var character_visual_node = Node2D.new().instance()
-	add_child(character_visual_node)
-	visual_character_representations[character] = character_visual_node
+	var character_visual_node = Node2D.new()
+	#add_child(character_visual_node)
+	_visual_character_representations[character] = character_visual_node
 	reset_character_timer(character)
 
 func tick():
-	for character in characters_by_team[0]:
+	for character in _characters_by_team[0]:
 		tick_character(character, 0)
-	for character in characters_by_team[1]:
+	for character in _characters_by_team[1]:
 		tick_character(character, 1)
 
 func tick_character(character: Character, team: int):
@@ -50,11 +50,11 @@ func tick_character(character: Character, team: int):
 		reset_character_timer(character)
 
 func reset_character_timer(character: Character):
-	character_timers[character] = 100.0 - character.get_current_value_for_stat("speed")
+	_character_timers[character] = 100.0 - character.get_current_value_for_stat("speed")
 
 func attack(src_character: Character, target_character: Character, item: Item):
 	# Apply weapon item effects + pass along the element attack of the weapon element on the src character
 	var element = item.get_element()
 	var src_element_attack: float = src_character.get_element_attack(element)
 	for effect in item.get_inflicted_effects():
-		src_character.add_effect(effect, src_element_attack)
+		src_character.add_effect(effect, item.get_element(), src_element_attack)
