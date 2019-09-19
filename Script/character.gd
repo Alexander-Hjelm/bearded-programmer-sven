@@ -14,8 +14,9 @@ var _active_effects: Array
 # Permenent stat value offsets, type: <String, float>
 var _permanent_stat_offsets: Dictionary
 
-func _init(name: String, item_names_by_slot: Dictionary):
+func _init(name: String, base_stats: Dictionary, item_names_by_slot: Dictionary):
 	_name = name
+	_base_stats = base_stats
 	_item_names_by_slot = item_names_by_slot
 	
 	# Initialize base stats
@@ -31,10 +32,15 @@ func _init(name: String, item_names_by_slot: Dictionary):
 	# TODO: Defined stats
 
 func deep_copy() -> Character:
+	# Copy base stats
+	var base_stats_copy: Dictionary
+	for stat in base_stats_copy:
+		base_stats_copy[stat] = _base_stats[stat]
+	# Copy item names
 	var item_names_by_slot_copy: Dictionary
 	for item_name in _item_names_by_slot:
 		item_names_by_slot_copy[item_name] = _item_names_by_slot[item_name]
-	return Character.new(_name, item_names_by_slot_copy)
+	return Character.new(_name, base_stats_copy, item_names_by_slot_copy)
 
 func tick():
 	for effect in _active_effects:
