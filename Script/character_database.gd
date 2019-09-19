@@ -9,7 +9,9 @@ var _characters : Dictionary = {
 			"mp": 5.0,
 			"speed": 40.0
 		},
-		{}
+		{
+			"Weapon": "Player Weapon"
+		}
 	),
 	# Segfault
 	"Segfault": Character.new("Segfault",
@@ -19,7 +21,8 @@ var _characters : Dictionary = {
 			"speed": 40.0
 		},
 		{
-			"Feet": "Segway"
+			"Feet": "Segway",
+			"Weapon": "Segfault Weapon"
 		}
 	),
 	# Stack Overflow
@@ -30,7 +33,8 @@ var _characters : Dictionary = {
 			"speed": 40.0
 		},
 		{
-			"Body": "Trash can"
+			"Body": "Trash Can",
+			"Weapon": "Stack Overflow Weapon"
 		}
 	),
 	# Blue Screen of Death
@@ -41,7 +45,8 @@ var _characters : Dictionary = {
 			"speed": 40.0
 		},
 		{
-			"Head": "Monitor"
+			"Head": "Monitor",
+			"Weapon": "Blue Screen of Death Weapon"
 		}
 	)
 }

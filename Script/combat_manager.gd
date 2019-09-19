@@ -37,7 +37,7 @@ func tick():
 func tick_character(character: Character, team: int):
 	_character_timers[character] = _character_timers[character] - 1.0
 	if _character_timers[character] <= 0.0:
-		#TODO: it's that character's turn to attack
+		# TODO: if the active character is in team 1, show ui
 		
 		# AI: Pick a random character on the other team to attack
 		var other_team: int = 0
@@ -52,19 +52,7 @@ func reset_character_timer(character: Character):
 	character_timers[character] = 100.0 - character.get_current_value_for_stat("speed")
 
 func attack(src_character: Character, target_character: Character, item: Item):
+	# TODO: implement attack function
+	#	( apply weapon item effects + pass along the element attack of the weapon element
+	#	on the src character
 	pass
-
-# TODO: if the active character is in team 1, show ui
-#	( apply weapon item effects + pass along the element attack of the weapon element on the src character
-# TODO: Each weapon has an element associated to it
-# TODO: Enforce that every character has a weapon
-
-# DONE
-# TODO: manage registered characters by team
-# TODO: Entry for registering a character
-# TODO: Entry function for creating characters on teams by name reference
-# TODO: for each registered character, maintain a reference to the visual node
-# TODO: for each character, maintain a timer
-# TODO: central clock, decrease every character's timer
-# TODO: if any character's timer becomes < 0.0, set that character as the active character
-# TODO: if the active character is in team 2, attack a random character from team 1

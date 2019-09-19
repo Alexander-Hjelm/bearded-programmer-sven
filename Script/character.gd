@@ -121,7 +121,8 @@ func add_permanent_stat_offset(stat: String, value: float):
 			_permanent_stat_offsets[stat] = 0
 
 func get_weapon() -> Item:
-	# TODO: Implement
+	var weapon_name: String = _item_names_by_slot["Weapon"]
+	return ItemDatabase.get_item_by_name[weapon_name]
 
 func get_element_attack(element: int) -> float:
 	return get_current_value_for_stat("element_attack_" + ElementDatabase.Element.values()[element])
