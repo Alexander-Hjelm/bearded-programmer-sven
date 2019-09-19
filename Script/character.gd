@@ -1,4 +1,4 @@
-class_name Character extends StatNode
+class_name Character
 
 var _name: String
 
@@ -73,4 +73,11 @@ func add_permanent_stat_offset(stat: String, value: float):
 	if stat == "hp" or stat == "mp":
 		if _permanent_stat_offsets[stat] > 0:
 			_permanent_stat_offsets[stat] = 0
-	
+
+#TODO: Element enum
+#TODO: Each effect has an element assigned to it
+#TODO: Upon evaluating if an effect should be applied to an actor, check the source actor's element damage against the target actor's element defense
+#      if the difference is greater than some threshold, do not inflict the status
+#TODO: Upon getting a current stat and base stat, return 0 if it does not exist
+#TODO: Speed stat that determines how often the actor attacks
+#TODO: Stat enum + usage
