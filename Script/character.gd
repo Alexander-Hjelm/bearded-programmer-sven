@@ -29,8 +29,6 @@ func _init(name: String, base_stats: Dictionary, item_names_by_slot: Dictionary)
 		self._base_stats["element_attack_" + str(element)] = 0.0
 		self._base_stats["element_resist_" + str(element)] = 0.0
 	
-	print(base_stats.keys())
-	
 	# Initialize any specified stats
 	for stat in base_stats.keys():
 		self._base_stats[stat] = base_stats[stat]
@@ -82,7 +80,7 @@ func get_current_value_for_stat(stat: String) -> float:
 	# Add any stat offsets due to effects
 	for effect in _active_effects:
 		var stat_effects = effect.get_stat_effects()
-		if stat_effects.has_key(stat):
+		if stat_effects.has(stat):
 			current_value = current_value + stat_effects[stat]
 	return current_value
 

@@ -31,14 +31,14 @@ var items : Dictionary = {
 		Item.ItemType.EQUIPPABLE
 	),
 	# Player Weapon, default weapon for the player
-	"Player Weapon": Item.new("Player Weapon", ElementDatabase.Element.software,
+	"Player Weapon": Item.new("Player Weapon", ElementDatabase.Element.glitch,
 		[
 			Effect.new({"hp": -1.0}, true, 0)
 		],
 		Item.ItemType.EQUIPPABLE
 	),
 	# Segfault Weapon, default weapon for the Segfault
-	"Segfault Weapon": Item.new("Segfault Weapon", ElementDatabase.Element.software,
+	"Segfault Weapon": Item.new("Segfault Weapon", ElementDatabase.Element.glitch,
 		[
 			Effect.new({"hp": -1.0}, true, 0)
 		],
