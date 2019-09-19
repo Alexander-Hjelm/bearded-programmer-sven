@@ -52,7 +52,8 @@ func reset_character_timer(character: Character):
 	character_timers[character] = 100.0 - character.get_current_value_for_stat("speed")
 
 func attack(src_character: Character, target_character: Character, item: Item):
-	# TODO: implement attack function
-	#	( apply weapon item effects + pass along the element attack of the weapon element
-	#	on the src character
-	pass
+	# Apply weapon item effects + pass along the element attack of the weapon element on the src character
+	var element = item.get_element()
+	var src_element_attack: float = src_character.get_element_attack(element)
+	for effect in item.get_inflicted_effects():
+		src_character.add_effect(effect, src_element_attack)
