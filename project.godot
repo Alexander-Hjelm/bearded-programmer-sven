@@ -57,14 +57,7 @@ _global_script_class_icons={
 [application]
 
 config/name="bearded-programmer-sven"
-run/main_scene="res://MainScene.tscn"
 config/icon="res://icon.png"
-
-[autoload]
-
-item_database="*res://Script/item_database.gd"
-character_database="*res://Script/character_database.gd"
-element_database="*res://Script/element_database.gd"
 
 [rendering]
 
