@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Actor/Protagonists/Sven/SvenTheProgrammer.tscn" type="PackedScene" id=1]
+
+[node name="RobTestScene" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 512, 320 )
+
+[node name="SvenTheProgrammer" parent="Node2D" instance=ExtResource( 1 )]

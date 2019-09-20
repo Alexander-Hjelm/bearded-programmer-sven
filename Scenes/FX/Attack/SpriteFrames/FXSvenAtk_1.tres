@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=25 format=2]
+
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0000] disableFX.png" type="Texture" id=1]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0001] disableFX.png" type="Texture" id=2]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0002] disableFX.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0003] disableFX.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0004] disableFX.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0005] disableFX.png" type="Texture" id=6]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0006] disableFX.png" type="Texture" id=7]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0007] disableFX.png" type="Texture" id=8]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0008] disableFX.png" type="Texture" id=9]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0009] disableFX.png" type="Texture" id=10]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0010] disableFX.png" type="Texture" id=11]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0011] disableFX.png" type="Texture" id=12]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0012] disableFX.png" type="Texture" id=13]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0013] disableFX.png" type="Texture" id=14]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0014] disableFX.png" type="Texture" id=15]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0015] disableFX.png" type="Texture" id=16]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0016] disableFX.png" type="Texture" id=17]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0017] disableFX.png" type="Texture" id=18]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0018] disableFX.png" type="Texture" id=19]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0019] disableFX.png" type="Texture" id=20]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0020] disableFX.png" type="Texture" id=21]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0021] disableFX.png" type="Texture" id=22]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0022] disableFX.png" type="Texture" id=23]
+[ext_resource path="res://GFX/Various_FX/[001] disableFX/[0023] disableFX.png" type="Texture" id=24]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"loop": false,
+"name": "default",
+"speed": 24.0
+} ]

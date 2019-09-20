@@ -1,0 +1,35 @@
+[gd_resource type="SpriteFrames" load_steps=26 format=2]
+
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_01.png" type="Texture" id=1]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_02.png" type="Texture" id=2]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_03.png" type="Texture" id=3]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_04.png" type="Texture" id=4]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_05.png" type="Texture" id=5]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_06.png" type="Texture" id=6]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_07.png" type="Texture" id=7]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_08.png" type="Texture" id=8]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_09.png" type="Texture" id=9]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_10.png" type="Texture" id=10]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_11.png" type="Texture" id=11]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_12.png" type="Texture" id=12]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_13.png" type="Texture" id=13]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_14.png" type="Texture" id=14]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_15.png" type="Texture" id=15]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_16.png" type="Texture" id=16]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_17.png" type="Texture" id=17]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_18.png" type="Texture" id=18]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_19.png" type="Texture" id=19]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_20.png" type="Texture" id=20]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_21.png" type="Texture" id=21]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_22.png" type="Texture" id=22]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_23.png" type="Texture" id=23]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_24.png" type="Texture" id=24]
+[ext_resource path="res://GFX/2 Monsters/3StackOverflow/Stack_25.png" type="Texture" id=25]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "idle",
+"speed": 12.0
+} ]

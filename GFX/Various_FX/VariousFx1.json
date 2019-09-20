@@ -1,0 +1,891 @@
+{
+    "version": {
+        "major": 5,
+        "minor": 1
+    },
+    "project": {
+        "format": {
+            "extension": "png"
+        },
+        "camera": {
+            "width": 512,
+            "height": 512,
+            "field": 0,
+            "framerate": 24.0,
+            "pixelaspectratio": 1.0,
+            "antialiasing": 1
+        },
+        "clip": {
+            "name": "ATTACK_FX",
+            "width": 256,
+            "height": 256,
+            "framerate": 24.0,
+            "pixelaspectratio": 1.0,
+            "image-count": 24,
+            "bg": {
+                "red": 92,
+                "green": 92,
+                "blue": 92
+            },
+            "markin": {
+                "status": false,
+                "value": 0
+            },
+            "markout": {
+                "status": false,
+                "value": 0
+            },
+            "camera": {
+                "mode": 2,
+                "profile": "2 0 1 0 0 1 1 ",
+                "motion-blur": 0.0,
+                "lock-all": false,
+                "lock-x": false,
+                "lock-y": false,
+                "lock-angle": false,
+                "lock-scale": false,
+                "points": [],
+                "positions": [
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    },
+                    {
+                        "x": -128.0,
+                        "y": -128.0,
+                        "angle": 0.0,
+                        "scale": 1.0
+                    }
+                ]
+            },
+            "layers": [
+                {
+                    "name": "disableFX",
+                    "visible": true,
+                    "position": 1,
+                    "opacity": 255,
+                    "start": 0,
+                    "end": 23,
+                    "pre-behavior": 0,
+                    "post-behavior": 0,
+                    "blending-mode": "Color",
+                    "group": {
+                        "red": 111,
+                        "green": 29,
+                        "blue": 108
+                    },
+                    "link": [
+                        {
+                            "instance-index": 0,
+                            "instance-name": "1",
+                            "file": "[001] disableFX/[0000] disableFX.png",
+                            "images": [
+                                0
+                            ]
+                        },
+                        {
+                            "instance-index": 1,
+                            "instance-name": "2",
+                            "file": "[001] disableFX/[0001] disableFX.png",
+                            "images": [
+                                1
+                            ]
+                        },
+                        {
+                            "instance-index": 2,
+                            "instance-name": "3",
+                            "file": "[001] disableFX/[0002] disableFX.png",
+                            "images": [
+                                2
+                            ]
+                        },
+                        {
+                            "instance-index": 3,
+                            "instance-name": "4",
+                            "file": "[001] disableFX/[0003] disableFX.png",
+                            "images": [
+                                3
+                            ]
+                        },
+                        {
+                            "instance-index": 4,
+                            "instance-name": "5",
+                            "file": "[001] disableFX/[0004] disableFX.png",
+                            "images": [
+                                4
+                            ]
+                        },
+                        {
+                            "instance-index": 5,
+                            "instance-name": "6",
+                            "file": "[001] disableFX/[0005] disableFX.png",
+                            "images": [
+                                5
+                            ]
+                        },
+                        {
+                            "instance-index": 6,
+                            "instance-name": "7",
+                            "file": "[001] disableFX/[0006] disableFX.png",
+                            "images": [
+                                6
+                            ]
+                        },
+                        {
+                            "instance-index": 7,
+                            "instance-name": "8",
+                            "file": "[001] disableFX/[0007] disableFX.png",
+                            "images": [
+                                7
+                            ]
+                        },
+                        {
+                            "instance-index": 8,
+                            "instance-name": "9",
+                            "file": "[001] disableFX/[0008] disableFX.png",
+                            "images": [
+                                8
+                            ]
+                        },
+                        {
+                            "instance-index": 9,
+                            "instance-name": "10",
+                            "file": "[001] disableFX/[0009] disableFX.png",
+                            "images": [
+                                9
+                            ]
+                        },
+                        {
+                            "instance-index": 10,
+                            "instance-name": "11",
+                            "file": "[001] disableFX/[0010] disableFX.png",
+                            "images": [
+                                10
+                            ]
+                        },
+                        {
+                            "instance-index": 11,
+                            "instance-name": "12",
+                            "file": "[001] disableFX/[0011] disableFX.png",
+                            "images": [
+                                11
+                            ]
+                        },
+                        {
+                            "instance-index": 12,
+                            "instance-name": "13",
+                            "file": "[001] disableFX/[0012] disableFX.png",
+                            "images": [
+                                12
+                            ]
+                        },
+                        {
+                            "instance-index": 13,
+                            "instance-name": "14",
+                            "file": "[001] disableFX/[0013] disableFX.png",
+                            "images": [
+                                13
+                            ]
+                        },
+                        {
+                            "instance-index": 14,
+                            "instance-name": "15",
+                            "file": "[001] disableFX/[0014] disableFX.png",
+                            "images": [
+                                14
+                            ]
+                        },
+                        {
+                            "instance-index": 15,
+                            "instance-name": "16",
+                            "file": "[001] disableFX/[0015] disableFX.png",
+                            "images": [
+                                15
+                            ]
+                        },
+                        {
+                            "instance-index": 16,
+                            "instance-name": "17",
+                            "file": "[001] disableFX/[0016] disableFX.png",
+                            "images": [
+                                16
+                            ]
+                        },
+                        {
+                            "instance-index": 17,
+                            "instance-name": "18",
+                            "file": "[001] disableFX/[0017] disableFX.png",
+                            "images": [
+                                17
+                            ]
+                        },
+                        {
+                            "instance-index": 18,
+                            "instance-name": "19",
+                            "file": "[001] disableFX/[0018] disableFX.png",
+                            "images": [
+                                18
+                            ]
+                        },
+                        {
+                            "instance-index": 19,
+                            "instance-name": "20",
+                            "file": "[001] disableFX/[0019] disableFX.png",
+                            "images": [
+                                19
+                            ]
+                        },
+                        {
+                            "instance-index": 20,
+                            "instance-name": "21",
+                            "file": "[001] disableFX/[0020] disableFX.png",
+                            "images": [
+                                20
+                            ]
+                        },
+                        {
+                            "instance-index": 21,
+                            "instance-name": "22",
+                            "file": "[001] disableFX/[0021] disableFX.png",
+                            "images": [
+                                21
+                            ]
+                        },
+                        {
+                            "instance-index": 22,
+                            "instance-name": "23",
+                            "file": "[001] disableFX/[0022] disableFX.png",
+                            "images": [
+                                22
+                            ]
+                        },
+                        {
+                            "instance-index": 23,
+                            "instance-name": "24",
+                            "file": "[001] disableFX/[0023] disableFX.png",
+                            "images": [
+                                23
+                            ]
+                        }
+                    ],
+                    "repeat": []
+                },
+                {
+                    "name": "HideFX",
+                    "visible": true,
+                    "position": 2,
+                    "opacity": 255,
+                    "start": 0,
+                    "end": 23,
+                    "pre-behavior": 0,
+                    "post-behavior": 0,
+                    "blending-mode": "Color",
+                    "group": {
+                        "red": 111,
+                        "green": 29,
+                        "blue": 108
+                    },
+                    "link": [
+                        {
+                            "instance-index": 0,
+                            "instance-name": "1",
+                            "file": "[002] HideFX/[0000] HideFX.png",
+                            "images": [
+                                0
+                            ]
+                        },
+                        {
+                            "instance-index": 1,
+                            "instance-name": "2",
+                            "file": "[002] HideFX/[0001] HideFX.png",
+                            "images": [
+                                1
+                            ]
+                        },
+                        {
+                            "instance-index": 2,
+                            "instance-name": "3",
+                            "file": "[002] HideFX/[0002] HideFX.png",
+                            "images": [
+                                2
+                            ]
+                        },
+                        {
+                            "instance-index": 3,
+                            "instance-name": "4",
+                            "file": "[002] HideFX/[0003] HideFX.png",
+                            "images": [
+                                3
+                            ]
+                        },
+                        {
+                            "instance-index": 4,
+                            "instance-name": "5",
+                            "file": "[002] HideFX/[0004] HideFX.png",
+                            "images": [
+                                4
+                            ]
+                        },
+                        {
+                            "instance-index": 5,
+                            "instance-name": "6",
+                            "file": "[002] HideFX/[0005] HideFX.png",
+                            "images": [
+                                5
+                            ]
+                        },
+                        {
+                            "instance-index": 6,
+                            "instance-name": "7",
+                            "file": "[002] HideFX/[0006] HideFX.png",
+                            "images": [
+                                6
+                            ]
+                        },
+                        {
+                            "instance-index": 7,
+                            "instance-name": "8",
+                            "file": "[002] HideFX/[0007] HideFX.png",
+                            "images": [
+                                7
+                            ]
+                        },
+                        {
+                            "instance-index": 8,
+                            "instance-name": "9",
+                            "file": "[002] HideFX/[0008] HideFX.png",
+                            "images": [
+                                8
+                            ]
+                        },
+                        {
+                            "instance-index": 9,
+                            "instance-name": "10",
+                            "file": "[002] HideFX/[0009] HideFX.png",
+                            "images": [
+                                9
+                            ]
+                        },
+                        {
+                            "instance-index": 10,
+                            "instance-name": "11",
+                            "file": "[002] HideFX/[0010] HideFX.png",
+                            "images": [
+                                10
+                            ]
+                        },
+                        {
+                            "instance-index": 11,
+                            "instance-name": "12",
+                            "file": "[002] HideFX/[0011] HideFX.png",
+                            "images": [
+                                11
+                            ]
+                        },
+                        {
+                            "instance-index": 12,
+                            "instance-name": "13",
+                            "file": "[002] HideFX/[0012] HideFX.png",
+                            "images": [
+                                12
+                            ]
+                        },
+                        {
+                            "instance-index": 13,
+                            "instance-name": "14",
+                            "file": "[002] HideFX/[0013] HideFX.png",
+                            "images": [
+                                13
+                            ]
+                        },
+                        {
+                            "instance-index": 14,
+                            "instance-name": "15",
+                            "file": "[002] HideFX/[0014] HideFX.png",
+                            "images": [
+                                14
+                            ]
+                        },
+                        {
+                            "instance-index": 15,
+                            "instance-name": "16",
+                            "file": "[002] HideFX/[0015] HideFX.png",
+                            "images": [
+                                15
+                            ]
+                        },
+                        {
+                            "instance-index": 16,
+                            "instance-name": "17",
+                            "file": "[002] HideFX/[0016] HideFX.png",
+                            "images": [
+                                16
+                            ]
+                        },
+                        {
+                            "instance-index": 17,
+                            "instance-name": "18",
+                            "file": "[002] HideFX/[0017] HideFX.png",
+                            "images": [
+                                17
+                            ]
+                        },
+                        {
+                            "instance-index": 18,
+                            "instance-name": "19",
+                            "file": "[002] HideFX/[0018] HideFX.png",
+                            "images": [
+                                18
+                            ]
+                        },
+                        {
+                            "instance-index": 19,
+                            "instance-name": "20",
+                            "file": "[002] HideFX/[0019] HideFX.png",
+                            "images": [
+                                19
+                            ]
+                        },
+                        {
+                            "instance-index": 20,
+                            "instance-name": "21",
+                            "file": "[002] HideFX/[0020] HideFX.png",
+                            "images": [
+                                20
+                            ]
+                        },
+                        {
+                            "instance-index": 21,
+                            "instance-name": "22",
+                            "file": "[002] HideFX/[0021] HideFX.png",
+                            "images": [
+                                21
+                            ]
+                        },
+                        {
+                            "instance-index": 22,
+                            "instance-name": "23",
+                            "file": "[002] HideFX/[0022] HideFX.png",
+                            "images": [
+                                22
+                            ]
+                        },
+                        {
+                            "instance-index": 23,
+                            "instance-name": "24",
+                            "file": "[002] HideFX/[0023] HideFX.png",
+                            "images": [
+                                23
+                            ]
+                        }
+                    ],
+                    "repeat": []
+                },
+                {
+                    "name": "QueueFreeAtkTop",
+                    "visible": true,
+                    "position": 3,
+                    "opacity": 255,
+                    "start": 0,
+                    "end": 23,
+                    "pre-behavior": 0,
+                    "post-behavior": 0,
+                    "blending-mode": "Color",
+                    "group": {
+                        "red": 255,
+                        "green": 255,
+                        "blue": 255
+                    },
+                    "link": [
+                        {
+                            "instance-index": 0,
+                            "instance-name": "1",
+                            "file": "[003] QueueFreeAtkTop/[0000] QueueFreeAtkTop.png",
+                            "images": [
+                                0
+                            ]
+                        },
+                        {
+                            "instance-index": 1,
+                            "instance-name": "2",
+                            "file": "[003] QueueFreeAtkTop/[0001] QueueFreeAtkTop.png",
+                            "images": [
+                                1
+                            ]
+                        },
+                        {
+                            "instance-index": 2,
+                            "instance-name": "3",
+                            "file": "[003] QueueFreeAtkTop/[0002] QueueFreeAtkTop.png",
+                            "images": [
+                                2
+                            ]
+                        },
+                        {
+                            "instance-index": 3,
+                            "instance-name": "4",
+                            "file": "[003] QueueFreeAtkTop/[0003] QueueFreeAtkTop.png",
+                            "images": [
+                                3
+                            ]
+                        },
+                        {
+                            "instance-index": 4,
+                            "instance-name": "5",
+                            "file": "[003] QueueFreeAtkTop/[0004] QueueFreeAtkTop.png",
+                            "images": [
+                                4
+                            ]
+                        },
+                        {
+                            "instance-index": 5,
+                            "instance-name": "6",
+                            "file": "[003] QueueFreeAtkTop/[0005] QueueFreeAtkTop.png",
+                            "images": [
+                                5
+                            ]
+                        },
+                        {
+                            "instance-index": 6,
+                            "instance-name": "7",
+                            "file": "[003] QueueFreeAtkTop/[0006] QueueFreeAtkTop.png",
+                            "images": [
+                                6
+                            ]
+                        },
+                        {
+                            "instance-index": 7,
+                            "instance-name": "8",
+                            "file": "[003] QueueFreeAtkTop/[0007] QueueFreeAtkTop.png",
+                            "images": [
+                                7
+                            ]
+                        },
+                        {
+                            "instance-index": 8,
+                            "instance-name": "9",
+                            "file": "[003] QueueFreeAtkTop/[0008] QueueFreeAtkTop.png",
+                            "images": [
+                                8
+                            ]
+                        },
+                        {
+                            "instance-index": 9,
+                            "instance-name": "10",
+                            "file": "[003] QueueFreeAtkTop/[0009] QueueFreeAtkTop.png",
+                            "images": [
+                                9
+                            ]
+                        },
+                        {
+                            "instance-index": 10,
+                            "instance-name": "11",
+                            "file": "[003] QueueFreeAtkTop/[0010] QueueFreeAtkTop.png",
+                            "images": [
+                                10
+                            ]
+                        },
+                        {
+                            "instance-index": 11,
+                            "instance-name": "12",
+                            "file": "[003] QueueFreeAtkTop/[0011] QueueFreeAtkTop.png",
+                            "images": [
+                                11
+                            ]
+                        },
+                        {
+                            "instance-index": 12,
+                            "instance-name": "13",
+                            "file": "[003] QueueFreeAtkTop/[0012] QueueFreeAtkTop.png",
+                            "images": [
+                                12
+                            ]
+                        },
+                        {
+                            "instance-index": 13,
+                            "instance-name": "14",
+                            "file": "[003] QueueFreeAtkTop/[0013] QueueFreeAtkTop.png",
+                            "images": [
+                                13
+                            ]
+                        },
+                        {
+                            "instance-index": 14,
+                            "instance-name": "15",
+                            "file": "[003] QueueFreeAtkTop/[0014] QueueFreeAtkTop.png",
+                            "images": [
+                                14
+                            ]
+                        },
+                        {
+                            "instance-index": 15,
+                            "instance-name": "16",
+                            "file": "[003] QueueFreeAtkTop/[0015] QueueFreeAtkTop.png",
+                            "images": [
+                                15
+                            ]
+                        },
+                        {
+                            "instance-index": 16,
+                            "instance-name": "17",
+                            "file": "[003] QueueFreeAtkTop/[0016] QueueFreeAtkTop.png",
+                            "images": [
+                                16
+                            ]
+                        },
+                        {
+                            "instance-index": 17,
+                            "instance-name": "18",
+                            "file": "[003] QueueFreeAtkTop/[0017] QueueFreeAtkTop.png",
+                            "images": [
+                                17
+                            ]
+                        },
+                        {
+                            "instance-index": 18,
+                            "instance-name": "19",
+                            "file": "[003] QueueFreeAtkTop/[0018] QueueFreeAtkTop.png",
+                            "images": [
+                                18
+                            ]
+                        },
+                        {
+                            "instance-index": 19,
+                            "instance-name": "20",
+                            "file": "[003] QueueFreeAtkTop/[0019] QueueFreeAtkTop.png",
+                            "images": [
+                                19
+                            ]
+                        },
+                        {
+                            "instance-index": 20,
+                            "instance-name": "21",
+                            "file": "[003] QueueFreeAtkTop/[0020] QueueFreeAtkTop.png",
+                            "images": [
+                                20
+                            ]
+                        },
+                        {
+                            "instance-index": 21,
+                            "instance-name": "22",
+                            "file": "[003] QueueFreeAtkTop/[0021] QueueFreeAtkTop.png",
+                            "images": [
+                                21
+                            ]
+                        },
+                        {
+                            "instance-index": 22,
+                            "instance-name": "23",
+                            "file": "[003] QueueFreeAtkTop/[0022] QueueFreeAtkTop.png",
+                            "images": [
+                                22
+                            ]
+                        },
+                        {
+                            "instance-index": 23,
+                            "instance-name": "24",
+                            "file": "[003] QueueFreeAtkTop/[0023] QueueFreeAtkTop.png",
+                            "images": [
+                                23
+                            ]
+                        }
+                    ],
+                    "repeat": []
+                },
+                {
+                    "name": "SLICEFX",
+                    "visible": true,
+                    "position": 4,
+                    "opacity": 255,
+                    "start": 0,
+                    "end": 4,
+                    "pre-behavior": 0,
+                    "post-behavior": 0,
+                    "blending-mode": "Color",
+                    "group": {
+                        "red": 71,
+                        "green": 142,
+                        "blue": 165
+                    },
+                    "link": [
+                        {
+                            "instance-index": 0,
+                            "instance-name": "1",
+                            "file": "[004] SLICEFX/[0000] SLICEFX.png",
+                            "images": [
+                                0
+                            ]
+                        },
+                        {
+                            "instance-index": 1,
+                            "instance-name": "2",
+                            "file": "[004] SLICEFX/[0001] SLICEFX.png",
+                            "images": [
+                                1
+                            ]
+                        },
+                        {
+                            "instance-index": 2,
+                            "instance-name": "3",
+                            "file": "[004] SLICEFX/[0002] SLICEFX.png",
+                            "images": [
+                                2
+                            ]
+                        },
+                        {
+                            "instance-index": 3,
+                            "instance-name": "4",
+                            "file": "[004] SLICEFX/[0003] SLICEFX.png",
+                            "images": [
+                                3
+                            ]
+                        },
+                        {
+                            "instance-index": 4,
+                            "instance-name": "5",
+                            "file": "[004] SLICEFX/[0004] SLICEFX.png",
+                            "images": [
+                                4
+                            ]
+                        }
+                    ],
+                    "repeat": []
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Actor/AnimatedActor.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Actor/StandardMovementAnimations/mov_attack_left.tres" type="Animation" id=2]
+[ext_resource path="res://Scenes/Actor/StandardMovementAnimations/mov_attack_right.tres" type="Animation" id=3]
+[ext_resource path="res://Scenes/Actor/StandardMovementAnimations/mov_hurt.tres" type="Animation" id=4]
+
+[node name="AnimatedActor" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+
+[node name="SpriteAnim" type="AnimationPlayer" parent="."]
+
+[node name="FXMovementAnim" type="AnimationPlayer" parent="."]
+anims/mov_attack_left = ExtResource( 2 )
+anims/mov_attack_right = ExtResource( 3 )
+anims/mov_hurt = ExtResource( 4 )
+
+[node name="attackFXPOS" type="Position2D" parent="."]
