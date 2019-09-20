@@ -1,6 +1,6 @@
 extends "res://Scenes/Actor/AnimatedActor.gd"
 
-enum morph_state_types {SEG, SEGTV, SEGSTACK, STACK, STACKTV, TV, FULLMORPH}
+enum morph_state_types {HUMAN,SEG, SEGTV, SEGSTACK, STACK, STACKTV, TV, FULLMORPH}
 var morph_state
 
 
@@ -16,6 +16,8 @@ func change_anim_state(new_state):
 				$FXMovementAnim.play("mov_attack_right")
 		anim_state_types.HURT:
 			$FXMovementAnim.play("mov_hurt")
+			if morph_state == morph_state_types.HUMAN:
+				$SpriteAnim.play("human_hurt")
 		anim_state_types.BOOSTSTAT:
 			pass
 		anim_state_types.LOWERSTAT:
@@ -25,6 +27,8 @@ func change_anim_state(new_state):
 func change_morph_state(new_morph_state):
 	morph_state = new_morph_state
 	match morph_state:
+		morph_state_types.HUMAN:
+			$SpriteAnim.play("human_idle")
 		morph_state_types.SEG:
 			$SpriteAnim.play("seg")
 		morph_state_types.SEGTV:
@@ -41,12 +45,12 @@ func change_morph_state(new_morph_state):
 			$SpriteAnim.play("fullmorph")
 
 
-func _input(event):
-	if Input.is_key_pressed(KEY_U):
-		change_anim_state(anim_state_types.ATTACK)
-		change_morph_state(morph_state_types.SEG)
-	if Input.is_key_pressed(KEY_H):
-		change_anim_state(anim_state_types.HURT)
+#func _input(event):
+#	if Input.is_key_pressed(KEY_U):
+#		change_anim_state(anim_state_types.ATTACK)
+#		change_morph_state(morph_state_types.SEG)
+#	if Input.is_key_pressed(KEY_H):
+#		change_anim_state(anim_state_types.HURT)
 
 
 func show_attack_fx():

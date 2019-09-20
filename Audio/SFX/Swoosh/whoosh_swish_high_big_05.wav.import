@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/whoosh_swish_high_big_05.wav-c9dc678854d2f0c9e8298ca36366d96f.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Swoosh/whoosh_swish_high_big_05.wav"
+dest_files=[ "res://.import/whoosh_swish_high_big_05.wav-c9dc678854d2f0c9e8298ca36366d96f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
