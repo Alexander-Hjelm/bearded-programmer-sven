@@ -31,6 +31,8 @@ func change_anim_state(new_state):
 			pass
 		anim_state_types.LOWERSTAT:
 			pass
+		anim_state_types.DEATH:
+			$FXMovementAnim.play("mov_death")
 
 # Update a given stat on the visual label node
 func set_stat(stat_name: String, value: float):
