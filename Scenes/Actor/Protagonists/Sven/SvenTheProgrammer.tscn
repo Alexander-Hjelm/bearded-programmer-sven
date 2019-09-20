@@ -1,14 +1,15 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Actor/AnimatedActor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Actor/Protagonists/Sven/SvenTheProgrammer.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/FX/Attack/FXSvenAtk_1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/FX/Attack/FXSvenAtk_2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/FX/Attack/FXSvenAtk_3.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Actor/Protagonists/Sven/SpriteFrames/SvenTheProgrammer.tres" type="SpriteFrames" id=6]
-[ext_resource path="res://Scenes/Actor/Protagonists/Sven/Animations/SvenTheProgrammer.tres" type="Animation" id=7]
+[ext_resource path="res://Scenes/FX/Smoke/Explosion_BadGuys.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Actor/Protagonists/Sven/SpriteFrames/SvenTheProgrammer.tres" type="SpriteFrames" id=7]
+[ext_resource path="res://Scenes/Actor/Protagonists/Sven/Animations/SvenTheProgrammer.tres" type="Animation" id=8]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=1]
 resource_name = "fullmorph"
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
@@ -47,8 +48,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "hurt"
+[sub_resource type="Animation" id=2]
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
@@ -87,8 +87,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "idle"
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -126,8 +125,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "seg"
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -165,8 +163,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "segstack"
+[sub_resource type="Animation" id=5]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -282,7 +279,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 resource_name = "tv"
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
@@ -327,23 +324,23 @@ has_random_atk_fx = true
 attack_fx_1 = ExtResource( 3 )
 attack_fx_2 = ExtResource( 4 )
 attack_fx_3 = ExtResource( 5 )
+hurt_fx = ExtResource( 6 )
 
 [node name="AnimatedSprite" parent="." index="0"]
-frames = ExtResource( 6 )
+frames = ExtResource( 7 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="SpriteAnim" parent="." index="1"]
-anims/fullmorph = SubResource( 5 )
-anims/hurt = SubResource( 1 )
-anims/idle = SubResource( 2 )
-anims/seg = SubResource( 3 )
-anims/segstack = SubResource( 4 )
+anims/fullmorph = SubResource( 1 )
+anims/hurt = SubResource( 2 )
+anims/idle = SubResource( 3 )
+anims/seg = SubResource( 4 )
+anims/segstack = SubResource( 5 )
 anims/segtv = SubResource( 6 )
 anims/stack = SubResource( 7 )
-anims/stacktv = ExtResource( 7 )
-anims/tv = SubResource( 9 )
+anims/stacktv = ExtResource( 8 )
+anims/tv = SubResource( 8 )
 
 [node name="attackFXPOS" parent="." index="3"]
 position = Vector2( 192, 0 )
