@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Actor/AnimatedActor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Actor/Antagonists/Monsters/StandardMonster.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/FX/Smoke/CloudAnim.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Actor/Antagonists/Monsters/SegFault/SpriteFrames/SegFault.tres" type="SpriteFrames" id=4]
+[ext_resource path="res://Scenes/FX/Attack/GenericAtkSwingFX.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/FX/Smoke/Explosion_HitBoss.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/FX/Smoke/CloudAnim.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Actor/Antagonists/Monsters/SegFault/SpriteFrames/SegFault.tres" type="SpriteFrames" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "idle"
@@ -46,13 +48,17 @@ tracks/2/keys = {
 
 [node name="SegFault" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+attack_fx_1 = ExtResource( 3 )
+hurt_fx = ExtResource( 4 )
+attack_left = true
 
-[node name="CloudAnim" parent="." index="0" instance=ExtResource( 3 )]
+[node name="CloudAnim" parent="." index="0" instance=ExtResource( 5 )]
+frame = 5
 
 [node name="AnimatedSprite" parent="." index="1"]
-frames = ExtResource( 4 )
+frames = ExtResource( 6 )
 animation = "idle"
-frame = 1
+frame = 3
 playing = true
 
 [node name="SpriteAnim" parent="." index="2"]
