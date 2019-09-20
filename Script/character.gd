@@ -17,6 +17,8 @@ var _permanent_stat_offsets: Dictionary
 func _init(name: String, base_stats: Dictionary, item_names_by_slot: Dictionary):
 	self._name = name
 	self._base_stats = {}
+	self._permanent_stat_offsets = {}
+	self._active_effects = []
 	self._item_names_by_slot = item_names_by_slot
 	
 	# Initialize base stats
@@ -108,8 +110,10 @@ func add_effect(effect: Effect, element: int, src_actor_element_attack: float):
 	if effect_copy.is_permanent():
 		for stat in effect_copy.get_stat_effects().keys():
 			add_permanent_stat_offset(stat, effect_copy.get_stat_effects()[stat])
+			print("The effect was added as a permanent stat offset")
 	else:
 		_active_effects.append(effect_copy)
+		print("The effect was added (non-permanent")
 
 func add_permanent_stat_offset(stat: String, value: float):
 	if _permanent_stat_offsets.has(stat):
@@ -129,6 +133,6 @@ func get_weapon() -> Item:
 
 func get_element_attack(element: int) -> float:
 	return get_current_value_for_stat("element_attack_" + str(ElementDatabase.Element.keys()[element]))
-	
+
 func get_element_resist(element: int) -> float:
 	return get_current_value_for_stat("element_resist_" + str(ElementDatabase.Element.keys()[element]))
