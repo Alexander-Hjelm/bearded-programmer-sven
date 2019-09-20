@@ -1,5 +1,8 @@
 class_name CombatManager extends Node2D
 
+signal combat_over_win
+signal combat_over_fail
+
 # Registered characters by team id. Type: <int, Array<Character>>
 var _characters_by_team: Dictionary
 
@@ -14,6 +17,7 @@ var _queued_target_character: Character
 
 var _ticking_active: bool = true
 var _hurt_timer: Timer
+var _combat_over_signal_emitted: bool = false
 
 func _init():
 	# Initialize team structures
@@ -26,6 +30,13 @@ func _init():
 	_hurt_timer.connect("timeout", self, "on_hurt_timer_timeout")
 
 func create_combat_encounter(characters_team_0: Array, characters_team_1: Array):
+	# Clear up any old character references
+	for character_node in _visual_character_representations.values():
+		character_node.queue_free()
+	_characters_by_team[0] = []
+	_characters_by_team[1] = []
+	_visual_character_representations.clear()
+	
 	for character in characters_team_0:
 		register_character(character, 0)
 	for character in characters_team_1:
@@ -57,6 +68,15 @@ func tick():
 		if not _ticking_active:
 			return
 		tick_character(character, 1)
+	
+	# If there are no more enemies left, notify the game manager that the fight has ended
+	if not _combat_over_signal_emitted:
+		if len(_characters_by_team[0]) == 0:
+			emit_signal("combat_over_fail")
+			_combat_over_signal_emitted = true
+		if len(_characters_by_team[1]) == 0:
+			emit_signal("combat_over_win")
+			_combat_over_signal_emitted = true
 
 func tick_character(character: Character, team: int):
 	_character_timers[character] = _character_timers[character] - 1.0

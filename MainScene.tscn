@@ -22,6 +22,7 @@ shader_param/uvWaveAmp = 0.01
 shader_param/albedoBaseChannel = ExtResource( 2 )
 
 [node name="MainScene" type="Node2D"]
+editor/display_folded = true
 
 [node name="BGSprite" type="Sprite" parent="."]
 material = SubResource( 2 )

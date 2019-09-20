@@ -22,7 +22,7 @@ var characters : Dictionary = {
 		"Segfault",
 		"res://Scenes/Actor/Antagonists/Monsters/SegFault/SegFault.tscn",
 		{
-			"hp": 13.0,
+			"hp": 6.0,
 			"mp": 5.0,
 			"speed": 40.0,
 			"element_resist_glitch": 1.0,
@@ -38,9 +38,10 @@ var characters : Dictionary = {
 		"Stack Overflow",
 		"res://Scenes/Actor/Antagonists/Monsters/StackOverflow/StackOverflow.tscn",
 		{
-			"hp": 14.0,
+			"hp": 7.0,
 			"mp": 5.0,
-			"speed": 40.0
+			"speed": 40.0,
+			"element_resist_glitch": 2.0
 		},
 		{
 			"Body": "Trash Can",
@@ -52,10 +53,11 @@ var characters : Dictionary = {
 		"Blue Screen of Death",
 		"res://Scenes/Actor/Antagonists/Monsters/BlueScreen/BlueScreen.tscn",
 		{
-			"hp": 15.0,
+			"hp": 8.0,
 			"mp": 5.0,
 			"speed": 40.0,
-			"element_attack_glitch": 100.0
+			"element_attack_glitch": 100.0,
+			"element_resist_glitch": 3.0
 		},
 		{
 			"Head": "Monitor",
