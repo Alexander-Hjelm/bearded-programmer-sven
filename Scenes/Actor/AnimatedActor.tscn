@@ -1,12 +1,43 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Actor/AnimatedActor.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Actor/StandardMovementAnimations/mov_attack_left.tres" type="Animation" id=2]
 [ext_resource path="res://Scenes/Actor/StandardMovementAnimations/mov_attack_right.tres" type="Animation" id=3]
 [ext_resource path="res://Scenes/Actor/StandardMovementAnimations/mov_hurt.tres" type="Animation" id=4]
+[ext_resource path="res://Audio/Random_SFXAudioStream.gd" type="Script" id=5]
+[ext_resource path="res://Audio/SFX/Death/retro_explosion_general_12.wav" type="AudioStream" id=6]
+[ext_resource path="res://Audio/SFX/Death/retro_explosion_general_13.wav" type="AudioStream" id=7]
+[ext_resource path="res://Audio/SFX/Death/retro_explosion_general_14.wav" type="AudioStream" id=8]
+[ext_resource path="res://Audio/SFX/Death/retro_explosion_general_15.wav" type="AudioStream" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "mov_death"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.117647, 0.117647, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("SFXDEATH")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_play_random_sfx"
+} ]
+}
 
 [node name="AnimatedActor" type="Node2D"]
 script = ExtResource( 1 )
@@ -28,3 +59,12 @@ anims/mov_hurt = ExtResource( 4 )
 [node name="SFX2" type="AudioStreamPlayer" parent="."]
 
 [node name="SFX3" type="AudioStreamPlayer" parent="."]
+
+[node name="SFXDEATH" type="AudioStreamPlayer" parent="."]
+bus = "SFX"
+script = ExtResource( 5 )
+sfx_1 = ExtResource( 6 )
+sfx_2 = ExtResource( 7 )
+sfx_3 = ExtResource( 8 )
+sfx_4 = ExtResource( 9 )
+random_sfx_to_play = 4
