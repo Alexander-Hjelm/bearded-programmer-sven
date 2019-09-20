@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/explosion_small_no_tail_02.wav-badc328b6d24286ed3705fd9f1af7c85.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Explosions/explosion_small_no_tail_02.wav"
+dest_files=[ "res://.import/explosion_small_no_tail_02.wav-badc328b6d24286ed3705fd9f1af7c85.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

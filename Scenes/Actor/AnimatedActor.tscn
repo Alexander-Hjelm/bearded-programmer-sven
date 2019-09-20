@@ -18,3 +18,9 @@ anims/mov_attack_right = ExtResource( 3 )
 anims/mov_hurt = ExtResource( 4 )
 
 [node name="attackFXPOS" type="Position2D" parent="."]
+
+[node name="SFX1" type="AudioStreamPlayer" parent="."]
+
+[node name="SFX2" type="AudioStreamPlayer" parent="."]
+
+[node name="SFX3" type="AudioStreamPlayer" parent="."]

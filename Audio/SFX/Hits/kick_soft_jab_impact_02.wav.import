@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/kick_soft_jab_impact_02.wav-7f2c3cc74c521cf409b49d5c00b1a1ec.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Hits/kick_soft_jab_impact_02.wav"
+dest_files=[ "res://.import/kick_soft_jab_impact_02.wav-7f2c3cc74c521cf409b49d5c00b1a1ec.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

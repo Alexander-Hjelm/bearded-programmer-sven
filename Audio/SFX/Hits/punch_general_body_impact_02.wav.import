@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/punch_general_body_impact_02.wav-56ca46a6f7d8aeaaabdc5b1ee5a3e7b8.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Hits/punch_general_body_impact_02.wav"
+dest_files=[ "res://.import/punch_general_body_impact_02.wav-56ca46a6f7d8aeaaabdc5b1ee5a3e7b8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

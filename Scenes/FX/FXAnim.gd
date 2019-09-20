@@ -5,6 +5,15 @@ var DIRECTION_LEFT = -1
 var direction = Vector2(DIRECTION_RIGHT, 1)
 
 
+export var random_rotation_on_ready = false
+
+
+func _ready():
+	if random_rotation_on_ready:
+		randomize()
+		rotation_degrees = randi() % 360
+
+
 func set_direction(hor_direction):
 	if hor_direction == 0:
 		hor_direction = DIRECTION_RIGHT # default to right if param is 0

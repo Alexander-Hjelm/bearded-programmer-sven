@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ui_button_simple_click_04.wav-51574954dddb50cf01e5fb2f6dc395a8.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/UI/ui_button_simple_click_04.wav"
+dest_files=[ "res://.import/ui_button_simple_click_04.wav-51574954dddb50cf01e5fb2f6dc395a8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
