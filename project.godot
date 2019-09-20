@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node2D",
-"class": "AnimatedActor",
-"language": "GDScript",
-"path": "res://Scenes/Actor/AnimatedActor.gd"
-}, {
 "base": "Reference",
 "class": "Character",
 "language": "GDScript",
@@ -50,7 +45,6 @@ _global_script_classes=[ {
 "path": "res://Script/item_database.gd"
 } ]
 _global_script_class_icons={
-"AnimatedActor": "",
 "Character": "",
 "CharacterDatabase": "",
 "CombatManager": "",
