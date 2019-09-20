@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://GFX/BG/bg.shader" type="Shader" id=1]
 [ext_resource path="res://GFX/BG/bg_1.png" type="Texture" id=2]
@@ -9,8 +9,9 @@
 [ext_resource path="res://Script/item_database.gd" type="Script" id=7]
 [ext_resource path="res://Script/element_database.gd" type="Script" id=8]
 [ext_resource path="res://Script/character_database.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/UI/HUD.tscn" type="PackedScene" id=10]
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
 shader_param/colorTint1 = Color( 0.0156863, 0, 0.266667, 1 )
 shader_param/colorTint2 = Color( 0.501961, 0.345098, 0.619608, 1 )
@@ -22,40 +23,39 @@ shader_param/uvWaveAmp = 0.01
 shader_param/albedoBaseChannel = ExtResource( 2 )
 
 [node name="MainScene" type="Node2D"]
-editor/display_folded = true
 
 [node name="BGSprite" type="Sprite" parent="."]
-material = SubResource( 2 )
+material = SubResource( 1 )
 position = Vector2( 252.695, 215.02 )
 texture = ExtResource( 3 )
 offset = Vector2( 79.5562, 181.063 )
 
 [node name="BGSprite2" type="Sprite" parent="BGSprite"]
-material = SubResource( 2 )
+material = SubResource( 1 )
 position = Vector2( 639.965, 0 )
 texture = ExtResource( 3 )
 offset = Vector2( 79.5562, 181.063 )
 
 [node name="BGSprite3" type="Sprite" parent="BGSprite"]
-material = SubResource( 2 )
+material = SubResource( 1 )
 position = Vector2( -0.0535278, 640.009 )
 texture = ExtResource( 3 )
 offset = Vector2( 79.5562, 181.063 )
 
 [node name="BGSprite4" type="Sprite" parent="BGSprite"]
-material = SubResource( 2 )
+material = SubResource( 1 )
 position = Vector2( 639.911, 640.009 )
 texture = ExtResource( 3 )
 offset = Vector2( 79.5562, 181.063 )
 
 [node name="BGSprite5" type="Sprite" parent="BGSprite"]
-material = SubResource( 2 )
+material = SubResource( 1 )
 position = Vector2( 1279.96, 640.009 )
 texture = ExtResource( 3 )
 offset = Vector2( 79.5562, 181.063 )
 
 [node name="BGSprite6" type="Sprite" parent="BGSprite"]
-material = SubResource( 2 )
+material = SubResource( 1 )
 position = Vector2( 1280.02, 0 )
 texture = ExtResource( 3 )
 offset = Vector2( 79.5562, 181.063 )
@@ -86,7 +86,9 @@ script = ExtResource( 8 )
 script = ExtResource( 9 )
 
 [node name="Team0StartPos" type="Node2D" parent="."]
-position = Vector2( 243.516, 358.643 )
+position = Vector2( 243.516, 453.616 )
 
 [node name="Team1StartPos" type="Node2D" parent="."]
-position = Vector2( 771.13, 351.269 )
+position = Vector2( 1615.09, 446.242 )
+
+[node name="HUD" parent="." instance=ExtResource( 10 )]

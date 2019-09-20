@@ -73,6 +73,11 @@ character_database="*res://Script/character_database.gd"
 element_database="*res://Script/element_database.gd"
 combat_manager="*res://Script/combat_manager.gd"
 
+[display]
+
+window/size/width=1920
+window/size/height=1080
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
