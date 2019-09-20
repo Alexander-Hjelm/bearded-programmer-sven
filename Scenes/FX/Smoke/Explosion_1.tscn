@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/FX/FXAnim.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GFX/Various_FX/[005] Explosion_1/Explosion_1_001.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://GFX/Various_FX/[005] Explosion_1/Explosion_1_011.png" type="Texture" id=12]
 [ext_resource path="res://GFX/Various_FX/[005] Explosion_1/Explosion_1_012.png" type="Texture" id=13]
 [ext_resource path="res://GFX/Various_FX/[005] Explosion_1/Explosion_1_013.png" type="Texture" id=14]
+[ext_resource path="res://Audio/Random_SFXAudioStream.gd" type="Script" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -112,3 +113,6 @@ playing = true
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "GenericAtk"
 anims/GenericAtk = SubResource( 2 )
+
+[node name="SFX" parent="." index="2"]
+script = ExtResource( 15 )

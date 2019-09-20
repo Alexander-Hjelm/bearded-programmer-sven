@@ -12,7 +12,7 @@ export var attack_left = false
 
 var state
 
-enum anim_state_types {IDLE, ATTACK, HURT, BOOSTSTAT, LOWERSTAT}
+enum anim_state_types {IDLE, ATTACK, HURT, DEATH, BOOSTSTAT, LOWERSTAT}
 
 # Set the animation state
 func change_anim_state(new_state):

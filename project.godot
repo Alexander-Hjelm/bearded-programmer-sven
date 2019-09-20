@@ -19,7 +19,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/character_database.gd"
 }, {
-"base": "Reference",
+"base": "Node2D",
 "class": "CombatManager",
 "language": "GDScript",
 "path": "res://Script/combat_manager.gd"
@@ -58,6 +58,11 @@ _global_script_class_icons={
 
 config/name="bearded-programmer-sven"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1980
+window/size/height=1080
 
 [rendering]
 
