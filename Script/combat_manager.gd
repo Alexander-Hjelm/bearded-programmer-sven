@@ -79,9 +79,16 @@ func attack(src_character: Character, target_character: Character, item: Item):
 	# Apply weapon item effects + pass along the element attack of the weapon element on the src character
 	var element = item.get_element()
 	var src_element_attack: float = src_character.get_element_attack(element)
+	
+	var stats_raised: int = 0
 	for effect in item.get_inflicted_effects():
-		target_character.add_effect(effect, item.get_element(), src_element_attack)
-
+		stats_raised = stats_raised + target_character.add_effect(effect, item.get_element(), src_element_attack)
+	
+	if stats_raised > 0:
+		send_boost_stat_message(target_character)
+	elif stats_raised < 0:
+		send_lower_stat_message(target_character)
+	
 	# Play attack animation on the associated visual node
 	_visual_character_representations[src_character].change_anim_state(AnimatedActor.anim_state_types.ATTACK)
 
