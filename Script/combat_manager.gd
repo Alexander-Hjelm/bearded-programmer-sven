@@ -101,4 +101,11 @@ func on_hurt_timer_timeout():
 	
 	print(_queued_target_character.get_name() + " now has hp: " + str(_queued_target_character.get_current_value_for_stat("hp")))
 	
+	# If the character's hp is <= 0, kill it
+	if(_queued_target_character.get_current_value_for_stat("hp") <= 0.0):
+		animated_actor.change_anim_state(AnimatedActor.anim_state_types.DEATH)
+		_characters_by_team[0].erase(_queued_target_character)
+		_characters_by_team[1].erase(_queued_target_character)
+		print(_queued_target_character.get_name() + " has died")
+	
 	_queued_target_character = null	
