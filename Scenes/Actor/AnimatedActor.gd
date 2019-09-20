@@ -1,4 +1,4 @@
-extends Node2D
+class_name AnimatedActor extends Node2D
 
 export var is_activated = true
 

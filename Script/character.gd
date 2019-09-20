@@ -137,6 +137,9 @@ func get_weapon() -> Item:
 	var weapon_name: String = _item_names_by_slot["Weapon"]
 	return item_database.items[weapon_name]
 
+func get_stat_keys() -> Array:
+	return _base_stats.keys()
+
 func get_element_attack(element: int) -> float:
 	return get_current_value_for_stat("element_attack_" + str(ElementDatabase.Element.keys()[element]))
 
