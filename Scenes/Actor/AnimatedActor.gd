@@ -14,6 +14,7 @@ var state
 
 enum anim_state_types {IDLE, ATTACK, HURT, BOOSTSTAT, LOWERSTAT}
 
+# Set the animation state
 func change_anim_state(new_state):
 	state = new_state
 	match state:
@@ -31,6 +32,9 @@ func change_anim_state(new_state):
 		anim_state_types.LOWERSTAT:
 			pass
 
+# Update a given stat on the visual label node
+func set_stat(stat_name: String, value: float):
+	pass
 
 func show_attack_fx():
 	if has_random_atk_fx:

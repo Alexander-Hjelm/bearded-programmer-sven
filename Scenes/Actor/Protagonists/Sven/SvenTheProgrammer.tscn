@@ -318,7 +318,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[node name="SvenTheProgrammer" instance=ExtResource( 1 )]
+[node name="SvenTheProgrammer" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 has_random_atk_fx = true
 attack_fx_1 = ExtResource( 3 )
