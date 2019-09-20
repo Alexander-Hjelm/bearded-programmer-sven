@@ -72,7 +72,7 @@ func get_current_value_for_stat(stat: String) -> float:
 		for effect in item.get_inflicted_effects():
 			if effect.is_permanent():
 				var stat_effects = effect.get_stat_effects()
-				if stat_effects.has_key(stat):
+				if stat_effects.has(stat):
 					current_value = current_value + stat_effects[stat]
 	# Add any permanent stat offsets
 	if _permanent_stat_offsets.has(stat):
@@ -93,9 +93,9 @@ func add_effect(effect: Effect, element: int, src_actor_element_attack: float):
 		return
 	
 	# The element factor decides how much of the incoming effect is resisted
-	var element_factor: float = (src_actor_element_attack - get_element_resist(element))/100
-	element_factor = max(element_factor, 1.0)
-	element_factor = min(element_factor, 0.0)
+	var element_factor: float = (src_actor_element_attack - get_element_resist(element))/100.0
+	element_factor = min(element_factor, 1.0)
+	element_factor = max(element_factor, 0.0)
 	
 	# Deep copy the incoming effect and apply the element factor to it,
 	# reducing any incoming stat damage
@@ -105,11 +105,11 @@ func add_effect(effect: Effect, element: int, src_actor_element_attack: float):
 		if stat_effects[stat] < 0.0:
 			stat_effects[stat] = stat_effects[stat] * element_factor
 	
-	if effect.is_permanent():
-		for stat in effect.get_stat_effects().keys():
-			add_permanent_stat_offset(stat, effect.get_stat_effects()[stat])
+	if effect_copy.is_permanent():
+		for stat in effect_copy.get_stat_effects().keys():
+			add_permanent_stat_offset(stat, effect_copy.get_stat_effects()[stat])
 	else:
-		_active_effects.append(effect)
+		_active_effects.append(effect_copy)
 
 func add_permanent_stat_offset(stat: String, value: float):
 	if _permanent_stat_offsets.has(stat):
