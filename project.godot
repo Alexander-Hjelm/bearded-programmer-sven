@@ -8,15 +8,63 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Character",
+"language": "GDScript",
+"path": "res://Script/character.gd"
+}, {
+"base": "Node2D",
+"class": "CharacterDatabase",
+"language": "GDScript",
+"path": "res://Script/character_database.gd"
+}, {
+"base": "Reference",
+"class": "CombatManager",
+"language": "GDScript",
+"path": "res://Script/combat_manager.gd"
+}, {
+"base": "Reference",
+"class": "Effect",
+"language": "GDScript",
+"path": "res://Script/effect.gd"
+}, {
+"base": "Node2D",
+"class": "ElementDatabase",
+"language": "GDScript",
+"path": "res://Script/element_database.gd"
+}, {
+"base": "Reference",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Script/item.gd"
+}, {
+"base": "Node2D",
+"class": "ItemDatabase",
+"language": "GDScript",
+"path": "res://Script/item_database.gd"
+} ]
 _global_script_class_icons={
-
+"Character": "",
+"CharacterDatabase": "",
+"CombatManager": "",
+"Effect": "",
+"ElementDatabase": "",
+"Item": "",
+"ItemDatabase": ""
 }
 
 [application]
 
 config/name="bearded-programmer-sven"
+run/main_scene="res://MainScene.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+item_database="*res://Script/item_database.gd"
+character_database="*res://Script/character_database.gd"
+element_database="*res://Script/element_database.gd"
 
 [rendering]
 
