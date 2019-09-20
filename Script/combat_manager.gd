@@ -21,6 +21,7 @@ func _init():
 	_characters_by_team[1] = []
 	
 	_hurt_timer = Timer.new()
+	_hurt_timer.one_shot = true
 	add_child(_hurt_timer)
 	_hurt_timer.connect("timeout", self, "on_hurt_timer_timeout")
 
