@@ -1,4 +1,4 @@
-class_name CombatManager
+class_name CombatManager extends Node2D
 
 # Registered characters by team id. Type: <int, Array<Character>>
 var _characters_by_team: Dictionary
@@ -23,10 +23,17 @@ func create_combat_encounter(characters_team_0: Array, characters_team_1: Array)
 
 func register_character(character: Character, team: int):
 	_characters_by_team[team].append(character)
-	# TODO: Use the AnimatedActor node instead of Node2D
-	var character_visual_node = Node2D.new()
-	#add_child(character_visual_node)
-	_visual_character_representations[character] = character_visual_node
+	# Instantiate the AnimatedActor resource
+	var resource_path: String = character.get_resource_path()
+	var character_node = load(resource_path).instance()
+	add_child(character_node)
+	_visual_character_representations[character] = character_node
+	
+	# Set root position of the character node
+	if team == 0:
+		character_node.transform.origin = get_node("/root/MainScene/Team0StartPos").transform.origin
+	elif team == 1:
+		character_node.transform.origin = get_node("/root/MainScene/Team1StartPos").transform.origin
 	reset_character_timer(character)
 
 func tick():

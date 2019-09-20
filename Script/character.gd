@@ -2,6 +2,8 @@ class_name Character
 
 var _name: String
 
+var _resource_path: String
+
 # Base stat values, type: <string, float>
 var _base_stats: Dictionary
 
@@ -14,8 +16,9 @@ var _active_effects: Array
 # Permenent stat value offsets, type: <String, float>
 var _permanent_stat_offsets: Dictionary
 
-func _init(name: String, base_stats: Dictionary, item_names_by_slot: Dictionary):
+func _init(name: String, resource_path: String, base_stats: Dictionary, item_names_by_slot: Dictionary):
 	self._name = name
+	self._resource_path = resource_path
 	self._base_stats = {}
 	self._permanent_stat_offsets = {}
 	self._active_effects = []
@@ -54,6 +57,9 @@ func tick():
 
 func get_name() -> String:
 	return _name
+
+func get_resource_path() -> String:
+	return _resource_path
 
 # Get the base value of a stat
 func get_base_value_for_stat(stat: String):

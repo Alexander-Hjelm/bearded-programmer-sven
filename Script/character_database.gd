@@ -3,7 +3,9 @@ class_name CharacterDatabase extends Node2D
 # Available items. Type: <String, Item>
 var characters : Dictionary = {
 	# Bearded Programmer Sven
-	"Bearded Programmer Sven": Character.new("Bearded Programmer Sven",
+	"Bearded Programmer Sven": Character.new(
+		"Bearded Programmer Sven",
+		"res://Scenes/Actor/Protagonists/Sven/SvenTheProgrammer.tscn",
 		{
 			"hp": 20.0,
 			"mp": 5.0,
@@ -16,7 +18,9 @@ var characters : Dictionary = {
 		}
 	),
 	# Segfault
-	"Segfault": Character.new("Segfault",
+	"Segfault": Character.new(
+		"Segfault",
+		"res://Scenes/Actor/Antagonists/Monsters/SegFault/SegFault.tscn",
 		{
 			"hp": 13.0,
 			"mp": 5.0,
@@ -30,7 +34,9 @@ var characters : Dictionary = {
 		}
 	),
 	# Stack Overflow
-	"Stack Overflow": Character.new("Stack Overflow",
+	"Stack Overflow": Character.new(
+		"Stack Overflow",
+		"res://Scenes/Actor/Antagonists/Monsters/StackOverflow/StackOverflow.tscn",
 		{
 			"hp": 14.0,
 			"mp": 5.0,
@@ -42,7 +48,9 @@ var characters : Dictionary = {
 		}
 	),
 	# Blue Screen of Death
-	"Blue Screen of Death": Character.new("Blue Screen of Death",
+	"Blue Screen of Death": Character.new(
+		"Blue Screen of Death",
+		"res://Scenes/Actor/Antagonists/Monsters/BlueScreen/BlueScreen.tscn",
 		{
 			"hp": 15.0,
 			"mp": 5.0,

@@ -19,7 +19,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/character_database.gd"
 }, {
-"base": "Reference",
+"base": "Node2D",
 "class": "CombatManager",
 "language": "GDScript",
 "path": "res://Script/combat_manager.gd"
@@ -65,6 +65,7 @@ config/icon="res://icon.png"
 item_database="*res://Script/item_database.gd"
 character_database="*res://Script/character_database.gd"
 element_database="*res://Script/element_database.gd"
+combat_manager="*res://Script/combat_manager.gd"
 
 [rendering]
 
