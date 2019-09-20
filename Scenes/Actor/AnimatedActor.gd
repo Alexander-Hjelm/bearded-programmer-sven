@@ -51,3 +51,8 @@ func show_attack_fx():
 	if attack_left:
 		atk_fx_instance.set_direction(atk_fx_instance.DIRECTION_LEFT)
 	get_tree().get_root().add_child(atk_fx_instance)
+
+
+func show_hurt_fx():
+	var hurt_fx_instance = hurt_fx.instance
+	add_child(hurt_fx_instance)

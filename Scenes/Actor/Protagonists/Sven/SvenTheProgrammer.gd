@@ -45,6 +45,8 @@ func _input(event):
 	if Input.is_key_pressed(KEY_U):
 		change_anim_state(anim_state_types.ATTACK)
 		change_morph_state(morph_state_types.SEG)
+	if Input.is_key_pressed(KEY_H):
+		change_anim_state(anim_state_types.HURT)
 
 
 func show_attack_fx():
@@ -62,3 +64,8 @@ func show_attack_fx():
 	if attack_left:
 		atk_fx_instance.set_direction(atk_fx_instance.DIRECTION_LEFT)
 	$attackFXPOS.add_child(atk_fx_instance)
+
+
+func show_hurt_fx():
+	var hurt_fx_instance = hurt_fx.instance()
+	add_child(hurt_fx_instance)
