@@ -92,18 +92,26 @@ func get_current_value_for_stat(stat: String) -> float:
 			current_value = current_value + stat_effects[stat]
 	return current_value
 
-func add_effect(effect: Effect, element: int, src_actor_element_attack: float):
+# Add an effect
+# The return value represents if the effect was positive, negative or neutral in terms of
+# raising/lowering stats
+# -1 = stats were primarily lowered
+# 0 = nothing happened with the stats
+# 1 = stats were primarily raised
+func add_effect(effect: Effect, element: int, src_actor_element_attack: float) -> int:
 	# Check the source actor's element damage against the target actor's element defense	
 	# If the target actor's element resist is less than source actor's element attack,
 	# do not apply the effect
 	if src_actor_element_attack <= get_element_resist(element):
 		print("The attack was deflected")
-		return
+		return 0
 	
 	# The element factor decides how much of the incoming effect is resisted
 	var element_factor: float = (src_actor_element_attack - get_element_resist(element))/100.0
 	element_factor = min(element_factor, 1.0)
 	element_factor = max(element_factor, 0.0)
+	
+	var total_stats_raised: float = 0.0
 	
 	# Deep copy the incoming effect and apply the element factor to it,
 	# reducing any incoming stat damage
@@ -112,6 +120,9 @@ func add_effect(effect: Effect, element: int, src_actor_element_attack: float):
 	for stat in stat_effects.keys():
 		if stat_effects[stat] < 0.0:
 			stat_effects[stat] = stat_effects[stat] * element_factor
+			
+		if stat != "hp" or stat != "mp":
+			total_stats_raised = total_stats_raised + stat_effects[stat]
 	
 	if effect_copy.is_permanent():
 		for stat in effect_copy.get_stat_effects().keys():
@@ -120,6 +131,13 @@ func add_effect(effect: Effect, element: int, src_actor_element_attack: float):
 	else:
 		_active_effects.append(effect_copy)
 		print("The effect was added (non-permanent")
+	
+	if total_stats_raised > 0.0:
+		return 1
+	elif total_stats_raised == 0:
+		return 0
+	else:
+		return -1
 
 func add_permanent_stat_offset(stat: String, value: float):
 	if _permanent_stat_offsets.has(stat):
