@@ -120,6 +120,8 @@ func add_effect(effect: Effect, element: int, src_actor_element_attack: float):
 	else:
 		_active_effects.append(effect_copy)
 		print("The effect was added (non-permanent")
+	
+		# TODO: lower/raise stat
 
 func add_permanent_stat_offset(stat: String, value: float):
 	if _permanent_stat_offsets.has(stat):

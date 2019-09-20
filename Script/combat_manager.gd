@@ -35,14 +35,16 @@ func register_character(character: Character, team: int):
 	# Instantiate the AnimatedActor resource
 	var resource_path: String = character.get_resource_path()
 	var character_node = load(resource_path).instance()
-	add_child(character_node)
+	#add_child(character_node)
 	_visual_character_representations[character] = character_node
 	
 	# Set root position of the character node
 	if team == 0:
-		character_node.transform.origin = get_node("/root/MainScene/Team0StartPos").transform.origin
+		get_node("/root/MainScene/Team0StartPos").add_child(character_node)
+		#character_node.transform.origin = get_node("/root/MainScene/Team0StartPos").transform.origin
 	elif team == 1:
-		character_node.transform.origin = get_node("/root/MainScene/Team1StartPos").transform.origin
+		get_node("/root/MainScene/Team1StartPos").add_child(character_node)
+		#character_node.transform.origin = get_node("/root/MainScene/Team1StartPos").transform.origin
 	reset_character_timer(character)
 
 func tick():
@@ -109,3 +111,9 @@ func on_hurt_timer_timeout():
 		print(_queued_target_character.get_name() + " has died")
 	
 	_queued_target_character = null	
+
+func send_boost_stat_message(character: Character):
+	_visual_character_representations[character].change_anim_state(AnimatedActor.anim_state_types.BOOSTSTAT)
+
+func send_lower_stat_message(character: Character):
+	_visual_character_representations[character].change_anim_state(AnimatedActor.anim_state_types.LOWERSTAT)
