@@ -9,6 +9,11 @@ onready var input_popup_menu = $InputPopUpMenu
 onready var input_attack_button = $InputPopUpMenu/InputBGPanel/AttackButton
 onready var input_dosomething_button = $InputPopUpMenu/InputBGPanel/DoSomething ### Add Functionality here... :P
 
+
+func _init():
+	Global.HUD = self
+
+
 func _ready():
 	$InputPopUpMenu/InputBGPanel/AttackButton.connect("pressed", self,"attack_enemy")
 	inactivate_player_input()
