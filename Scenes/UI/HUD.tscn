@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/UI/HUD.gd" type="Script" id=1]
+[ext_resource path="res://Themes/BattleTheme.tres" type="Theme" id=2]
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="InputPopUpMenu" type="Control" parent="."]
+margin_left = 16.0
+margin_top = 707.0
+margin_right = 304.0
+margin_bottom = 1027.0
+
+[node name="Panel" type="Panel" parent="InputPopUpMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BG Panel" type="Control" parent="."]
+margin_left = 32.0
+margin_top = 736.0
+margin_right = 1948.0
+margin_bottom = 1056.0
+theme = ExtResource( 2 )
+
+[node name="HpStats" type="Control" parent="BG Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 448.0
+margin_top = 64.0
+margin_right = -1052.0
+margin_bottom = -64.0
+
+[node name="TimerStatsPlayer" type="Control" parent="BG Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 64.0
+margin_right = -1564.0
+margin_bottom = -64.0
+
+[node name="BGPanel" type="Panel" parent="BG Panel"]
+modulate = Color( 1, 1, 1, 0.470588 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BGPanel2" type="Panel" parent="BG Panel"]
+modulate = Color( 1, 1, 1, 0.470588 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1184.0
+margin_top = 32.0
+margin_right = -28.0
+margin_bottom = -32.0
+
+[node name="BGPanel3" type="Panel" parent="BG Panel"]
+modulate = Color( 1, 1, 1, 0.470588 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 416.0
+margin_top = 32.0
+margin_right = -764.0
+margin_bottom = -32.0
+
+[node name="BGPanel4" type="Panel" parent="BG Panel"]
+modulate = Color( 1, 1, 1, 0.470588 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = -1532.0
+margin_bottom = -32.0
