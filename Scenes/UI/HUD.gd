@@ -95,3 +95,8 @@ func item_button_clicked(item_name: String):
 	get_node("InventoryPanel").visible = false
 	
 	inactivate_player_input()
+
+
+func show_pop_up_message(text):
+	$MessagePanel/MessagePanelAnim.play("Popup Long Show Message")
+	$MessagePanel/MessageText.text = str(text)

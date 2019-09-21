@@ -75,5 +75,24 @@ script = ExtResource( 5 )
 [node name="Team0StartPos" type="Node2D" parent="."]
 position = Vector2( 276.999, 453.616 )
 
+[node name="Pos1" type="Position2D" parent="Team0StartPos"]
+
 [node name="Team1StartPos" type="Node2D" parent="."]
-position = Vector2( 1615.09, 446.242 )
+position = Vector2( 1579.93, 446.242 )
+
+[node name="Pos2" type="Position2D" parent="Team1StartPos"]
+position = Vector2( -218.373, -92.5309 )
+
+[node name="Pos1" type="Position2D" parent="Team1StartPos"]
+
+[node name="Pos3" type="Position2D" parent="Team1StartPos"]
+position = Vector2( -275.742, 49.9666 )
+
+[node name="Pos4" type="Position2D" parent="Team1StartPos"]
+position = Vector2( -42.5643, 114.738 )
+
+[node name="Pos5" type="Position2D" parent="Team1StartPos"]
+position = Vector2( -442.298, -57.3693 )
+
+[node name="Pos6" type="Position2D" parent="Team1StartPos"]
+position = Vector2( -510.771, 81.427 )

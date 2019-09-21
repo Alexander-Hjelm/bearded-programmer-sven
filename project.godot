@@ -80,7 +80,6 @@ element_database="*res://Script/element_database.gd"
 combat_manager="*res://Script/combat_manager.gd"
 HUD="*res://Scenes/UI/HUD.tscn"
 Global="*res://Global.gd"
-inventory="*res://Script/inventory.gd"
 
 [display]
 

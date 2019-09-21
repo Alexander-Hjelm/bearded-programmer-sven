@@ -28,6 +28,9 @@ var _hurt_timer: Timer
 # Used to ensure that a given signal is only emitted once per combat encounter
 var _combat_over_signal_emitted: bool = false
 
+#Current Monster
+var current_monster_name : String
+
 func _init():
 	# Initialize team structures
 	_characters_by_team[0] = []
@@ -76,6 +79,7 @@ func register_character(character: Character, team: int):
 	elif team == 1:
 		get_node("/root/MainScene/Team1StartPos").add_child(character_node)
 		HUD.set_enemy_names(character_node.get_name())
+		current_monster_name = character_node.get_name()
 	
 	# Set ticking timer to 0 for the new character
 	reset_character_timer(character)
@@ -235,6 +239,7 @@ func use_item_on_enemy(item_name: String, enemy_index: int):
 
 
 func keep_track_of_svens_morph_state(_active_combat_encounter):
+	HUD.show_pop_up_message("You merged with the %s" % current_monster_name)
 	match _active_combat_encounter:
 		0:
 			pass
