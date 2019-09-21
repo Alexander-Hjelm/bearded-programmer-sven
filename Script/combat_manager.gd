@@ -72,8 +72,10 @@ func register_character(character: Character, team: int):
 	# Set root position of the character node
 	if team == 0:
 		get_node("/root/MainScene/Team0StartPos").add_child(character_node)
+		HUD.set_player_names(character_node.get_name())
 	elif team == 1:
 		get_node("/root/MainScene/Team1StartPos").add_child(character_node)
+		HUD.set_enemy_names(character_node.get_name())
 	
 	# Set ticking timer to 0 for the new character
 	reset_character_timer(character)
@@ -208,14 +210,10 @@ func keep_track_of_svens_morph_state(_active_combat_encounter):
 			pass
 		1:
 			Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.SEG)
-			print(Global.sven_the_bad_programmer)
-			print(Global.sven_current_morph_state)
 		2:
 			Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.SEGSTACK)
-			print(Global.sven_current_morph_state)
 		3:
 			Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.FULLMORPH)
-			print(Global.sven_current_morph_state)
 		4:
 			Global.you_merged_with_godot = true
 			Global.sven_the_bad_programmer.change_anim_state(Global.sven_the_bad_programmer.DEATH)

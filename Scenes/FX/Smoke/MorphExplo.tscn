@@ -119,7 +119,7 @@ tracks/6/keys = {
 } ]
 }
 
-[node name="MorphExplo" instance=ExtResource( 1 )]
+[node name="MorphExplo" index="0" instance=ExtResource( 1 )]
 script = SubResource( 1 )
 random_rotation_on_ready = false
 

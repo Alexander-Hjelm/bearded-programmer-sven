@@ -44,7 +44,7 @@ func set_player_names(player_name : String):
 
 
 func set_enemy_names(enemy_name : String):
-	$BadGuyPanel/EnemyTeamLabel.text = enemy_name
+	$BadGuyPanel/EnemyTeamLabel.text = str(enemy_name)
 
 
 func update_player_HUD_stats(player_hp, player_hp_max): ## Update player hp

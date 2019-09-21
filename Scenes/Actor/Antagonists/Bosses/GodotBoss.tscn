@@ -187,6 +187,7 @@ attack_left = true
 [node name="AnimatedSprite" parent="." index="0"]
 frames = ExtResource( 7 )
 animation = "talk"
+frame = 1
 playing = true
 
 [node name="SpriteAnim" parent="." index="1"]

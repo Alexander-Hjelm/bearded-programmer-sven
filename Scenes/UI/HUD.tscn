@@ -63,10 +63,10 @@ theme = ExtResource( 2 )
 text = "Sven"
 
 [node name="HpProgressBar" type="ProgressBar" parent="PlayerPanel"]
-margin_left = 113.0
-margin_top = 19.0
-margin_right = 497.0
-margin_bottom = 56.0
+margin_left = 67.0
+margin_top = 136.0
+margin_right = 451.0
+margin_bottom = 173.0
 theme = ExtResource( 2 )
 rounded = true
 percent_visible = false
@@ -138,6 +138,7 @@ text = "Monster Name"
 align = 1
 
 [node name="EnemyTeamLabel2" type="Label" parent="BadGuyPanel"]
+visible = false
 margin_top = 56.0
 margin_right = 1056.0
 margin_bottom = 87.0
@@ -146,6 +147,7 @@ text = "Monster Name"
 align = 1
 
 [node name="EnemyTeamLabel3" type="Label" parent="BadGuyPanel"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -8.0
@@ -157,6 +159,7 @@ text = "Monster Name"
 align = 1
 
 [node name="EnemyTeamLabel4" type="Label" parent="BadGuyPanel"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -8.0
@@ -168,6 +171,7 @@ text = "Monster Name"
 align = 1
 
 [node name="EnemyTeamLabel5" type="Label" parent="BadGuyPanel"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -8.0
@@ -179,6 +183,7 @@ text = "Monster Name"
 align = 1
 
 [node name="EnemyTeamLabel6" type="Label" parent="BadGuyPanel"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -8.0
