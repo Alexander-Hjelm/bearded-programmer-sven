@@ -53,7 +53,7 @@ hurt_fx = ExtResource( 4 )
 attack_left = true
 
 [node name="CloudAnim" parent="." index="0" instance=ExtResource( 5 )]
-frame = 4
+frame = 6
 
 [node name="AnimatedSprite" parent="." index="1"]
 frames = ExtResource( 6 )

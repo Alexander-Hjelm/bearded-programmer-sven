@@ -38,6 +38,7 @@ func change_anim_state(new_state):
 func set_stat(stat_name, value):
 	$Pos/StatLabel.text = str(stat_name) + str(value)
 
+
 func show_attack_fx():
 	if has_random_atk_fx:
 		randomize()
