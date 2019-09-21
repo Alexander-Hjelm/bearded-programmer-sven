@@ -46,14 +46,14 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[node name="SegFault" instance=ExtResource( 1 )]
+[node name="SegFault" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 attack_fx_1 = ExtResource( 3 )
 hurt_fx = ExtResource( 4 )
 attack_left = true
 
 [node name="CloudAnim" parent="." index="0" instance=ExtResource( 5 )]
-frame = 6
+frame = 4
 
 [node name="AnimatedSprite" parent="." index="1"]
 frames = ExtResource( 6 )

@@ -320,7 +320,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[node name="SvenTheProgrammer" index="0" groups=[
+[node name="SvenTheProgrammer" groups=[
 "player",
 ] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -333,7 +333,6 @@ hurt_fx = ExtResource( 6 )
 [node name="AnimatedSprite" parent="." index="0"]
 frames = ExtResource( 7 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="SpriteAnim" parent="." index="1"]
@@ -349,3 +348,8 @@ anims/tv = SubResource( 8 )
 
 [node name="attackFXPOS" parent="." index="3"]
 position = Vector2( 192, 0 )
+
+[node name="StatLabel" parent="Pos" index="0"]
+modulate = Color( 1, 0, 0, 1 )
+margin_right = 141.0
+text = "sfsffsfsfs"

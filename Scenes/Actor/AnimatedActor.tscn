@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Actor/AnimatedActor.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Actor/StandardMovementAnimations/mov_attack_left.tres" type="Animation" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Audio/SFX/Death/retro_explosion_general_13.wav" type="AudioStream" id=7]
 [ext_resource path="res://Audio/SFX/Death/retro_explosion_general_14.wav" type="AudioStream" id=8]
 [ext_resource path="res://Audio/SFX/Death/retro_explosion_general_15.wav" type="AudioStream" id=9]
+[ext_resource path="res://Themes/BattleTheme.tres" type="Theme" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "mov_death"
@@ -53,6 +54,48 @@ tracks/2/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=2]
+resource_name = "LabelAnimRed"
+tracks/0/type = "value"
+tracks/0/path = NodePath("StatLabel:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -19, -130 ), Vector2( -19, -197 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("StatLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/path = NodePath("StatLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="AnimatedActor" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -86,7 +129,15 @@ random_sfx_to_play = 4
 [node name="Pos" type="Node2D" parent="."]
 
 [node name="StatLabel" type="Label" parent="Pos"]
-margin_left = -19.0
-margin_top = -90.0
-margin_right = 21.0
-margin_bottom = -76.0
+margin_left = -69.0
+margin_top = -200.0
+margin_right = 75.0
+margin_bottom = -169.0
+theme = ExtResource( 10 )
+text = "addaadad"
+align = 1
+
+[node name="LabelAnim" type="AnimationPlayer" parent="Pos"]
+autoplay = "default"
+anims/LabelAnimRed = SubResource( 2 )
+anims/default = SubResource( 3 )
