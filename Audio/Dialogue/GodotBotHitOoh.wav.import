@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GodotBotHitOoh.wav-23cc7de888579cc185c98e956fac17bf.sample"
+
+[deps]
+
+source_file="res://Audio/Dialogue/GodotBotHitOoh.wav"
+dest_files=[ "res://.import/GodotBotHitOoh.wav-23cc7de888579cc185c98e956fac17bf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

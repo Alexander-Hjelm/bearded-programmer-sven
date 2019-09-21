@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GodotBotHit.wav-525b687db3ec117419a320a39894146f.sample"
+
+[deps]
+
+source_file="res://Audio/Dialogue/GodotBotHit.wav"
+dest_files=[ "res://.import/GodotBotHit.wav-525b687db3ec117419a320a39894146f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
