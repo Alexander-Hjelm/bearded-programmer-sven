@@ -78,7 +78,7 @@ func register_character(character: Character, team: int):
 		HUD.set_player_names(character_node.get_name())
 	elif team == 1:
 		get_node("/root/MainScene/Team1StartPos").add_child(character_node)
-		HUD.set_enemy_names(character_node.get_name())
+		HUD.set_enemy_name(len(_characters_by_team)-1, character_node.get_name())
 		current_monster_name = character_node.get_name()
 	
 	# Set ticking timer to 0 for the new character
@@ -148,9 +148,9 @@ func tick_character(character: Character, team: int):
 			reset_character_timer(character)
 
 # External entry for attacking with the player, called from the player UI
-func player_attack():
+func player_attack(monster_index: int):
 	var player_character: Character = _characters_by_team[0][0]
-	var target_character: Character = _characters_by_team[1][0]
+	var target_character: Character = _characters_by_team[1][monster_index]
 	attack(player_character, target_character, player_character.get_weapon())
 	reset_character_timer(player_character)
 

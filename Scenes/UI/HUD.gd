@@ -16,10 +16,27 @@ onready var item_button_resource = preload("res://Scenes/UI/ItemButton.tscn")
 #func _init():
 #	Global.HUD = self
 
+enum AttackMode {
+	WITH_ITEM,
+	WITH_WEAPON
+}
+
+var _queued_attack: bool = false
+var _queued_attack_mode: int
+var _queued_attack_item_name: String
+
 
 func _ready():
 	$InputPopUpMenu/InputBGPanel/AttackButton.connect("pressed", self,"attack_enemy")
 	$InputPopUpMenu/InputBGPanel/InventoryButton.connect("pressed", self,"show_inventory")
+	
+	$BadGuyPanel/EnemyTeamLabel1.connect("pressed", self, "on_monster_label_clicked", [0])
+	$BadGuyPanel/EnemyTeamLabel2.connect("pressed", self, "on_monster_label_clicked", [1])
+	$BadGuyPanel/EnemyTeamLabel3.connect("pressed", self, "on_monster_label_clicked", [2])
+	$BadGuyPanel/EnemyTeamLabel4.connect("pressed", self, "on_monster_label_clicked", [3])
+	$BadGuyPanel/EnemyTeamLabel5.connect("pressed", self, "on_monster_label_clicked", [4])
+	$BadGuyPanel/EnemyTeamLabel6.connect("pressed", self, "on_monster_label_clicked", [5])
+	
 	inactivate_player_input()
 
 
@@ -47,8 +64,9 @@ func set_player_names(player_name : String):
 	$PlayerPanel/PlayerTeamLabel.text = str(player_name)
 
 
-func set_enemy_names(enemy_name : String):
-	$BadGuyPanel/EnemyTeamLabel.text = str(enemy_name)
+func set_enemy_name(enemy_index: int, enemy_name : String):
+	get_node("BadGuyPanel/EnemyTeamLabel" + str(enemy_index)).text = enemy_name
+	get_node("BadGuyPanel/EnemyTeamLabel" + str(enemy_index)).visible = true
 
 
 func update_player_HUD_stats(player_hp, player_hp_max): ## Update player hp
@@ -58,11 +76,14 @@ func update_player_HUD_stats(player_hp, player_hp_max): ## Update player hp
 
 
 func attack_enemy():
-	inactivate_player_input()
-	combat_manager.player_attack()
+	_queued_attack = true
+	_queued_attack_mode = AttackMode.WITH_WEAPON
+	
+	$BadGuyPanel/PickEnemyLabel.visible = true
 	
 	# Hide the inventory, in case it is open
 	get_node("InventoryPanel").visible = false
+	inactivate_player_input()
 
 
 func show_inventory():
@@ -89,12 +110,29 @@ func item_button_clicked(item_name: String):
 		Item.ItemType.CONSUMABLE:
 			combat_manager.use_item_on_player(item_name)
 		Item.ItemType.OFFENSIVE:
-			combat_manager.use_item_on_enemy(item_name, 0)
+			$BadGuyPanel/PickEnemyLabel.visible = true
+			_queued_attack = true
+			_queued_attack_mode = AttackMode.WITH_ITEM
+			_queued_attack_item_name = item_name
+			
 
 	# Finally, hide the inventory
 	get_node("InventoryPanel").visible = false
 	
 	inactivate_player_input()
+
+
+func on_monster_label_clicked(monster_index: int):
+	if not _queued_attack:
+		return
+	_queued_attack = false
+	match _queued_attack_mode:
+		AttackMode.WITH_ITEM:
+			combat_manager.use_item_on_enemy(_queued_attack_item_name, monster_index)
+		AttackMode.WITH_WEAPON:
+			combat_manager.player_attack(monster_index)
+	
+	$BadGuyPanel/PickEnemyLabel.visible = false
 
 
 func show_pop_up_message(text):

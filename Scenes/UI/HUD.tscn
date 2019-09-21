@@ -179,6 +179,7 @@ margin_bottom = 14.5
 clip_text = true
 
 [node name="InventoryPanel" type="Panel" parent="."]
+editor/display_folded = true
 visible = false
 margin_left = 22.0
 margin_top = 287.0
@@ -227,31 +228,29 @@ rounded = true
 percent_visible = false
 
 [node name="BadGuyPanel" type="Panel" parent="."]
-editor/display_folded = true
 margin_left = 832.0
 margin_top = 736.0
 margin_right = 1904.0
 margin_bottom = 1024.0
 theme = ExtResource( 2 )
 
-[node name="EnemyTeamLabel" type="Label" parent="BadGuyPanel"]
+[node name="EnemyTeamLabel1" type="Button" parent="BadGuyPanel"]
+visible = false
 margin_top = 19.0
 margin_right = 1056.0
 margin_bottom = 50.0
 theme = ExtResource( 2 )
 text = "Monster Name"
-align = 1
 
-[node name="EnemyTeamLabel2" type="Label" parent="BadGuyPanel"]
+[node name="EnemyTeamLabel2" type="Button" parent="BadGuyPanel"]
 visible = false
 margin_top = 56.0
 margin_right = 1056.0
 margin_bottom = 87.0
 theme = ExtResource( 2 )
 text = "Monster Name"
-align = 1
 
-[node name="EnemyTeamLabel3" type="Label" parent="BadGuyPanel"]
+[node name="EnemyTeamLabel3" type="Button" parent="BadGuyPanel"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -261,9 +260,8 @@ margin_right = -8.0
 margin_bottom = -161.0
 theme = ExtResource( 2 )
 text = "Monster Name"
-align = 1
 
-[node name="EnemyTeamLabel4" type="Label" parent="BadGuyPanel"]
+[node name="EnemyTeamLabel4" type="Button" parent="BadGuyPanel"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -273,9 +271,8 @@ margin_right = -8.0
 margin_bottom = -8.0
 theme = ExtResource( 2 )
 text = "Monster Name"
-align = 1
 
-[node name="EnemyTeamLabel5" type="Label" parent="BadGuyPanel"]
+[node name="EnemyTeamLabel5" type="Button" parent="BadGuyPanel"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -285,9 +282,8 @@ margin_right = -8.0
 margin_bottom = -81.0
 theme = ExtResource( 2 )
 text = "Monster Name"
-align = 1
 
-[node name="EnemyTeamLabel6" type="Label" parent="BadGuyPanel"]
+[node name="EnemyTeamLabel6" type="Button" parent="BadGuyPanel"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -297,6 +293,14 @@ margin_right = -8.0
 margin_bottom = -41.0
 theme = ExtResource( 2 )
 text = "Monster Name"
+
+[node name="PickEnemyLabel" type="Label" parent="BadGuyPanel"]
+visible = false
+margin_top = -40.0
+margin_right = 1054.0
+margin_bottom = 1.0
+theme = ExtResource( 2 )
+text = "Pick an enemy to attack:"
 align = 1
 
 [node name="InputPopUpMenu" type="Control" parent="."]
@@ -307,6 +311,7 @@ margin_right = 304.0
 margin_bottom = 1027.0
 
 [node name="InputBGPanel" type="Panel" parent="InputPopUpMenu"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -35.0
