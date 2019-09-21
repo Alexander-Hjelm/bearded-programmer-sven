@@ -33,8 +33,8 @@ var current_monster_name : String
 
 func _init():
 	# Initialize team structures
-	_characters_by_team[0] = []
-	_characters_by_team[1] = []
+	_characters_by_team[0] = {}
+	_characters_by_team[1] = {}
 	
 	# Initialize hurt timer
 	_hurt_timer = Timer.new()
@@ -50,8 +50,8 @@ func create_combat_encounter(characters_team_0: Array, characters_team_1: Array)
 			character_node.queue_free()
 			
 	# Initialize teams
-	_characters_by_team[0] = []
-	_characters_by_team[1] = []
+	_characters_by_team[0] = {}
+	_characters_by_team[1] = {}
 	_visual_character_representations.clear()
 	
 	# Register all characters in the corect team
@@ -65,7 +65,7 @@ func create_combat_encounter(characters_team_0: Array, characters_team_1: Array)
 # Register a character at the beginning of a combat encounter
 func register_character(character: Character, team: int):
 	# Add the character to the correct team
-	_characters_by_team[team].append(character)
+	_characters_by_team[team][len(_characters_by_team[team])] = character
 	
 	# Instantiate the AnimatedActor resource
 	var resource_path: String = character.get_resource_path()
@@ -87,11 +87,11 @@ func register_character(character: Character, team: int):
 # The main heartbeat of the Combat cycle.
 func tick():
 	# Call tick_character for all characters, but only if ticking is active
-	for character in _characters_by_team[0]:
+	for character in _characters_by_team[0].values():
 		if not _ticking_active:
 			return
 		tick_character(character, 0)
-	for character in _characters_by_team[1]:
+	for character in _characters_by_team[1].values():
 		if not _ticking_active:
 			return
 		tick_character(character, 1)
@@ -203,16 +203,28 @@ func on_hurt_timer_timeout():
 	if(_queued_target_character.get_current_value_for_stat("hp") <= 0.0):
 		animated_actor.change_anim_state(AnimatedActor.anim_state_types.DEATH)
 		
-		# Item drop
-		# Add a random item to the player's inventory:
-		drop_item(_queued_target_character)
-	
-		# Notify the HUD that the character has died
-		HUD.notify_enemy_dead(_characters_by_team[1].find(_queued_target_character))
+		# If enemy
+		if _characters_by_team[1].values().find(_queued_target_character) > -1:
+			# Item drop
+			# Add a random item to the player's inventory:
+			drop_item(_queued_target_character)
+			
+			var index_of_enemy: int = -1
+			for key in _characters_by_team[1].keys():
+				if(_characters_by_team[1][key] == _queued_target_character):
+					index_of_enemy = key
+					break
+			
+			# Notify the HUD that the character has died
+			HUD.notify_enemy_dead(index_of_enemy)
+			
+			# Erase the reference to the character
+			_characters_by_team[1].erase(index_of_enemy)
 		
-		# Erase the reference to the character
-		_characters_by_team[0].erase(_queued_target_character)
-		_characters_by_team[1].erase(_queued_target_character)
+		# If player
+		elif _characters_by_team[0].values().find(_queued_target_character) > -1:
+			_characters_by_team[0].erase(0)
+		
 		print(_queued_target_character.get_name() + " has died")
 	
 	# Dereference the queued target character just in case
