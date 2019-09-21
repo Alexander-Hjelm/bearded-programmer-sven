@@ -49,13 +49,17 @@ func _init(name: String, resource_path: String, base_stats: Dictionary, item_nam
 func deep_copy() -> Character:
 	# Copy base stats
 	var base_stats_copy: Dictionary
-	for stat in base_stats_copy:
+	for stat in self._base_stats.keys():
 		base_stats_copy[stat] = self._base_stats[stat]
 	# Copy item names
 	var item_names_by_slot_copy: Dictionary
-	for item_name in _item_names_by_slot:
+	for item_name in _item_names_by_slot.keys():
 		item_names_by_slot_copy[item_name] = _item_names_by_slot[item_name]
-	return get_script().new(_name, base_stats_copy, item_names_by_slot_copy)
+	# Copy item drops
+	var item_drops_copy: Dictionary
+	for item_name in _item_drops.keys():
+		item_drops_copy[item_name] = _item_drops[item_name]
+	return get_script().new(_name, _resource_path, base_stats_copy, item_names_by_slot_copy, item_drops_copy)
 
 # Tick. Go over all non-permanent effects and remove them once they expire
 func tick():

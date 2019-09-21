@@ -206,6 +206,9 @@ func on_hurt_timer_timeout():
 		# Item drop
 		# Add a random item to the player's inventory:
 		drop_item(_queued_target_character)
+	
+		# Notify the HUD that the character has died
+		HUD.notify_enemy_dead(_characters_by_team[1].find(_queued_target_character))
 		
 		# Erase the reference to the character
 		_characters_by_team[0].erase(_queued_target_character)

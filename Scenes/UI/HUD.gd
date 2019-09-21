@@ -135,6 +135,9 @@ func on_monster_label_clicked(monster_index: int):
 	$BadGuyPanel/PickEnemyLabel.visible = false
 
 
+func notify_enemy_dead(enemy_index: int):
+	get_node("BadGuyPanel/EnemyTeamLabel" + str(enemy_index+1)).visible = false
+
 func show_pop_up_message(text):
 	$MessagePanel/MessagePanelAnim.play("Popup Long Show Message")
 	$MessagePanel/MessageText.text = str(text)

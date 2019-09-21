@@ -10,11 +10,11 @@ var _battle_over_timer: Timer
 
 # All possible combat encounters that will play out, in order
 var _combat_encounters: Array = [
-	[character_database.characters["Segfault"],
-		character_database.characters["Segfault"]],
-	[character_database.characters["Stack Overflow"]],
-	[character_database.characters["Blue Screen of Death"]],
-	[character_database.characters["Godot Boss"]]
+	[character_database.get_character("Segfault"),
+		character_database.get_character("Segfault")],
+	[character_database.get_character("Stack Overflow")],
+	[character_database.get_character("Blue Screen of Death")],
+	[character_database.get_character("Godot Boss")]
 ]
 
 enum _sven_morph_states {HUMAN,SEG, SEGTV, SEGSTACK, STACK, STACKTV, TV, FULLMORPH}
@@ -22,11 +22,13 @@ enum _sven_morph_states {HUMAN,SEG, SEGTV, SEGSTACK, STACK, STACKTV, TV, FULLMOR
 # Which combat encounter are we currently on?
 var _active_combat_encounter: int = 0
 
+var _player_character: Character
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Spawn up the first combat encounter
-	var player_character: Character = character_database.characters["Bearded Programmer Sven"]
-	combat_manager.create_combat_encounter([player_character], _combat_encounters[_active_combat_encounter])
+	_player_character = character_database.get_character("Bearded Programmer Sven")
+	combat_manager.create_combat_encounter([_player_character], _combat_encounters[_active_combat_encounter])
 	_active_combat_encounter = _active_combat_encounter + 1
 	
 	combat_manager.connect("combat_over_win", self, "_on_combat_win")
@@ -61,7 +63,6 @@ func _on_combat_fail():
 func _on_battle_over():
 	# The battle was won, create the next combat encounter
 	if _active_combat_encounter < _combat_encounters.size():
-		var player_character: Character = character_database.characters["Bearded Programmer Sven"]
 		combat_manager.keep_track_of_svens_morph_state(_active_combat_encounter)
-		combat_manager.create_combat_encounter([player_character], _combat_encounters[_active_combat_encounter])
+		combat_manager.create_combat_encounter([_player_character], _combat_encounters[_active_combat_encounter])
 		_active_combat_encounter = _active_combat_encounter + 1

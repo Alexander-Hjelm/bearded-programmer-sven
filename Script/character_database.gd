@@ -1,7 +1,7 @@
 class_name CharacterDatabase extends Node2D
 
 # Available items. Type: <String, Item>
-var characters : Dictionary = {
+var _characters : Dictionary = {
 	# Bearded Programmer Sven
 	"Bearded Programmer Sven": Character.new(
 		"Bearded Programmer Sven",
@@ -86,3 +86,7 @@ var characters : Dictionary = {
 		{}
 	)
 }
+
+# Use this when getting characters
+func get_character(character_name: String) -> Character:
+	return _characters[character_name].deep_copy()
