@@ -89,7 +89,7 @@ func tick_character(character: Character, team: int):
 			other_team = 1
 		var rand_index = randi()%len(_characters_by_team[other_team])
 		var target_character: Character = _characters_by_team[other_team][rand_index]
-		attack(character, target_character, target_character.get_weapon())
+		attack(character, target_character, character.get_weapon())
 		reset_character_timer(character)
 
 func reset_character_timer(character: Character):
