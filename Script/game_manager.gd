@@ -10,7 +10,8 @@ var _battle_over_timer: Timer
 
 # All possible combat encounters that will play out, in order
 var _combat_encounters: Array = [
-	[character_database.characters["Segfault"]],
+	[character_database.characters["Segfault"],
+		character_database.characters["Segfault"]],
 	[character_database.characters["Stack Overflow"]],
 	[character_database.characters["Blue Screen of Death"]],
 	[character_database.characters["Godot Boss"]]

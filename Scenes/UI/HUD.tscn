@@ -228,6 +228,7 @@ rounded = true
 percent_visible = false
 
 [node name="BadGuyPanel" type="Panel" parent="."]
+editor/display_folded = true
 margin_left = 832.0
 margin_top = 736.0
 margin_right = 1904.0
@@ -304,6 +305,7 @@ text = "Pick an enemy to attack:"
 align = 1
 
 [node name="InputPopUpMenu" type="Control" parent="."]
+editor/display_folded = true
 visible = false
 margin_left = 16.0
 margin_top = 707.0
