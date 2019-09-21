@@ -41,6 +41,8 @@ func create_combat_encounter(characters_team_0: Array, characters_team_1: Array)
 		register_character(character, 0)
 	for character in characters_team_1:
 		register_character(character, 1)
+	
+	_combat_over_signal_emitted = false
 
 func register_character(character: Character, team: int):
 	_characters_by_team[team].append(character)
@@ -72,11 +74,11 @@ func tick():
 	# If there are no more enemies left, notify the game manager that the fight has ended
 	if not _combat_over_signal_emitted:
 		if len(_characters_by_team[0]) == 0:
+			_combat_over_signal_emitted = true
 			emit_signal("combat_over_fail")
-			_combat_over_signal_emitted = true
 		if len(_characters_by_team[1]) == 0:
-			emit_signal("combat_over_win")
 			_combat_over_signal_emitted = true
+			emit_signal("combat_over_win")
 
 func tick_character(character: Character, team: int):
 	_character_timers[character] = _character_timers[character] - 1.0
