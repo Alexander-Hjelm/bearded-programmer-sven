@@ -12,19 +12,23 @@ var _base_stats: Dictionary
 # What items are present on the actor, by slot. Type: <String, Item>
 var _item_names_by_slot: Dictionary
 
+# What items can be dropped when this actor dies? With what chance? Type: <String, float>
+var _item_drops: Dictionary
+
 # Active effects, type: Effect
 var _active_effects: Array
 
 # Permenent stat value offsets, type: <String, float>
 var _permanent_stat_offsets: Dictionary
 
-func _init(name: String, resource_path: String, base_stats: Dictionary, item_names_by_slot: Dictionary):
+func _init(name: String, resource_path: String, base_stats: Dictionary, item_names_by_slot: Dictionary, item_drops: Dictionary):
 	self._name = name
 	self._resource_path = resource_path
 	self._base_stats = {}
 	self._permanent_stat_offsets = {}
 	self._active_effects = []
 	self._item_names_by_slot = item_names_by_slot
+	self._item_drops = item_drops
 	
 	# Initialize base stats to 0
 	self._base_stats["hp"] = 0.0
@@ -174,6 +178,9 @@ func get_weapon() -> Item:
 # Get all available stats as strings
 func get_stat_keys() -> Array:
 	return _base_stats.keys()
+
+func get_item_drops() -> Dictionary:
+	return _item_drops
 
 # Get elemental attack power
 func get_element_attack(element: int) -> float:

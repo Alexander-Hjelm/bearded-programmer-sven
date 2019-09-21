@@ -110,7 +110,18 @@ func tick():
 			_combat_over_signal_emitted = true
 			emit_signal("combat_over_win")
 
-# Tick routing for a single character
+# Randomize an item from a characters item_drops, and add it to the inventory
+func drop_item(dropping_character: Character):
+	var item_drops: Dictionary = dropping_character.get_item_drops()
+	var r: float = randf()
+	var counted: float = 0.0
+	for item in item_drops.keys():
+		counted = counted + item_drops[item]
+		if counted > r:
+			inventory.add_item(item)
+		
+
+# Tick routine for a single character
 func tick_character(character: Character, team: int):
 	# Update the Timer
 	_character_timers[character] = _character_timers[character] - 1.0
@@ -192,6 +203,12 @@ func on_hurt_timer_timeout():
 	# If the character's hp is <= 0, kill it
 	if(_queued_target_character.get_current_value_for_stat("hp") <= 0.0):
 		animated_actor.change_anim_state(AnimatedActor.anim_state_types.DEATH)
+		
+		# Item drop
+		# Add a random item to the player's inventory:
+		drop_item(_queued_target_character)
+		
+		# Erase the reference to the character
 		_characters_by_team[0].erase(_queued_target_character)
 		_characters_by_team[1].erase(_queued_target_character)
 		print(_queued_target_character.get_name() + " has died")

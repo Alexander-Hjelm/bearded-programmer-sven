@@ -15,7 +15,8 @@ var characters : Dictionary = {
 		},
 		{
 			"Weapon": "Player Weapon"
-		}
+		},
+		{}
 	),
 	# Segfault
 	"Segfault": Character.new(
@@ -31,7 +32,8 @@ var characters : Dictionary = {
 		{
 			"Feet": "Segway",
 			"Weapon": "Segfault Weapon"
-		}
+		},
+		{"Bubba Cola": 1.0}
 	),
 	# Stack Overflow
 	"Stack Overflow": Character.new(
@@ -46,7 +48,8 @@ var characters : Dictionary = {
 		{
 			"Body": "Trash Can",
 			"Weapon": "Stack Overflow Weapon"
-		}
+		},
+		{}
 	),
 	# Blue Screen of Death
 	"Blue Screen of Death": Character.new(
@@ -62,7 +65,8 @@ var characters : Dictionary = {
 		{
 			"Head": "Monitor",
 			"Weapon": "Blue Screen of Death Weapon"
-		}
+		},
+		{}
 	),
 		# Godot Boss
 	"Godot Boss": Character.new(
@@ -78,6 +82,7 @@ var characters : Dictionary = {
 		{
 			"Head": "Your Anus",
 			"Weapon": "Godot Fisting Weapon"
-		}
+		},
+		{}
 	)
 }
