@@ -1,5 +1,8 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Themes/BattleTheme.tres" type="Theme" id=1]
 
 [node name="ItemButton" type="Button"]
 margin_right = 113.0
-margin_bottom = 20.0
+margin_bottom = 24.0
+theme = ExtResource( 1 )
