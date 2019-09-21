@@ -72,8 +72,6 @@ item_database="*res://Script/item_database.gd"
 character_database="*res://Script/character_database.gd"
 element_database="*res://Script/element_database.gd"
 combat_manager="*res://Script/combat_manager.gd"
-Global="res://Global.gd"
-HUD="*res://Scenes/UI/HUD.tscn"
 
 [display]
 
