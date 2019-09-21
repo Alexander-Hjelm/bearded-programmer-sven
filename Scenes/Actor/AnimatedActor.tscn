@@ -82,3 +82,11 @@ sfx_2 = ExtResource( 7 )
 sfx_3 = ExtResource( 8 )
 sfx_4 = ExtResource( 9 )
 random_sfx_to_play = 4
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="StatLabel" type="Label" parent="Node2D"]
+margin_left = -19.0
+margin_top = -90.0
+margin_right = 21.0
+margin_bottom = -76.0

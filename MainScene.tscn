@@ -1,18 +1,19 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://GFX/BG/bg.shader" type="Shader" id=1]
-[ext_resource path="res://GFX/BG/bg_1.png" type="Texture" id=2]
-[ext_resource path="res://GFX/BG/bg_2.png" type="Texture" id=3]
-[ext_resource path="res://GFX/BG/black16.png" type="Texture" id=4]
-[ext_resource path="res://Script/game_manager.gd" type="Script" id=5]
-[ext_resource path="res://Script/combat_manager.gd" type="Script" id=6]
-[ext_resource path="res://Script/item_database.gd" type="Script" id=7]
-[ext_resource path="res://Script/element_database.gd" type="Script" id=8]
-[ext_resource path="res://Script/character_database.gd" type="Script" id=9]
-[ext_resource path="res://Scenes/UI/HUD.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Battle/BattleScenes.gd" type="Script" id=1]
+[ext_resource path="res://GFX/BG/bg.shader" type="Shader" id=2]
+[ext_resource path="res://GFX/BG/bg_1.png" type="Texture" id=3]
+[ext_resource path="res://GFX/BG/bg_2.png" type="Texture" id=4]
+[ext_resource path="res://GFX/BG/black16.png" type="Texture" id=5]
+[ext_resource path="res://Script/game_manager.gd" type="Script" id=6]
+[ext_resource path="res://Script/combat_manager.gd" type="Script" id=7]
+[ext_resource path="res://Script/item_database.gd" type="Script" id=8]
+[ext_resource path="res://Script/element_database.gd" type="Script" id=9]
+[ext_resource path="res://Script/character_database.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/UI/HUD.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 1 )
+shader = ExtResource( 2 )
 shader_param/colorTint1 = Color( 0.0156863, 0, 0.266667, 1 )
 shader_param/colorTint2 = Color( 0.501961, 0.345098, 0.619608, 1 )
 shader_param/uvScrollSpeedY = 0.16
@@ -20,70 +21,71 @@ shader_param/uvSwaySpeed = 0.96
 shader_param/uvSwayAmp = 0.09
 shader_param/uvWaveSpeed = 0.028
 shader_param/uvWaveAmp = 0.01
-shader_param/albedoBaseChannel = ExtResource( 2 )
+shader_param/albedoBaseChannel = ExtResource( 3 )
 
 [node name="MainScene" type="Node2D"]
+script = ExtResource( 1 )
 
 [node name="BGSprite" type="Sprite" parent="."]
 material = SubResource( 1 )
 position = Vector2( 252.695, 215.02 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( 79.5562, 181.063 )
 
 [node name="BGSprite2" type="Sprite" parent="BGSprite"]
 material = SubResource( 1 )
 position = Vector2( 639.965, 0 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( 79.5562, 181.063 )
 
 [node name="BGSprite3" type="Sprite" parent="BGSprite"]
 material = SubResource( 1 )
 position = Vector2( -0.0535278, 640.009 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( 79.5562, 181.063 )
 
 [node name="BGSprite4" type="Sprite" parent="BGSprite"]
 material = SubResource( 1 )
 position = Vector2( 639.911, 640.009 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( 79.5562, 181.063 )
 
 [node name="BGSprite5" type="Sprite" parent="BGSprite"]
 material = SubResource( 1 )
 position = Vector2( 1279.96, 640.009 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( 79.5562, 181.063 )
 
 [node name="BGSprite6" type="Sprite" parent="BGSprite"]
 material = SubResource( 1 )
 position = Vector2( 1280.02, 0 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( 79.5562, 181.063 )
 
 [node name="BlackBroderTop" type="Sprite" parent="."]
 position = Vector2( 581.135, 19.0207 )
 scale = Vector2( 200, 10 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="BlackBroderBottom" type="Sprite" parent="."]
 position = Vector2( 570, 1010 )
 scale = Vector2( 200, 10 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="GameManager" type="Node2D" parent="."]
-script = ExtResource( 5 )
-
-[node name="CombatMananger" type="Node2D" parent="."]
 script = ExtResource( 6 )
 
-[node name="ItemDatabase" type="Node2D" parent="."]
+[node name="CombatMananger" type="Node2D" parent="."]
 script = ExtResource( 7 )
 
-[node name="ElementDatabase" type="Node2D" parent="."]
+[node name="ItemDatabase" type="Node2D" parent="."]
 script = ExtResource( 8 )
 
-[node name="CharacterDatabase" type="Node2D" parent="."]
+[node name="ElementDatabase" type="Node2D" parent="."]
 script = ExtResource( 9 )
+
+[node name="CharacterDatabase" type="Node2D" parent="."]
+script = ExtResource( 10 )
 
 [node name="Team0StartPos" type="Node2D" parent="."]
 position = Vector2( 243.516, 453.616 )
@@ -91,4 +93,4 @@ position = Vector2( 243.516, 453.616 )
 [node name="Team1StartPos" type="Node2D" parent="."]
 position = Vector2( 1615.09, 446.242 )
 
-[node name="HUD" parent="." instance=ExtResource( 10 )]
+[node name="HUD" parent="." instance=ExtResource( 11 )]

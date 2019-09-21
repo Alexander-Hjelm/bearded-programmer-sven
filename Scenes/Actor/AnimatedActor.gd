@@ -52,7 +52,7 @@ func show_attack_fx():
 	var atk_fx_instance = current_atk_fx.instance()
 	if attack_left:
 		atk_fx_instance.set_direction(atk_fx_instance.DIRECTION_LEFT)
-	get_tree().get_root().add_child(atk_fx_instance)
+	$attackFXPOS.add_child(atk_fx_instance)
 
 
 func show_hurt_fx():

@@ -4,29 +4,41 @@
 resource_name = "mov_hurt"
 length = 0.5
 step = 0.01
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.03, 0.08, 0.21, 0.31, 0.41, 0.5 ),
-"transitions": PoolRealArray( 0.5, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 26, 0 ), Vector2( -59, 0 ), Vector2( 24, 0 ), Vector2( -9, 0 ), Vector2( 6, 0 ), Vector2( -3, 0 ) ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray( 0.01 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
 "method": "show_hurt_fx"
 } ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Node2D/StatLabel:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -19, -34 ), Vector2( -19, -90 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.06, 0.11, 0.15, 0.2, 0.24, 0.29 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -17, 0 ), Vector2( 15, 0 ), Vector2( -10, 0 ), Vector2( 6, 0 ), Vector2( -4, 0 ), Vector2( 0, 0 ) ]
 }

@@ -9,9 +9,9 @@ onready var input_popup_menu = $InputPopUpMenu
 onready var input_attack_button = $InputPopUpMenu/InputBGPanel/AttackButton
 onready var input_dosomething_button = $InputPopUpMenu/InputBGPanel/DoSomething ### Add Functionality here... :P
 
-
-func _init():
-	Global.HUD = self
+#
+#func _init():
+#	Global.HUD = self
 
 
 func _ready():
@@ -31,7 +31,7 @@ func inactivate_player_input(): #Inactivate Player Input
 	input_dosomething_button.disabled = true
 
 
-func update_HUD_timer(player_timer : int, player_timer_done : bool): #sends player timer data and sets player input true/false
+func update_player_HUD_timer(player_timer : int, player_timer_done : bool): #sends player timer data and sets player input true/false
 	timer_progress.value = player_timer
 	if player_timer_done:
 		activate_player_input()
@@ -39,7 +39,15 @@ func update_HUD_timer(player_timer : int, player_timer_done : bool): #sends play
 		inactivate_player_input()
 
 
-func update_HUD_stats(player_hp, player_hp_max): ## Update player hp
+func set_player_names(player_name : String):
+	$PlayerPanel/PlayerTeamLabel.text = str(player_name)
+
+
+func set_enemy_names(enemy_name : String):
+	$BadGuyPanel/EnemyTeamLabel.text = enemy_name
+
+
+func update_player_HUD_stats(player_hp, player_hp_max): ## Update player hp
 	player_hp_current_progressbar.value = player_hp
 	player_hp_current_label.text = str(player_hp)
 	player_hp_current_max_label.text = str(player_hp_max)

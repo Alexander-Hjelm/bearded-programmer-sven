@@ -4,6 +4,10 @@ enum morph_state_types {HUMAN,SEG, SEGTV, SEGSTACK, STACK, STACKTV, TV, FULLMORP
 var morph_state
 
 
+func _ready():
+	change_morph_state(morph_state_types.HUMAN)
+
+
 func change_anim_state(new_state):
 	state = new_state
 	match state:

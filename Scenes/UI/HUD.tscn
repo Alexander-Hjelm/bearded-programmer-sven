@@ -130,14 +130,61 @@ margin_bottom = 1024.0
 theme = ExtResource( 2 )
 
 [node name="EnemyTeamLabel" type="Label" parent="BadGuyPanel"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -507.0
-margin_top = -121.0
-margin_right = 507.0
-margin_bottom = 120.0
+margin_top = 19.0
+margin_right = 1056.0
+margin_bottom = 50.0
+theme = ExtResource( 2 )
+text = "Monster Name"
+align = 1
+
+[node name="EnemyTeamLabel2" type="Label" parent="BadGuyPanel"]
+margin_top = 56.0
+margin_right = 1056.0
+margin_bottom = 87.0
+theme = ExtResource( 2 )
+text = "Monster Name"
+align = 1
+
+[node name="EnemyTeamLabel3" type="Label" parent="BadGuyPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -8.0
+margin_top = 96.0
+margin_right = -8.0
+margin_bottom = -161.0
+theme = ExtResource( 2 )
+text = "Monster Name"
+align = 1
+
+[node name="EnemyTeamLabel4" type="Label" parent="BadGuyPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -8.0
+margin_top = 136.0
+margin_right = -8.0
+margin_bottom = -8.0
+theme = ExtResource( 2 )
+text = "Monster Name"
+align = 1
+
+[node name="EnemyTeamLabel5" type="Label" parent="BadGuyPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -8.0
+margin_top = 176.0
+margin_right = -8.0
+margin_bottom = -81.0
+theme = ExtResource( 2 )
+text = "Monster Name"
+align = 1
+
+[node name="EnemyTeamLabel6" type="Label" parent="BadGuyPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -8.0
+margin_top = 216.0
+margin_right = -8.0
+margin_bottom = -41.0
 theme = ExtResource( 2 )
 text = "Monster Name"
 align = 1

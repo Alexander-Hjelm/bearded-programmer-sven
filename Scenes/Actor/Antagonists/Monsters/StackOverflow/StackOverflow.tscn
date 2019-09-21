@@ -44,7 +44,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[node name="StackOverflow" index="0" instance=ExtResource( 1 )]
+[node name="StackOverflow" instance=ExtResource( 1 )]
 attack_fx_1 = ExtResource( 2 )
 hurt_fx = ExtResource( 3 )
 attack_left = true
@@ -52,8 +52,11 @@ attack_left = true
 [node name="AnimatedSprite" parent="." index="0"]
 frames = ExtResource( 4 )
 animation = "idle"
-frame = 3
+frame = 29
 playing = true
 
 [node name="SpriteAnim" parent="." index="1"]
 anims/idle = SubResource( 1 )
+
+[node name="attackFXPOS" parent="." index="3"]
+position = Vector2( -179.218, 0 )

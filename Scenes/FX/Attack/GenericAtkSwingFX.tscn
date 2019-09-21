@@ -90,7 +90,6 @@ tracks/5/keys = {
 }
 
 [node name="GenericAtkSwingFX" index="0" instance=ExtResource( 1 )]
-position = Vector2( 416, 192 )
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = ExtResource( 2 )

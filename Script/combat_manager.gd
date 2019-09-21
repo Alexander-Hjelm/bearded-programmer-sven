@@ -112,7 +112,6 @@ func attack(src_character: Character, target_character: Character, item: Item):
 	
 	# Play attack animation on the associated visual node
 	_visual_character_representations[src_character].change_anim_state(AnimatedActor.anim_state_types.ATTACK)
-
 	_queued_target_character = target_character
 	_hurt_timer.set_wait_time(1.0)
 	_hurt_timer.start()
