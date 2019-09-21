@@ -27,3 +27,6 @@ func get_inflicted_effects():
 
 func get_element() -> int:
 	return _element
+
+func get_item_type() -> int:
+	return _item_type

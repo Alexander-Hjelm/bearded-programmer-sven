@@ -115,7 +115,6 @@ func drop_item(dropping_character: Character):
 		counted = counted + item_drops[item]
 		if counted > r:
 			inventory.add_item(item)
-		
 
 # Tick routine for a single character
 func tick_character(character: Character, team: int):
@@ -219,6 +218,20 @@ func send_boost_stat_message(character: Character):
 # Send a "Lower Stat" message to the HUD
 func send_lower_stat_message(character: Character):
 	_visual_character_representations[character].change_anim_state(AnimatedActor.anim_state_types.LOWERSTAT)
+
+func use_item_on_player(item_name: String):
+	var player: Character = _characters_by_team[0][0]
+	attack(player, player, item_database.items[item_name])
+	inventory.remove_item(item_name)
+	reset_character_timer(player)
+
+
+func use_item_on_enemy(item_name: String, enemy_index: int):
+	var player: Character = _characters_by_team[0][0]
+	var enemy: Character = _characters_by_team[1][enemy_index]
+	attack(player, enemy, item_database.items[item_name])
+	inventory.remove_item(item_name)
+	reset_character_timer(player)
 
 
 func keep_track_of_svens_morph_state(_active_combat_encounter):

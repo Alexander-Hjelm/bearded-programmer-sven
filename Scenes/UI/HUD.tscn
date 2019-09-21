@@ -101,6 +101,32 @@ margin_right = 378.0
 margin_bottom = 14.5
 clip_text = true
 
+[node name="InventoryPanel" type="Panel" parent="."]
+visible = false
+margin_left = 22.0
+margin_top = 287.0
+margin_right = 399.0
+margin_bottom = 737.0
+theme = ExtResource( 2 )
+
+[node name="PlayerTeamLabel" type="Label" parent="InventoryPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -136.217
+margin_top = -210.372
+margin_right = 109.783
+margin_bottom = -150.372
+theme = ExtResource( 2 )
+text = "Inventory"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InventoryPanel"]
+margin_top = 67.0
+margin_right = 375.0
+margin_bottom = 447.0
+
 [node name="TimerPanel" type="Panel" parent="."]
 margin_left = 22.0
 margin_top = 736.0
@@ -228,7 +254,7 @@ margin_right = 272.0
 margin_bottom = 69.0
 text = "Attack"
 
-[node name="DoSomethingPanel" type="NinePatchRect" parent="InputPopUpMenu/InputBGPanel"]
+[node name="InventoryPanel" type="NinePatchRect" parent="InputPopUpMenu/InputBGPanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
@@ -242,7 +268,7 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="DoSomething" type="Button" parent="InputPopUpMenu/InputBGPanel"]
+[node name="InventoryButton" type="Button" parent="InputPopUpMenu/InputBGPanel"]
 margin_left = 16.0
 margin_top = 85.0
 margin_right = 272.0

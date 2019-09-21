@@ -1,0 +1,5 @@
+[gd_scene format=2]
+
+[node name="ItemButton" type="Button"]
+margin_right = 113.0
+margin_bottom = 20.0
