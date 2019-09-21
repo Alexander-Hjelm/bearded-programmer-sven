@@ -12,8 +12,11 @@ var _battle_over_timer: Timer
 var _combat_encounters: Array = [
 	[character_database.characters["Segfault"]],
 	[character_database.characters["Stack Overflow"]],
-	[character_database.characters["Blue Screen of Death"]]
+	[character_database.characters["Blue Screen of Death"]],
+	[character_database.characters["Godot Boss"]]
 ]
+
+enum _sven_morph_states {HUMAN,SEG, SEGTV, SEGSTACK, STACK, STACKTV, TV, FULLMORPH}
 
 # Which combat encounter are we currently on?
 var _active_combat_encounter: int = 0
@@ -56,6 +59,8 @@ func _on_combat_fail():
 
 func _on_battle_over():
 	# The battle was won, create the next combat encounter
-	var player_character: Character = character_database.characters["Bearded Programmer Sven"]
-	combat_manager.create_combat_encounter([player_character], _combat_encounters[_active_combat_encounter])
-	_active_combat_encounter = _active_combat_encounter + 1
+	if _active_combat_encounter < _combat_encounters.size():
+		var player_character: Character = character_database.characters["Bearded Programmer Sven"]
+		combat_manager.create_combat_encounter([player_character], _combat_encounters[_active_combat_encounter])
+		combat_manager.keep_track_of_svens_morph_state(_active_combat_encounter)
+		_active_combat_encounter = _active_combat_encounter + 1

@@ -1,11 +1,13 @@
 extends "res://Scenes/Actor/AnimatedActor.gd"
 
-enum morph_state_types {HUMAN,SEG, SEGTV, SEGSTACK, STACK, STACKTV, TV, FULLMORPH}
-var morph_state
+var morph_explo = preload("res://Scenes/FX/Smoke/MorphExplo.tscn")
+
+func _init():
+	Global.sven_the_bad_programmer = self
 
 
 func _ready():
-	change_morph_state(morph_state_types.HUMAN)
+	change_morph_state(Global.sven_current_morph_state)
 
 
 func change_anim_state(new_state):
@@ -20,41 +22,41 @@ func change_anim_state(new_state):
 				$FXMovementAnim.play("mov_attack_right")
 		anim_state_types.HURT:
 			$FXMovementAnim.play("mov_hurt")
-			if morph_state == morph_state_types.HUMAN:
+			if Global.sven_current_morph_state == Global.sven_morph_state_types.HUMAN:
 				$SpriteAnim.play("human_hurt")
 		anim_state_types.BOOSTSTAT:
 			pass
 		anim_state_types.LOWERSTAT:
 			pass
+		anim_state_types.DEATH:
+			$FXMovementAnim.play("mov_death")
 
 
 func change_morph_state(new_morph_state):
-	morph_state = new_morph_state
-	match morph_state:
-		morph_state_types.HUMAN:
+	Global.sven_current_morph_state = new_morph_state
+	match Global.sven_current_morph_state:
+		Global.sven_morph_state_types.HUMAN:
 			$SpriteAnim.play("human_idle")
-		morph_state_types.SEG:
+		Global.sven_morph_state_types.SEG:
 			$SpriteAnim.play("seg")
-		morph_state_types.SEGTV:
+		Global.sven_morph_state_types.SEGTV:
 			$SpriteAnim.play("segtv")
-		morph_state_types.SEGSTACK:
+		Global.sven_morph_state_types.SEGSTACK:
 			$SpriteAnim.play("segstack")
-		morph_state_types.STACK:
+		Global.sven_morph_state_types.STACK:
 			$SpriteAnim.play("stack")
-		morph_state_types.STACKTV:
+		Global.sven_morph_state_types.STACKTV:
 			$SpriteAnim.play("stacktv")
-		morph_state_types.TV:
+		Global.sven_morph_state_types.TV:
 			$SpriteAnim.play("tv")
-		morph_state_types.SEG:
+		Global.sven_morph_state_types.FULLMORPH:
 			$SpriteAnim.play("fullmorph")
+	create_morph_explosion()
 
 
-#func _input(event):
-#	if Input.is_key_pressed(KEY_U):
-#		change_anim_state(anim_state_types.ATTACK)
-#		change_morph_state(morph_state_types.SEG)
-#	if Input.is_key_pressed(KEY_H):
-#		change_anim_state(anim_state_types.HURT)
+func create_morph_explosion():
+	var morphexplo_instance = morph_explo.instance()
+	add_child(morphexplo_instance)
 
 
 func show_attack_fx():

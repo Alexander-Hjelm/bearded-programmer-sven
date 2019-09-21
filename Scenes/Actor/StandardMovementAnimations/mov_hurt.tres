@@ -19,7 +19,7 @@ tracks/0/keys = {
 } ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Node2D/StatLabel:rect_position")
+tracks/1/path = NodePath("Pos/StatLabel:rect_position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false

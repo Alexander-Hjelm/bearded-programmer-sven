@@ -11,7 +11,7 @@ var characters : Dictionary = {
 			"mp": 5.0,
 			"speed": 40.0,
 			"element_resist_glitch": 10.0,
-			"element_attack_glitch": 100.0
+			"element_attack_glitch": 100.0,
 		},
 		{
 			"Weapon": "Player Weapon"
@@ -62,6 +62,22 @@ var characters : Dictionary = {
 		{
 			"Head": "Monitor",
 			"Weapon": "Blue Screen of Death Weapon"
+		}
+	),
+		# Godot Boss
+	"Godot Boss": Character.new(
+		"Godot Boss",
+		"res://Scenes/Actor/Antagonists/Bosses/GodotBoss.tscn",
+		{
+			"hp": 20.0,
+			"mp": 5.0,
+			"speed": 50.0,
+			"element_attack_glitch": 100.0,
+			"element_resist_glitch": 3.0
+		},
+		{
+			"Head": "Your Anus",
+			"Weapon": "Godot Fisting Weapon"
 		}
 	)
 }

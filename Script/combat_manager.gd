@@ -200,3 +200,22 @@ func send_boost_stat_message(character: Character):
 # Send a "Lower Stat" message to the HUD
 func send_lower_stat_message(character: Character):
 	_visual_character_representations[character].change_anim_state(AnimatedActor.anim_state_types.LOWERSTAT)
+
+
+func keep_track_of_svens_morph_state(_active_combat_encounter):
+	match _active_combat_encounter:
+		0:
+			pass
+		1:
+			Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.SEG)
+			print(Global.sven_the_bad_programmer)
+			print(Global.sven_current_morph_state)
+		2:
+			Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.SEGSTACK)
+			print(Global.sven_current_morph_state)
+		3:
+			Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.FULLMORPH)
+			print(Global.sven_current_morph_state)
+		4:
+			Global.you_merged_with_godot = true
+			Global.sven_the_bad_programmer.change_anim_state(Global.sven_the_bad_programmer.DEATH)

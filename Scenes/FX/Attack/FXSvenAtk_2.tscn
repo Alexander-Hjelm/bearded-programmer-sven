@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/FX/Attack/FXSvenAtk_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/FX/Attack/SpriteFrames/FXSvenAtk_2.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Audio/SFX/GetStuff/collect_item_23.wav" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "GenericAtkFX"
@@ -77,3 +78,6 @@ frames = ExtResource( 2 )
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/GenericAtkFX = SubResource( 1 )
+
+[node name="SFX" parent="." index="2"]
+stream = ExtResource( 3 )

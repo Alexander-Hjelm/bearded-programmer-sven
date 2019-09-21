@@ -1,0 +1,131 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/FX/Smoke/Explosion_1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Audio/SFX/GetStuff/collect_item_20.wav" type="AudioStream" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+var DIRECTION_RIGHT = 1
+var DIRECTION_LEFT = -1
+var direction = Vector2(DIRECTION_RIGHT, 1)
+
+
+export var random_rotation_on_ready = false
+
+
+func _ready():
+	if random_rotation_on_ready:
+		randomize()
+		rotation_degrees = randi() % 360
+
+
+func set_direction(hor_direction):
+	if hor_direction == 0:
+		hor_direction = DIRECTION_RIGHT # default to right if param is 0
+	var hor_dir_mod = hor_direction / abs(hor_direction) # get unit direction
+	apply_scale(Vector2(hor_dir_mod * direction.x, 1)) # flip
+	direction = Vector2(hor_dir_mod, direction.y) # update direction"
+
+[sub_resource type="Animation" id=2]
+resource_name = "GenericAtkFX"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "default" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimatedSprite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.65 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("SFX")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_play_random_sfx"
+} ]
+}
+
+[node name="MorphExplo" instance=ExtResource( 1 )]
+script = SubResource( 1 )
+random_rotation_on_ready = false
+
+[node name="AnimationPlayer" parent="." index="1"]
+anims/GenericAtk = SubResource( 2 )
+
+[node name="SFX" parent="." index="2"]
+sfx_1 = ExtResource( 2 )
+random_sfx_to_play = 1

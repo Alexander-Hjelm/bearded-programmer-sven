@@ -35,8 +35,8 @@ func change_anim_state(new_state):
 			$FXMovementAnim.play("mov_death")
 
 # Update a given stat on the visual label node
-func set_stat(stat_name: String, value: float):
-	pass
+func set_stat(stat_name, value):
+	$Pos/StatLabel.text = str(stat_name) + str(value)
 
 func show_attack_fx():
 	if has_random_atk_fx:
