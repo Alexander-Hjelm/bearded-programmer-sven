@@ -61,6 +61,6 @@ func _on_battle_over():
 	# The battle was won, create the next combat encounter
 	if _active_combat_encounter < _combat_encounters.size():
 		var player_character: Character = character_database.characters["Bearded Programmer Sven"]
-		combat_manager.create_combat_encounter([player_character], _combat_encounters[_active_combat_encounter])
 		combat_manager.keep_track_of_svens_morph_state(_active_combat_encounter)
+		combat_manager.create_combat_encounter([player_character], _combat_encounters[_active_combat_encounter])
 		_active_combat_encounter = _active_combat_encounter + 1

@@ -56,3 +56,8 @@ func update_player_HUD_stats(player_hp, player_hp_max): ## Update player hp
 func attack_enemy():
 	inactivate_player_input()
 	combat_manager.player_attack()
+
+
+func show_pop_up_message(text):
+	$MessagePanel/MessagePanelAnim.play("Popup Long Show Message")
+	$MessagePanel/MessageText.text = str(text)
