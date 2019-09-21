@@ -119,6 +119,8 @@ func drop_item(dropping_character: Character):
 		counted = counted + item_drops[item]
 		if counted > r:
 			inventory.add_item(item)
+			HUD.show_pop_up_message("Sven got an item! (" + item + ")")
+			return
 
 # Tick routine for a single character
 func tick_character(character: Character, team: int):
