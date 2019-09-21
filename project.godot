@@ -53,6 +53,21 @@ _global_script_classes=[ {
 "class": "ItemDatabase",
 "language": "GDScript",
 "path": "res://Script/item_database.gd"
+}, {
+"base": "RigidBody2D",
+"class": "OverworldActor",
+"language": "GDScript",
+"path": "res://Script/overworld_actor.gd"
+}, {
+"base": "OverworldActor",
+"class": "OverworldEnemy",
+"language": "GDScript",
+"path": "res://Script/overworld_enemy.gd"
+}, {
+"base": "OverworldActor",
+"class": "OverworldPlayer",
+"language": "GDScript",
+"path": "res://Script/overworld_player.gd"
 } ]
 _global_script_class_icons={
 "AnimatedActor": "",
@@ -63,7 +78,10 @@ _global_script_class_icons={
 "ElementDatabase": "",
 "Inventory": "",
 "Item": "",
-"ItemDatabase": ""
+"ItemDatabase": "",
+"OverworldActor": "",
+"OverworldEnemy": "",
+"OverworldPlayer": ""
 }
 
 [application]
