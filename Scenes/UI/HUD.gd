@@ -65,8 +65,8 @@ func set_player_names(player_name : String):
 
 
 func set_enemy_name(enemy_index: int, enemy_name : String):
-	get_node("BadGuyPanel/EnemyTeamLabel" + str(enemy_index)).text = enemy_name
-	get_node("BadGuyPanel/EnemyTeamLabel" + str(enemy_index)).visible = true
+	get_node("BadGuyPanel/EnemyTeamLabel" + str(enemy_index+1)).text = enemy_name
+	get_node("BadGuyPanel/EnemyTeamLabel" + str(enemy_index+1)).visible = true
 
 
 func update_player_HUD_stats(player_hp, player_hp_max): ## Update player hp
