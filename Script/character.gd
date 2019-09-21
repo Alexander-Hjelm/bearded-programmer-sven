@@ -1,7 +1,9 @@
 class_name Character
 
+# The character's name
 var _name: String
 
+# The path at which the instantiated AnimatedActor is located
 var _resource_path: String
 
 # Base stat values, type: <string, float>
@@ -24,20 +26,22 @@ func _init(name: String, resource_path: String, base_stats: Dictionary, item_nam
 	self._active_effects = []
 	self._item_names_by_slot = item_names_by_slot
 	
-	# Initialize base stats
+	# Initialize base stats to 0
 	self._base_stats["hp"] = 0.0
 	self._base_stats["mp"] = 0.0
 	self._base_stats["speed"] = 0.0
 	
-	# Add element attack and resistances
+	# Add attack and resistance stats for every element
 	for element in ElementDatabase.Element.keys():
 		self._base_stats["element_attack_" + str(element)] = 0.0
 		self._base_stats["element_resist_" + str(element)] = 0.0
 	
-	# Initialize any specified stats
+	# Initialize any stats that were specified in the constructor
+	# Overrides all other stats
 	for stat in base_stats.keys():
 		self._base_stats[stat] = base_stats[stat]
 
+# Return an exact copy of this character
 func deep_copy() -> Character:
 	# Copy base stats
 	var base_stats_copy: Dictionary
@@ -49,6 +53,7 @@ func deep_copy() -> Character:
 		item_names_by_slot_copy[item_name] = _item_names_by_slot[item_name]
 	return get_script().new(_name, base_stats_copy, item_names_by_slot_copy)
 
+# Tick. Go over all non-permanent effects and remove them once they expire
 func tick():
 	for effect in _active_effects:
 		effect.tick()
@@ -76,8 +81,10 @@ func get_current_value_for_stat(stat: String) -> float:
 	var current_value: float = _base_stats[stat]
 	# Add any stat offsets due to equipped items
 	for item_name in _item_names_by_slot.values():
+		# The Weapon slot should not contribute to the character's stats
 		if _item_names_by_slot["Weapon"] == item_name:
 			continue
+		# Get the item from the database and go through all PERMANENT effects
 		var item = item_database.items[item_name]
 		for effect in item.get_inflicted_effects():
 			if effect.is_permanent():
@@ -109,10 +116,12 @@ func add_effect(effect: Effect, element: int, src_actor_element_attack: float) -
 		return 0
 	
 	# The element factor decides how much of the incoming effect is resisted
+	# Element factor = attacker's Element Attack - defender's Element Resist
 	var element_factor: float = (src_actor_element_attack - get_element_resist(element))/100.0
 	element_factor = min(element_factor, 1.0)
 	element_factor = max(element_factor, 0.0)
 	
+	# Keep track of how much all stats have been rasied/lowered in total
 	var total_stats_raised: float = 0.0
 	
 	# Deep copy the incoming effect and apply the element factor to it,
@@ -126,10 +135,12 @@ func add_effect(effect: Effect, element: int, src_actor_element_attack: float) -
 		if stat != "hp" or stat != "mp":
 			total_stats_raised = total_stats_raised + stat_effects[stat]
 	
+	# If the effect is permanent, add it to the character as a permanent stat offset
 	if effect_copy.is_permanent():
 		for stat in effect_copy.get_stat_effects().keys():
 			add_permanent_stat_offset(stat, effect_copy.get_stat_effects()[stat])
 			print("The effect was added as a permanent stat offset")
+	# If the effect is not permanent, add it as an effect. It will be deleted after it's duration expires
 	else:
 		_active_effects.append(effect_copy)
 		print("The effect was added (non-permanent")
@@ -141,6 +152,8 @@ func add_effect(effect: Effect, element: int, src_actor_element_attack: float) -
 	else:
 		return -1
 
+# Add a permanent stat offset
+# This works similarily to Effects, but permanent offsets are never removed.
 func add_permanent_stat_offset(stat: String, value: float):
 	if _permanent_stat_offsets.has(stat):
 		_permanent_stat_offsets[stat] = _permanent_stat_offsets[stat] + value
@@ -153,15 +166,19 @@ func add_permanent_stat_offset(stat: String, value: float):
 		if _permanent_stat_offsets[stat] > 0:
 			_permanent_stat_offsets[stat] = 0
 
+# Get the item on the "Weapon" slot
 func get_weapon() -> Item:
 	var weapon_name: String = _item_names_by_slot["Weapon"]
 	return item_database.items[weapon_name]
 
+# Get all available stats as strings
 func get_stat_keys() -> Array:
 	return _base_stats.keys()
 
+# Get elemental attack power
 func get_element_attack(element: int) -> float:
 	return get_current_value_for_stat("element_attack_" + str(ElementDatabase.Element.keys()[element]))
 
+# Get elemental resistance
 func get_element_resist(element: int) -> float:
 	return get_current_value_for_stat("element_resist_" + str(ElementDatabase.Element.keys()[element]))

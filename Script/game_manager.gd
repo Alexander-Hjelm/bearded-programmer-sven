@@ -1,22 +1,26 @@
 extends Node2D
 
+# A ticking timer that controls the heartbeat of the combat manager
 var _tick_delta: float = 0.05
 var _tick_timer: Timer
 
+# A timer that enforces a wait time after the combat encounter is won/lost
 var _battle_over_wait: float = 1.0
 var _battle_over_timer: Timer
 
+# All possible combat encounters that will play out, in order
 var _combat_encounters: Array = [
 	[character_database.characters["Segfault"]],
 	[character_database.characters["Stack Overflow"]],
 	[character_database.characters["Blue Screen of Death"]]
 ]
 
+# Which combat encounter are we currently on?
 var _active_combat_encounter: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Test combat encounter
+	# Spawn up the first combat encounter
 	var player_character: Character = character_database.characters["Bearded Programmer Sven"]
 	combat_manager.create_combat_encounter([player_character], _combat_encounters[_active_combat_encounter])
 	_active_combat_encounter = _active_combat_encounter + 1
@@ -36,18 +40,22 @@ func _ready():
 	_battle_over_timer.one_shot = true
 	add_child(_battle_over_timer)
 
-
+# Tick the combat manager
 func _on_tick():
 	combat_manager.tick()
 	_tick_timer.start(_tick_delta)
 
+# The battle was won
 func _on_combat_win():
+	# Wait for a short period to allow all death animations to play out
 	_battle_over_timer.start(_battle_over_wait)
 
+# The battle was lost
 func _on_combat_fail():
 	pass
 
 func _on_battle_over():
+	# The battle was won, create the next combat encounter
 	var player_character: Character = character_database.characters["Bearded Programmer Sven"]
 	combat_manager.create_combat_encounter([player_character], _combat_encounters[_active_combat_encounter])
 	_active_combat_encounter = _active_combat_encounter + 1

@@ -13,6 +13,7 @@ func _init(stat_effects: Dictionary, permanent: bool, time: int):
 	self._permanent = permanent
 	self._time = time
 
+# Return an exact copy of this effect
 func deep_copy() -> Effect:
 	var _stat_effects_copy: Dictionary
 	for stat in _stat_effects.keys():
@@ -22,9 +23,11 @@ func deep_copy() -> Effect:
 func tick():
 	_time = _time - 1
 
+# Has this effect expired or not?
 func is_completed() -> bool:
 	return _time > 0
 
+# Get a dictionary of all effected stats
 func get_stat_effects() -> Dictionary:
 	return _stat_effects
 
