@@ -99,6 +99,8 @@ func show_inventory():
 			get_node("InventoryPanel/VBoxContainer").add_child(item_button_instance)
 			item_button_instance.text = str(num_of_items) + "x " + item
 			item_button_instance.connect("pressed", self, "item_button_clicked", [item])
+			item_button_instance.connect("mouse_entered", self, "on_mouse_over_item", [item])
+			item_button_instance.connect("mouse_exited", self, "on_mouse_left_item")
 	
 	# Finally, show the inventory
 	get_node("InventoryPanel").visible = true
@@ -120,6 +122,7 @@ func item_button_clicked(item_name: String):
 	get_node("InventoryPanel").visible = false
 	
 	inactivate_player_input()
+	$DescriptionPanel.visible = false
 
 
 func on_monster_label_clicked(monster_index: int):
@@ -141,3 +144,10 @@ func notify_enemy_dead(enemy_index: int):
 func show_pop_up_message(text):
 	$MessagePanel/MessagePanelAnim.play("Popup Long Show Message")
 	$MessagePanel/MessageText.text = str(text)
+
+func on_mouse_over_item(item_name: String):
+	$DescriptionPanel/DescriptionLabel.text = item_database.items[item_name].get_description()
+	$DescriptionPanel.visible = true
+
+func on_mouse_left_item():
+	$DescriptionPanel.visible = false

@@ -13,14 +13,13 @@ shader_param/colorTint2 = Color( 0.501961, 0.345098, 0.619608, 1 )
 shader_param/uvScrollSpeedY = 0.16
 shader_param/uvSwaySpeed = 0.96
 shader_param/uvSwayAmp = 0.09
-shader_param/uvWaveSpeed = 0.028
-shader_param/uvWaveAmp = 0.01
+shader_param/uvWaveSpeed = 0.077
+shader_param/uvWaveAmp = 0.078
 shader_param/albedoBaseChannel = ExtResource( 2 )
 
 [node name="MainScene" type="Node2D"]
 
 [node name="BGSprite" type="Sprite" parent="."]
-editor/display_folded = true
 material = SubResource( 1 )
 position = Vector2( 252.695, 215.02 )
 z_index = -20

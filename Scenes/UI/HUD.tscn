@@ -179,11 +179,10 @@ margin_bottom = 14.5
 clip_text = true
 
 [node name="InventoryPanel" type="Panel" parent="."]
-editor/display_folded = true
 visible = false
-margin_left = 22.0
+margin_left = 514.0
 margin_top = 287.0
-margin_right = 399.0
+margin_right = 833.0
 margin_bottom = 737.0
 theme = ExtResource( 2 )
 
@@ -204,6 +203,39 @@ align = 1
 margin_top = 67.0
 margin_right = 375.0
 margin_bottom = 447.0
+
+[node name="DescriptionPanel" type="Panel" parent="."]
+visible = false
+margin_left = 832.0
+margin_top = 470.0
+margin_right = 1183.0
+margin_bottom = 737.0
+theme = ExtResource( 2 )
+
+[node name="DescriptiongHeaderLebel" type="Label" parent="DescriptionPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -118.5
+margin_top = -118.5
+margin_right = 109.5
+margin_bottom = -67.5
+theme = ExtResource( 2 )
+text = "Description"
+align = 1
+
+[node name="DescriptionLabel" type="Label" parent="DescriptionPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -155.5
+margin_top = -72.5
+margin_right = 153.5
+margin_bottom = 131.5
+theme = ExtResource( 2 )
+autowrap = true
 
 [node name="TimerPanel" type="Panel" parent="."]
 editor/display_folded = true
