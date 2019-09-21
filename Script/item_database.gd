@@ -33,7 +33,7 @@ var items : Dictionary = {
 	# Player Weapon, default weapon for the player
 	"Player Weapon": Item.new("Player Weapon", ElementDatabase.Element.glitch,
 		[
-			Effect.new({"hp": -10.0}, true, 0)
+			Effect.new({"hp": -5.0}, true, 0)
 		],
 		Item.ItemType.EQUIPPABLE
 	),

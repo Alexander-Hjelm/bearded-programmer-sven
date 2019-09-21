@@ -32,7 +32,8 @@ func _init():
 func create_combat_encounter(characters_team_0: Array, characters_team_1: Array):
 	# Clear up any old character references
 	for character_node in _visual_character_representations.values():
-		character_node.queue_free()
+		if str(character_node) != "[Deleted Object]":
+			character_node.queue_free()
 	_characters_by_team[0] = []
 	_characters_by_team[1] = []
 	_visual_character_representations.clear()
