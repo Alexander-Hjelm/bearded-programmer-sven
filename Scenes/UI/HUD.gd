@@ -55,4 +55,4 @@ func update_player_HUD_stats(player_hp, player_hp_max): ## Update player hp
 
 func attack_enemy():
 	inactivate_player_input()
-	##CONTINUE ATTACK LOOP
+	combat_manager.player_attack()

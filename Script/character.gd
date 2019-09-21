@@ -76,6 +76,8 @@ func get_current_value_for_stat(stat: String) -> float:
 	var current_value: float = _base_stats[stat]
 	# Add any stat offsets due to equipped items
 	for item_name in _item_names_by_slot.values():
+		if _item_names_by_slot["Weapon"] == item_name:
+			continue
 		var item = item_database.items[item_name]
 		for effect in item.get_inflicted_effects():
 			if effect.is_permanent():

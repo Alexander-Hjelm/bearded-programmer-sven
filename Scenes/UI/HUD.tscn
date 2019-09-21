@@ -197,17 +197,10 @@ margin_right = 304.0
 margin_bottom = 1027.0
 
 [node name="InputBGPanel" type="Panel" parent="InputPopUpMenu"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -35.0
 theme = ExtResource( 2 )
-
-[node name="AttackButton" type="Button" parent="InputPopUpMenu/InputBGPanel"]
-margin_left = 16.0
-margin_top = 26.0
-margin_right = 272.0
-margin_bottom = 69.0
 
 [node name="AttackPanel" type="NinePatchRect" parent="InputPopUpMenu/InputBGPanel"]
 anchor_right = 1.0
@@ -223,15 +216,14 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="DoSomething" type="Button" parent="InputPopUpMenu/InputBGPanel"]
-visible = false
+[node name="AttackButton" type="Button" parent="InputPopUpMenu/InputBGPanel"]
 margin_left = 16.0
-margin_top = 85.0
+margin_top = 26.0
 margin_right = 272.0
-margin_bottom = 128.0
+margin_bottom = 69.0
+text = "Attack"
 
 [node name="DoSomethingPanel" type="NinePatchRect" parent="InputPopUpMenu/InputBGPanel"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
@@ -244,3 +236,9 @@ patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
+
+[node name="DoSomething" type="Button" parent="InputPopUpMenu/InputBGPanel"]
+margin_left = 16.0
+margin_top = 85.0
+margin_right = 272.0
+margin_bottom = 128.0

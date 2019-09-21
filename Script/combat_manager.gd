@@ -42,6 +42,9 @@ func create_combat_encounter(characters_team_0: Array, characters_team_1: Array)
 	for character in characters_team_1:
 		register_character(character, 1)
 	
+	# Interface with HUD
+	
+	
 	_combat_over_signal_emitted = false
 
 func register_character(character: Character, team: int):
@@ -71,6 +74,11 @@ func tick():
 			return
 		tick_character(character, 1)
 	
+	# Update HUD
+	var player_hp: float = _characters_by_team[0][0].get_current_value_for_stat("hp")
+	var player_hp_max: float = _characters_by_team[0][0].get_base_value_for_stat("hp")
+	HUD.update_player_HUD_stats(player_hp, player_hp_max)
+	
 	# If there are no more enemies left, notify the game manager that the fight has ended
 	if not _combat_over_signal_emitted:
 		if len(_characters_by_team[0]) == 0:
@@ -82,17 +90,32 @@ func tick():
 
 func tick_character(character: Character, team: int):
 	_character_timers[character] = _character_timers[character] - 1.0
+	
+	# Update HUD Timer
+	if team == 0:
+		HUD.update_player_HUD_timer(100 - 100*_character_timers[character]/character.get_current_value_for_stat("speed"), false)
+	
 	if _character_timers[character] <= 0.0:
-		# TODO: if the active character is in team 0, show ui
-		
-		# AI: Pick a random character on the other team to attack
 		var other_team: int = 0
 		if team == 0:
 			other_team = 1
-		var rand_index = randi()%len(_characters_by_team[other_team])
-		var target_character: Character = _characters_by_team[other_team][rand_index]
-		attack(character, target_character, character.get_weapon())
-		reset_character_timer(character)
+		
+		if team == 0:
+			# If the active character is in team 0, show ui
+			HUD.activate_player_input()
+			_ticking_active = false
+		else:
+			# AI: Pick a random character on the other team to attack
+			var rand_index = randi()%len(_characters_by_team[other_team])
+			var target_character: Character = _characters_by_team[other_team][rand_index]
+			attack(character, target_character, character.get_weapon())
+			reset_character_timer(character)
+
+func player_attack():
+	var player_character: Character = _characters_by_team[0][0]
+	var target_character: Character = _characters_by_team[1][0]
+	attack(player_character, target_character, player_character.get_weapon())
+	reset_character_timer(player_character)
 
 func reset_character_timer(character: Character):
 	_character_timers[character] = 100.0 - character.get_current_value_for_stat("speed")

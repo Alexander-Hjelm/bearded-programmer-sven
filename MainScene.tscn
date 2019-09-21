@@ -1,15 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://GFX/BG/bg.shader" type="Shader" id=1]
 [ext_resource path="res://GFX/BG/bg_1.png" type="Texture" id=2]
 [ext_resource path="res://GFX/BG/bg_2.png" type="Texture" id=3]
 [ext_resource path="res://GFX/BG/black16.png" type="Texture" id=4]
 [ext_resource path="res://Script/game_manager.gd" type="Script" id=5]
-[ext_resource path="res://Script/combat_manager.gd" type="Script" id=6]
-[ext_resource path="res://Script/item_database.gd" type="Script" id=7]
-[ext_resource path="res://Script/element_database.gd" type="Script" id=8]
-[ext_resource path="res://Script/character_database.gd" type="Script" id=9]
-[ext_resource path="res://Scenes/UI/HUD.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
@@ -25,8 +20,10 @@ shader_param/albedoBaseChannel = ExtResource( 2 )
 [node name="MainScene" type="Node2D"]
 
 [node name="BGSprite" type="Sprite" parent="."]
+editor/display_folded = true
 material = SubResource( 1 )
 position = Vector2( 252.695, 215.02 )
+z_index = -20
 texture = ExtResource( 3 )
 offset = Vector2( 79.5562, 181.063 )
 
@@ -63,32 +60,20 @@ offset = Vector2( 79.5562, 181.063 )
 [node name="BlackBroderTop" type="Sprite" parent="."]
 position = Vector2( 581.135, 19.0207 )
 scale = Vector2( 200, 10 )
+z_index = -10
 texture = ExtResource( 4 )
 
 [node name="BlackBroderBottom" type="Sprite" parent="."]
 position = Vector2( 570, 1010 )
 scale = Vector2( 200, 10 )
+z_index = -10
 texture = ExtResource( 4 )
 
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource( 5 )
-
-[node name="CombatMananger" type="Node2D" parent="."]
-script = ExtResource( 6 )
-
-[node name="ItemDatabase" type="Node2D" parent="."]
-script = ExtResource( 7 )
-
-[node name="ElementDatabase" type="Node2D" parent="."]
-script = ExtResource( 8 )
-
-[node name="CharacterDatabase" type="Node2D" parent="."]
-script = ExtResource( 9 )
 
 [node name="Team0StartPos" type="Node2D" parent="."]
 position = Vector2( 243.516, 453.616 )
 
 [node name="Team1StartPos" type="Node2D" parent="."]
 position = Vector2( 1615.09, 446.242 )
-
-[node name="HUD" parent="." instance=ExtResource( 10 )]
