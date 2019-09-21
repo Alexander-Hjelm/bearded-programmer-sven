@@ -73,7 +73,7 @@ texture = ExtResource( 4 )
 script = ExtResource( 5 )
 
 [node name="Team0StartPos" type="Node2D" parent="."]
-position = Vector2( 243.516, 453.616 )
+position = Vector2( 276.999, 453.616 )
 
 [node name="Team1StartPos" type="Node2D" parent="."]
 position = Vector2( 1615.09, 446.242 )
