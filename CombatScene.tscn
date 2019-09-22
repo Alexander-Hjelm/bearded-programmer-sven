@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://GFX/BG/bg.shader" type="Shader" id=1]
 [ext_resource path="res://GFX/BG/bg_1.png" type="Texture" id=2]
 [ext_resource path="res://GFX/BG/bg_2.png" type="Texture" id=3]
 [ext_resource path="res://GFX/BG/black16.png" type="Texture" id=4]
+[ext_resource path="res://Audio/MUSIC/ChipTuneBattleOrchestra.ogg" type="AudioStream" id=5]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
@@ -94,3 +95,7 @@ position = Vector2( -442.298, -57.3693 )
 
 [node name="Pos6" type="Position2D" parent="Team1StartPos"]
 position = Vector2( -510.771, 81.427 )
+
+[node name="DaMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
