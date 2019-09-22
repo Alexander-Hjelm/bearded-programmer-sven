@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Audio/MUSIC/ChipTuneBattleOrchestra.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Scenes/Audio/DaMusicManager.gd" type="Script" id=2]
+[ext_resource path="res://Audio/Random_SFXAudioStream.gd" type="Script" id=3]
+[ext_resource path="res://Audio/SFX/Swoosh/whoosh_swish_high_big_04.wav" type="AudioStream" id=4]
+[ext_resource path="res://Audio/SFX/UI/sci-fi_alarm_warning_loop_01.wav" type="AudioStream" id=5]
+[ext_resource path="res://Audio/SFX/UI/sci-fi_alarm_warning_loop_02.wav" type="AudioStream" id=6]
+
+[node name="DaMusic" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -12.0
+script = ExtResource( 2 )
+combat_music_1 = ExtResource( 1 )
+boss_music_1 = ExtResource( 1 )
+intro_music = ExtResource( 1 )
+overworld_music = ExtResource( 1 )
+
+[node name="SFX1" type="AudioStreamPlayer" parent="."]
+bus = "SFX"
+script = ExtResource( 3 )
+sfx_1 = ExtResource( 4 )
+sfx_2 = ExtResource( 5 )
+sfx_3 = ExtResource( 6 )
+random_sfx_to_play = 2
+
+[node name="SFX2" type="AudioStreamPlayer" parent="."]
+bus = "SFX"
+
+[node name="SFX3" type="AudioStreamPlayer" parent="."]
+bus = "SFX"

@@ -381,6 +381,18 @@ tracks/9/keys = {
 "update": 1,
 "values": [ false, true ]
 }
+tracks/10/type = "value"
+tracks/10/path = NodePath("../MainGame/Button:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 14.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0, 0, 1, 1 )
@@ -413,6 +425,7 @@ script = ExtResource( 1 )
 [node name="TheCanvas" type="CanvasLayer" parent="."]
 
 [node name="TheIntro" type="Control" parent="TheCanvas"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -431,7 +444,9 @@ margin_top = -500.5
 margin_right = 919.0
 margin_bottom = 500.5
 theme = ExtResource( 2 )
-text = "M"
+text = "MSDOUCH Version 3.11
+
+C:/RUNGAME$$$.EXE"
 
 [node name="TheIntroSFX" type="AudioStreamPlayer" parent="TheCanvas/TheIntro"]
 stream = ExtResource( 3 )
@@ -477,7 +492,6 @@ custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "MERGE ERROR!!!"
 
 [node name="ColorRect2" type="ColorRect" parent="TheCanvas"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 0.445679
@@ -487,7 +501,6 @@ margin_bottom = 634.11
 color = Color( 0, 0, 0, 1 )
 
 [node name="MainGame" type="Panel" parent="TheCanvas"]
-visible = false
 margin_left = 523.446
 margin_top = 324.11
 margin_right = 1382.45

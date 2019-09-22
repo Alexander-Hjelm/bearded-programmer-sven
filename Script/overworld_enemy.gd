@@ -23,4 +23,5 @@ func _on_body_enter_big(body):
 func _on_body_enter_small(body):
 	if body.name == "OverworldPlayer":
 		game_manager.start_combat_encounter(enounter_enemy_names)
+		DaMusicManager.play_encounter_sfx()
 		queue_free()

@@ -99,7 +99,7 @@ _global_script_class_icons={
 [application]
 
 config/name="bearded-programmer-sven"
-run/main_scene="res://MainScene.tscn"
+run/main_scene="res://TheIntroScene.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -114,6 +114,7 @@ inventory="*res://Script/inventory.gd"
 game_manager="*res://Script/game_manager.gd"
 CombatScene="*res://CombatScene.tscn"
 Overworld="*res://Overworld.tscn"
+DaMusicManager="*res://Scenes/Audio/DaMusicManager.tscn"
 
 [display]
 

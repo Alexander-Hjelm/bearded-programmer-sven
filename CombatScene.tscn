@@ -1,20 +1,20 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://GFX/BG/bg.shader" type="Shader" id=1]
-[ext_resource path="res://GFX/BG/bg_2.png" type="Texture" id=2]
-[ext_resource path="res://GFX/BG/black16.png" type="Texture" id=3]
-[ext_resource path="res://Audio/MUSIC/ChipTuneBattleOrchestra.ogg" type="AudioStream" id=4]
+[ext_resource path="res://GFX/BG/bg_1.png" type="Texture" id=2]
+[ext_resource path="res://GFX/BG/bg_2.png" type="Texture" id=3]
+[ext_resource path="res://GFX/BG/black16.png" type="Texture" id=4]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
-shader_param/colorTint1 = Color( 0.0117647, 0, 0.188235, 1 )
-shader_param/colorTint2 = Color( 0.415686, 0.243137, 0.545098, 1 )
-shader_param/uvScrollSpeedY = 0.1
-shader_param/uvSwaySpeed = 0.44
-shader_param/uvSwayAmp = 0.2
-shader_param/uvWaveSpeed1 = 0.0
-shader_param/uvWaveSpeed2 = 4.63
-shader_param/uvWaveAmp = 0.254
+shader_param/colorTint1 = Color( 0.0156863, 0, 0.266667, 1 )
+shader_param/colorTint2 = Color( 0.501961, 0.345098, 0.619608, 1 )
+shader_param/uvScrollSpeedY = 0.16
+shader_param/uvSwaySpeed = 0.96
+shader_param/uvSwayAmp = 0.09
+shader_param/uvWaveSpeed1 = null
+shader_param/uvWaveSpeed2 = null
+shader_param/uvWaveAmp = 0.172
 shader_param/albedoBaseChannel = ExtResource( 2 )
 
 [node name="CombatScene" type="Node2D"]
@@ -24,20 +24,20 @@ material = SubResource( 1 )
 position = Vector2( 710.939, 282.196 )
 scale = Vector2( 3.06741, 1.57672 )
 z_index = -20
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 offset = Vector2( 79.5562, 181.063 )
 
 [node name="BlackBroderTop" type="Sprite" parent="."]
 position = Vector2( 581.135, 19.0207 )
 scale = Vector2( 200, 10 )
 z_index = -10
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="BlackBroderBottom" type="Sprite" parent="."]
 position = Vector2( 570, 1010 )
 scale = Vector2( 200, 10 )
 z_index = -10
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="Team0StartPos" type="Node2D" parent="."]
 editor/display_folded = true
@@ -65,8 +65,3 @@ position = Vector2( -442.298, -57.3693 )
 
 [node name="Pos6" type="Position2D" parent="Team1StartPos"]
 position = Vector2( -510.771, 81.427 )
-
-[node name="DaMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
-volume_db = -12.0
-autoplay = true
