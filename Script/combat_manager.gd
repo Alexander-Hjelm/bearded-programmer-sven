@@ -108,10 +108,6 @@ func tick():
 		var player_hp_max: float = _characters_by_team[0][0].get_base_value_for_stat("hp")
 		HUD.update_player_HUD_stats(player_hp, player_hp_max)
 		
-		if len(_characters_by_team[0]) == 0:
-			# Player is dead, FAILED
-			_combat_over_signal_emitted = true
-			emit_signal("combat_over_fail")
 		if len(_characters_by_team[1]) == 0:
 			# All enemies are dead, WIN
 			# Clear (non permanent) player effects
@@ -246,7 +242,9 @@ func on_hurt_timer_timeout():
 		
 		# If player
 		elif _characters_by_team[0].values().find(_queued_target_character) > -1:
-			_characters_by_team[0].erase(0)
+			# Player is dead, FAILED
+			_combat_over_signal_emitted = true
+			emit_signal("combat_over_fail")
 		
 		print(_queued_target_character.get_name() + " has died")
 	

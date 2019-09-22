@@ -88,6 +88,7 @@ func _on_combat_win():
 
 # The battle was lost
 func _on_combat_fail():
+	_tick_timer.stop()
 	var game_over_scene_instance = game_over_scene.instance()
 	get_tree().get_root().add_child(game_over_scene_instance)
 
