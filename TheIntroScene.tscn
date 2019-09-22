@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://TheIntroScene.gd" type="Script" id=1]
 [ext_resource path="res://Themes/BattleTheme.tres" type="Theme" id=2]
@@ -147,6 +147,24 @@ tracks/10/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../MainGame/SvenLabel:text")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Bearded Programmer Sven - 
+
+A Game by Alexander Hjelm and Robert Arnborg
+
+Lead Programmer + PixiArt- Alexander Hjelm
+
+Cell Animations Music/SFX and Sh# - Robert Arnborg" ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -530,6 +548,46 @@ tracks/10/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/11/type = "value"
+tracks/11/path = NodePath("../MainGame/SvenLabel:text")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Bearded Programmer Sven - 
+
+A Game by Alexander Hjelm and Robert Arnborg
+
+Lead Programmer + PixiArt- Alexander Hjelm
+
+Cell Animations Music/SFX and Sh# - Robert Arnborg" ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "WTF"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../MainGame/SvenLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "You are Sven, you have merged with game and must 
+merge with the gamemaker to become whole again.
+
+Move with arrow keys. Use mouse to interact with GUI.
+Merge with your brain to read screen for information.
+
+Now play the game, Sven, Programmer, Warrior. 
+May the Merge be with you." ]
+}
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 1, 1 )
@@ -605,7 +663,6 @@ margin_top = -500.5
 margin_right = 919.0
 margin_bottom = 500.5
 theme = ExtResource( 2 )
-text = "M"
 
 [node name="TheIntroSFX" type="AudioStreamPlayer" parent="TheCanvas/TheIntro"]
 stream = ExtResource( 3 )
@@ -615,6 +672,7 @@ volume_db = -12.0
 autoplay = "TheIntroAnim"
 anims/IntroDone = SubResource( 1 )
 anims/TheIntroAnim = SubResource( 2 )
+anims/WTF = SubResource( 15 )
 
 [node name="GamePanel" type="Panel" parent="TheCanvas/TheIntro"]
 visible = false
@@ -661,7 +719,6 @@ margin_bottom = 631.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="MainGame" type="Panel" parent="TheCanvas"]
-visible = false
 margin_left = 523.446
 margin_top = 324.11
 margin_right = 1382.45
@@ -669,18 +726,19 @@ margin_bottom = 773.11
 theme = SubResource( 12 )
 
 [node name="SvenLabel" type="Label" parent="TheCanvas/MainGame"]
-margin_left = 0.554321
+margin_left = 27.0
 margin_top = 46.0
-margin_right = 838.554
+margin_right = 830.0
 margin_bottom = 281.0
 theme = ExtResource( 2 )
-text = "Bearded Programmer Sven - 
+text = "You are Sven, you have merged with game and must 
+merge with the gamemaker to become whole again.
 
-A Game by Alexander Hjelm and Robert Arnborg
+Move with arrow keys. Use mouse to interact with GUI.
+Merge with your brain to read screen for information.
 
-Lead Programmer + PixiArt- Alexander Hjelm
-
-Cell Animations Music/SFX and Sh# - Robert Arnborg"
+Now play the game, Sven, Programmer, Warrior. 
+May the Merge be with you."
 align = 1
 
 [node name="MERGE ERROR" type="Label" parent="TheCanvas/MainGame"]
@@ -694,11 +752,23 @@ custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "MERGE ERROR!!!"
 
 [node name="Button" type="Button" parent="TheCanvas/MainGame"]
-margin_left = 323.554
+margin_left = 152.554
 margin_top = 341.89
-margin_right = 526.554
+margin_right = 355.554
 margin_bottom = 391.89
 theme = ExtResource( 2 )
-disabled = true
 text = "Start this Game"
+
+[node name="WTFButton" type="Button" parent="TheCanvas/MainGame/Button"]
+margin_left = 350.0
+margin_right = 553.0
+margin_bottom = 50.0
+theme = ExtResource( 2 )
+text = "Story/WTF"
+
+[node name="UISound" type="AudioStreamPlayer" parent="TheCanvas/MainGame/Button/WTFButton"]
+stream = ExtResource( 7 )
+volume_db = -12.0
+bus = "SFX"
 [connection signal="button_up" from="TheCanvas/MainGame/Button" to="." method="_on_Button_button_up"]
+[connection signal="pressed" from="TheCanvas/MainGame/Button/WTFButton" to="." method="_on_WTFButton_pressed"]
