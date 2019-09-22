@@ -67,6 +67,12 @@ func start_combat_encounter(enemy_names: Array):
 	Overworld.visible = false
 	_overworld_running = false
 	
+	# Randomize background texture and color
+	Global.combat_background.randomize_color_and_texture()
+	
+	if enemy_names.has("Godot Boss"):
+		Global.combat_background.set_boss_background()
+	
 	Global.combat_camera.current = true
 	Global.overworld_camera.current = false
 

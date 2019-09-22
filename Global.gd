@@ -12,3 +12,5 @@ var overworld_camera: Camera2D
 var combat_camera: Camera2D
 
 var overworld_player: OverworldPlayer
+
+var combat_background: CombatBackground

@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/character_database.gd"
 }, {
+"base": "Node2D",
+"class": "CombatBackground",
+"language": "GDScript",
+"path": "res://Script/combat_background.gd"
+}, {
 "base": "Camera2D",
 "class": "CombatCamera",
 "language": "GDScript",
@@ -83,6 +88,7 @@ _global_script_class_icons={
 "AnimatedActor": "",
 "Character": "",
 "CharacterDatabase": "",
+"CombatBackground": "",
 "CombatCamera": "",
 "CombatManager": "",
 "Effect": "",
@@ -99,7 +105,7 @@ _global_script_class_icons={
 [application]
 
 config/name="bearded-programmer-sven"
-run/main_scene="res://TheIntroScene.tscn"
+run/main_scene="res://MainScene.tscn"
 config/icon="res://icon.png"
 
 [autoload]
