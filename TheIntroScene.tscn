@@ -2,10 +2,10 @@
 
 [ext_resource path="res://TheIntroScene.gd" type="Script" id=1]
 [ext_resource path="res://Themes/BattleTheme.tres" type="Theme" id=2]
-[ext_resource path="res://Audio/SFX/Explosions/explosion_small_no_tail_01.wav" type="AudioStream" id=3]
-[ext_resource path="res://Audio/SFX/UI/retro_blip_beep_01.wav" type="AudioStream" id=4]
-[ext_resource path="res://Audio/SFX/UI/retro_blip_beep_02.wav" type="AudioStream" id=5]
-[ext_resource path="res://Audio/SFX/UI/retro_blip_beep_03.wav" type="AudioStream" id=6]
+[ext_resource path="res://Audio/SFX/UI/retro_blip_beep_03.wav" type="AudioStream" id=3]
+[ext_resource path="res://Audio/SFX/Explosions/explosion_small_no_tail_01.wav" type="AudioStream" id=4]
+[ext_resource path="res://Audio/SFX/UI/retro_blip_beep_01.wav" type="AudioStream" id=5]
+[ext_resource path="res://Audio/SFX/UI/retro_blip_beep_02.wav" type="AudioStream" id=6]
 [ext_resource path="res://Audio/SFX/UI/ui_button_simple_click_04.wav" type="AudioStream" id=7]
 [ext_resource path="res://Audio/SFX/UI/hospital_beep_alarm_glitch_01.wav" type="AudioStream" id=8]
 [ext_resource path="res://Audio/SFX/UI/beep_10.wav" type="AudioStream" id=9]
@@ -36,7 +36,7 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 3 )
+"stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -226,10 +226,6 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 4 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
 "stream": ExtResource( 5 )
 }, {
 "end_offset": 0.0,
@@ -238,39 +234,43 @@ tracks/1/keys = {
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 6 )
+"stream": ExtResource( 3 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 6 )
+"stream": ExtResource( 3 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 6 )
+"stream": ExtResource( 3 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 4 )
+"stream": ExtResource( 3 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 4 )
+"stream": ExtResource( 5 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 6 )
+"stream": ExtResource( 5 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 4 )
+"stream": ExtResource( 3 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 6 )
+"stream": ExtResource( 5 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 6 )
+"stream": ExtResource( 3 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -374,43 +374,43 @@ tracks/1/keys = {
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
+"stream": ExtResource( 5 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 9 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 9 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 9 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 9 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 9 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 9 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
 "stream": ExtResource( 4 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 9 )
+"stream": ExtResource( 4 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 9 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 9 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 9 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 9 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 9 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 3 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 3 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 3 )
+"stream": ExtResource( 4 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -418,7 +418,7 @@ tracks/1/keys = {
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 3 )
+"stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6, 1, 1.4, 1.4, 1.8, 2, 2.2, 2.4, 3.3, 3.7, 3.9, 4.1, 4.3, 4.4, 4.5, 4.6, 4.8, 4.9, 5, 5.1, 5.7, 5.8, 5.9, 6, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 7.3, 7.6, 9.1, 9.4, 9.7, 10, 10.3, 10.6, 10.9, 11.4, 12.3, 13.3, 14.1, 14.8 )
 }
@@ -605,6 +605,7 @@ margin_top = -500.5
 margin_right = 919.0
 margin_bottom = 500.5
 theme = ExtResource( 2 )
+text = "M"
 
 [node name="TheIntroSFX" type="AudioStreamPlayer" parent="TheCanvas/TheIntro"]
 stream = ExtResource( 3 )
@@ -660,6 +661,7 @@ margin_bottom = 631.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="MainGame" type="Panel" parent="TheCanvas"]
+visible = false
 margin_left = 523.446
 margin_top = 324.11
 margin_right = 1382.45
@@ -697,5 +699,6 @@ margin_top = 341.89
 margin_right = 526.554
 margin_bottom = 391.89
 theme = ExtResource( 2 )
+disabled = true
 text = "Start this Game"
 [connection signal="button_up" from="TheCanvas/MainGame/Button" to="." method="_on_Button_button_up"]
