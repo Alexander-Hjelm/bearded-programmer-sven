@@ -122,6 +122,7 @@ position = Vector2( 1208.83, -1612.99 )
 enounter_enemy_names = [ "Segfault", "Segfault" ]
 
 [node name="OverworldCamera" type="Camera2D" parent="."]
+editor/display_folded = true
 current = true
 zoom = Vector2( 0.3, 0.3 )
 process_mode = 0

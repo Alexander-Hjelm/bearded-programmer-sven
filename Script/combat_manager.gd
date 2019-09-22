@@ -65,6 +65,11 @@ func create_combat_encounter(characters_team_0: Array, characters_team_1: Array)
 		register_character(character, 1)
 	
 	_combat_over_signal_emitted = false
+	
+	# Update HUD
+	var player_hp: float = _characters_by_team[0][0].get_current_value_for_stat("hp")
+	var player_hp_max: float = _characters_by_team[0][0].get_base_value_for_stat("hp")
+	HUD.update_player_HUD_stats(player_hp, player_hp_max)
 
 # Register a character at the beginning of a combat encounter
 func register_character(character: Character, team: int):
@@ -103,10 +108,6 @@ func tick():
 	
 	# If there are no more enemies left, notify the game manager that the fight has ended
 	if not _combat_over_signal_emitted:
-		# Update HUD
-		var player_hp: float = _characters_by_team[0][0].get_current_value_for_stat("hp")
-		var player_hp_max: float = _characters_by_team[0][0].get_base_value_for_stat("hp")
-		HUD.update_player_HUD_stats(player_hp, player_hp_max)
 		
 		if len(_characters_by_team[1]) == 0:
 			# All enemies are dead, WIN
@@ -218,6 +219,11 @@ func on_hurt_timer_timeout():
 	_ticking_active = true
 	
 	print(_queued_target_character.get_name() + " now has hp: " + str(_queued_target_character.get_current_value_for_stat("hp")))
+	
+	# Update HUD
+	var player_hp: float = _characters_by_team[0][0].get_current_value_for_stat("hp")
+	var player_hp_max: float = _characters_by_team[0][0].get_base_value_for_stat("hp")
+	HUD.update_player_HUD_stats(player_hp, player_hp_max)
 	
 	# If the character's hp is <= 0, kill it
 	if(_queued_target_character.get_current_value_for_stat("hp") <= 0.0):

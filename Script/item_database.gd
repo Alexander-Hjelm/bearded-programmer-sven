@@ -63,7 +63,7 @@ var items : Dictionary = {
 	# Canary bird. 
 	"Canary Bird": Item.new("Canary Bird", ElementDatabase.Element.memory,
 		[
-			Effect.new({"hp": -5.0}, true, 0)
+			Effect.new({"hp": -20.0}, true, 0)
 		],
 		Item.ItemType.OFFENSIVE,
 		"Does extra damage to Memory enemies. SQUAWK SQUAWK!."
@@ -71,7 +71,7 @@ var items : Dictionary = {
 	# Registry cleaner. 
 	"Registry Cleaner": Item.new("Registry Cleaner", ElementDatabase.Element.OS,
 		[
-			Effect.new({"hp": -5.0}, true, 0)
+			Effect.new({"hp": -20.0}, true, 0)
 		],
 		Item.ItemType.OFFENSIVE,
 		"Does extra damage to OS enemies. A portable Roomba that sucks you regfiles squeaky clean!"
@@ -79,7 +79,7 @@ var items : Dictionary = {
 	# Registry cleaner. 
 	"Bugzapper": Item.new("Bugzapper", ElementDatabase.Element.glitch,
 		[
-			Effect.new({"hp": -5.0}, true, 0)
+			Effect.new({"hp": -20.0}, true, 0)
 		],
 		Item.ItemType.OFFENSIVE,
 		"Does extra damage to glitch enemies. Zip Zap ZoppidyBap!"
@@ -136,7 +136,7 @@ var items : Dictionary = {
 	# Blue Screen of Death Weapon, default weapon for the Blue Screen of Death
 	"Blue Screen of Death Weapon": Item.new("Blue Screen of Death Weapon", ElementDatabase.Element.OS,
 		[
-			Effect.new({"hp": -1.8}, true, 0)
+			Effect.new({"hp": -1.5}, true, 0)
 		],
 		Item.ItemType.EQUIPPABLE,
 		""
