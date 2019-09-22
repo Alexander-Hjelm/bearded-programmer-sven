@@ -320,7 +320,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[node name="SvenTheProgrammer" index="0" groups=[
+[node name="SvenTheProgrammer" groups=[
 "player",
 ] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
