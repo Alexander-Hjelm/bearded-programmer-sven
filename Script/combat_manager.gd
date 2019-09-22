@@ -50,7 +50,7 @@ func create_combat_encounter(characters_team_0: Array, characters_team_1: Array)
 	
 	# Clear up any old character references
 	for character_node in _visual_character_representations.values():
-		if str(character_node) != "[Deleted Object]":
+		if is_instance_valid(character_node):
 			character_node.queue_free()
 			
 	# Initialize teams
