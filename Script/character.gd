@@ -27,8 +27,16 @@ func _init(name: String, resource_path: String, base_stats: Dictionary, item_nam
 	self._base_stats = {}
 	self._permanent_stat_offsets = {}
 	self._active_effects = []
-	self._item_names_by_slot = item_names_by_slot
-	self._item_drops = item_drops
+	self._item_names_by_slot = {}
+	self._item_drops = {}
+	
+	# Copy over item names
+	for item_slot in item_names_by_slot.keys():
+		self._item_names_by_slot[item_slot] = item_names_by_slot[item_slot]
+	
+	# Copy over item drops
+	for item_name in _item_drops.keys():
+		self._item_drops[item_name] = item_drops[item_name]
 	
 	# Initialize base stats to 0
 	self._base_stats["hp"] = 0.0
@@ -49,8 +57,8 @@ func _init(name: String, resource_path: String, base_stats: Dictionary, item_nam
 func deep_copy() -> Character:
 	# Copy base stats
 	var base_stats_copy: Dictionary
-	for stat in self._base_stats.keys():
-		base_stats_copy[stat] = self._base_stats[stat]
+	for stat in _base_stats.keys():
+		base_stats_copy[stat] = _base_stats[stat]
 	# Copy item names
 	var item_names_by_slot_copy: Dictionary
 	for item_name in _item_names_by_slot.keys():
