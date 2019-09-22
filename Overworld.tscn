@@ -12,17 +12,18 @@
 [ext_resource path="res://GFX/overworld/level/overworld_tileset.tres" type="TileSet" id=10]
 [ext_resource path="res://Scenes/Overworld/HPFountain.tscn" type="PackedScene" id=11]
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 6 )
 shader_param/colorTint = Color( 0.235294, 0, 0, 1 )
 shader_param/colorCycleSpeed = null
 shader_param/albedoBaseChannel = ExtResource( 7 )
 
-[sub_resource type="CanvasItemMaterial" id=1]
+[sub_resource type="CanvasItemMaterial" id=2]
 
 [node name="Overworld" type="Node2D"]
 
 [node name="OverworldPlayer" parent="." instance=ExtResource( 1 )]
+speed = 75.0
 
 [node name="OverworldMonsterSegfault2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 352.855, -410.964 )
@@ -46,7 +47,7 @@ script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="OverworldCamera"]
 show_behind_parent = true
-material = SubResource( 2 )
+material = SubResource( 1 )
 position = Vector2( 4.08821, 0.551741 )
 scale = Vector2( 48.3977, 28.9996 )
 z_index = -100
@@ -57,7 +58,7 @@ position = Vector2( 960, 540 )
 script = ExtResource( 9 )
 
 [node name="TileMap" type="TileMap" parent="."]
-material = SubResource( 1 )
+material = SubResource( 2 )
 tile_set = ExtResource( 10 )
 cell_size = Vector2( 16, 16 )
 collision_use_kinematic = true
