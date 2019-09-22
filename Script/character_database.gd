@@ -33,7 +33,13 @@ var _characters : Dictionary = {
 			"Feet": "Segway",
 			"Weapon": "Segfault Weapon"
 		},
-		{"Bubba Cola": 1.0}
+		{
+			"Bubba Cola": 0.2,
+			"Registry Cleaner": 0.15,
+			"Canary Bird": 0.15,
+			"Unit Test Suite": 0.1,
+			"Debugger": 0.1
+		}
 	),
 	# Stack Overflow
 	"Stack Overflow": Character.new(
@@ -49,7 +55,13 @@ var _characters : Dictionary = {
 			"Body": "Trash Can",
 			"Weapon": "Stack Overflow Weapon"
 		},
-		{}
+		{
+			"Bubba Cola": 0.2,
+			"Registry Cleaner": 0.15,
+			"Bugzapper": 0.15,
+			"Extra RAM": 0.1,
+			"BloatKiller (TM)": 0.1
+		}
 	),
 	# Blue Screen of Death
 	"Blue Screen of Death": Character.new(
@@ -66,7 +78,13 @@ var _characters : Dictionary = {
 			"Head": "Monitor",
 			"Weapon": "Blue Screen of Death Weapon"
 		},
-		{}
+		{
+			"Bubba Cola": 0.2,
+			"Bugzapper": 0.15,
+			"Canary Bird": 0.15,
+			"Linux Virtual Machine": 0.1,
+			"Distro Upgrade": 0.1
+		}
 	),
 		# Godot Boss
 	"Godot Boss": Character.new(

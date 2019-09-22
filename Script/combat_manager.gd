@@ -155,6 +155,7 @@ func tick_character(character: Character, team: int):
 
 # External entry for attacking with the player, called from the player UI
 func player_attack(monster_index: int):
+	# TODO: Pass along the element of the enemy, not the player weapon (only do this for the player)
 	var player_character: Character = _characters_by_team[0][0]
 	var target_character: Character = _characters_by_team[1][monster_index]
 	attack(player_character, target_character, player_character.get_weapon())
