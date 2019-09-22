@@ -74,10 +74,10 @@ func register_character(character: Character, team: int):
 	
 	# Set root position of the character node
 	if team == 0:
-		get_node("/root/MainScene/Team0StartPos/Pos1").add_child(character_node)
+		CombatScene.get_node("Team0StartPos/Pos1").add_child(character_node)
 		HUD.set_player_names(character_node.get_name())
 	elif team == 1:
-		get_node("/root/MainScene/Team1StartPos/Pos" + str(len(_characters_by_team[1]))).add_child(character_node)
+		CombatScene.get_node("Team1StartPos/Pos" + str(len(_characters_by_team[1]))).add_child(character_node)
 		HUD.set_enemy_name(len(_characters_by_team[1])-1, character_node.get_name())
 		current_monster_name = character_node.get_name()
 	

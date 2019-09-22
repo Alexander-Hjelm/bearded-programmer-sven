@@ -22,9 +22,10 @@ animations = [ {
 radius = 83.4831
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 83.4831
+radius = 14.0582
 
 [node name="OverworldMonsterSegfault" type="RigidBody2D"]
+mode = 2
 gravity_scale = 0.0
 script = ExtResource( 1 )
 speed = 150.0

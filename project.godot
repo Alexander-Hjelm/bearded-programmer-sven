@@ -99,6 +99,9 @@ combat_manager="*res://Script/combat_manager.gd"
 HUD="*res://Scenes/UI/HUD.tscn"
 Global="*res://Global.gd"
 inventory="*res://Script/inventory.gd"
+game_manager="*res://Script/game_manager.gd"
+CombatScene="*res://CombatScene.tscn"
+Overworld="*res://Overworld.tscn"
 
 [display]
 

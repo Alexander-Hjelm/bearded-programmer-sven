@@ -19,6 +19,7 @@ animations = [ {
 } ]
 
 [node name="OverworldPlayer" type="RigidBody2D"]
+mode = 2
 gravity_scale = 0.0
 script = ExtResource( 1 )
 speed = 50.0

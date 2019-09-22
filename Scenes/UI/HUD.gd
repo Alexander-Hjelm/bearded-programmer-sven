@@ -41,6 +41,20 @@ func _ready():
 	inactivate_player_input()
 
 
+func show_combat_hud():
+	$PlayerPanel.visible = true
+	$TimerPanel.visible = true
+	$BadGuyPanel.visible = true
+
+
+func hide_combat_hud():
+	$PlayerPanel.visible = false
+	$TimerPanel.visible = false
+	$BadGuyPanel.visible = false
+	$InventoryPanel.visible = false
+	$DescriptionPanel.visible = false
+
+
 func activate_player_input(): #Activate Player Input
 	input_popup_menu.show()
 	input_attack_button.disabled = false

@@ -8,7 +8,11 @@ var animated_sprite
 func _ready():
 	animated_sprite = get_node("AnimatedSprite")
 
-func set_velocity(vx, vy):	
+func set_velocity(vx, vy):
+	if not game_manager.is_overworld_running():
+		set_linear_velocity(Vector2(0.0,0.0))
+		return
+	
 	# Animation
 	if abs(vy) < 0.1 and abs(vx) < 0.1:
 		animated_sprite.play("idle")
