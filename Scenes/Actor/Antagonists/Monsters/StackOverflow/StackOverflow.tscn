@@ -55,7 +55,7 @@ play_standard_encounter_music = true
 [node name="AnimatedSprite" parent="." index="0"]
 frames = ExtResource( 4 )
 animation = "idle"
-frame = 13
+frame = 7
 playing = true
 
 [node name="SpriteAnim" parent="." index="1"]
