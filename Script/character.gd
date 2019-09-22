@@ -186,6 +186,10 @@ func get_stat_keys() -> Array:
 func get_item_drops() -> Dictionary:
 	return _item_drops
 
+# Clear all non-permanent effects on this actor
+func clear_active_effects():
+	_active_effects.clear()
+
 # Get elemental attack power
 func get_element_attack(element: int) -> float:
 	return get_current_value_for_stat("element_attack_" + str(ElementDatabase.Element.keys()[element]))

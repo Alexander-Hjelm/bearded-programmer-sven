@@ -104,9 +104,13 @@ func tick():
 	# If there are no more enemies left, notify the game manager that the fight has ended
 	if not _combat_over_signal_emitted:
 		if len(_characters_by_team[0]) == 0:
+			# Player is dead, FAILED
 			_combat_over_signal_emitted = true
 			emit_signal("combat_over_fail")
 		if len(_characters_by_team[1]) == 0:
+			# All enemies are dead, WIN
+			# Clear (non permanent) player effects
+			_characters_by_team[0][0].clear_active_effects()
 			_combat_over_signal_emitted = true
 			emit_signal("combat_over_win")
 

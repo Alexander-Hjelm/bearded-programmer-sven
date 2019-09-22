@@ -21,6 +21,7 @@ enum AttackMode {
 	WITH_WEAPON
 }
 
+# Queued attack, will be executed after player has selected a monster
 var _queued_attack: bool = false
 var _queued_attack_mode: int
 var _queued_attack_item_name: String
@@ -71,6 +72,7 @@ func set_enemy_name(enemy_index: int, enemy_name : String):
 
 func update_player_HUD_stats(player_hp, player_hp_max): ## Update player hp
 	player_hp_current_progressbar.value = player_hp
+	player_hp_current_progressbar.max_value = player_hp_max
 	player_hp_current_label.text = str(player_hp)
 	player_hp_current_max_label.text = str(player_hp_max)
 
@@ -145,9 +147,11 @@ func show_pop_up_message(text):
 	$MessagePanel/MessagePanelAnim.play("Popup Long Show Message")
 	$MessagePanel/MessageText.text = str(text)
 
+# Show item description
 func on_mouse_over_item(item_name: String):
 	$DescriptionPanel/DescriptionLabel.text = item_database.items[item_name].get_description()
 	$DescriptionPanel.visible = true
 
+# Hide item description
 func on_mouse_left_item():
 	$DescriptionPanel.visible = false
