@@ -225,7 +225,6 @@ margin_bottom = 14.5
 clip_text = true
 
 [node name="InventoryPanel" type="Panel" parent="."]
-editor/display_folded = true
 visible = false
 margin_left = 514.0
 margin_top = 287.0
@@ -248,7 +247,7 @@ align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="InventoryPanel"]
 margin_top = 67.0
-margin_right = 375.0
+margin_right = 319.0
 margin_bottom = 447.0
 
 [node name="DescriptionPanel" type="Panel" parent="."]
