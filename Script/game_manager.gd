@@ -26,6 +26,8 @@ var _player_character: Character
 
 var _overworld_running: bool = false
 
+var game_over_scene = load("res://Scenes/UI/GameOver.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	CombatScene.visible = false
@@ -80,7 +82,8 @@ func _on_combat_win():
 
 # The battle was lost
 func _on_combat_fail():
-	pass
+	var game_over_scene_instance = game_over_scene.instance()
+	get_tree().get_root().add_child(game_over_scene_instance)
 
 func _on_battle_over():
 	# The battle was won, go back to the overworld

@@ -12,7 +12,7 @@
 [ext_resource path="res://Audio/SFX/Explosions/explosion_small_no_tail_03.wav" type="AudioStream" id=10]
 [ext_resource path="res://GFX/SexyDatingGirl.png" type="Texture" id=11]
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=1]
 resource_name = "IntroDone"
 tracks/0/type = "value"
 tracks/0/path = NodePath("TheTerminalText:text")
@@ -149,7 +149,7 @@ tracks/10/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=2]
 resource_name = "TheIntroAnim"
 length = 15.0
 tracks/0/type = "value"
@@ -531,7 +531,7 @@ tracks/10/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 1, 1 )
 border_width_left = 10
 border_width_top = 10
@@ -540,21 +540,21 @@ border_width_bottom = 10
 shadow_color = Color( 0.380392, 1, 1, 0.6 )
 shadow_size = 10
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=4]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=5]
 
-[sub_resource type="Theme" id=4]
-Panel/styles/panel = SubResource( 1 )
-Panel/styles/panelf = SubResource( 2 )
-Panel/styles/panelnc = SubResource( 3 )
+[sub_resource type="Theme" id=6]
+Panel/styles/panel = SubResource( 3 )
+Panel/styles/panelf = SubResource( 4 )
+Panel/styles/panelnc = SubResource( 5 )
 
-[sub_resource type="DynamicFontData" id=5]
+[sub_resource type="DynamicFontData" id=7]
 font_path = "res://Fonts/Retro Gaming.ttf"
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=8]
 size = 100
-font_data = SubResource( 5 )
+font_data = SubResource( 7 )
 
 [sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0, 0, 1, 1 )
@@ -612,8 +612,8 @@ volume_db = -12.0
 
 [node name="TheIntroAnim" type="AnimationPlayer" parent="TheCanvas/TheIntro"]
 autoplay = "TheIntroAnim"
-anims/IntroDone = SubResource( 7 )
-anims/TheIntroAnim = SubResource( 8 )
+anims/IntroDone = SubResource( 1 )
+anims/TheIntroAnim = SubResource( 2 )
 
 [node name="GamePanel" type="Panel" parent="TheCanvas/TheIntro"]
 visible = false
@@ -621,7 +621,7 @@ margin_left = 523.446
 margin_top = 324.11
 margin_right = 1382.45
 margin_bottom = 773.11
-theme = SubResource( 4 )
+theme = SubResource( 6 )
 
 [node name="SvenLabel" type="Label" parent="TheCanvas/TheIntro/GamePanel"]
 margin_left = 123.0
@@ -646,7 +646,7 @@ margin_left = -26.4457
 margin_top = 182.89
 margin_right = 882.554
 margin_bottom = 310.89
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "MERGE ERROR!!!"
 

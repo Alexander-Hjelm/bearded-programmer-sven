@@ -100,13 +100,14 @@ func tick():
 			return
 		tick_character(character, 1)
 	
-	# Update HUD
-	var player_hp: float = _characters_by_team[0][0].get_current_value_for_stat("hp")
-	var player_hp_max: float = _characters_by_team[0][0].get_base_value_for_stat("hp")
-	HUD.update_player_HUD_stats(player_hp, player_hp_max)
 	
 	# If there are no more enemies left, notify the game manager that the fight has ended
 	if not _combat_over_signal_emitted:
+		# Update HUD
+		var player_hp: float = _characters_by_team[0][0].get_current_value_for_stat("hp")
+		var player_hp_max: float = _characters_by_team[0][0].get_base_value_for_stat("hp")
+		HUD.update_player_HUD_stats(player_hp, player_hp_max)
+		
 		if len(_characters_by_team[0]) == 0:
 			# Player is dead, FAILED
 			_combat_over_signal_emitted = true
