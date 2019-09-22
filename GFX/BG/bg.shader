@@ -11,16 +11,17 @@ uniform vec4 colorTint2 : hint_color;
 uniform float uvScrollSpeedY : hint_range(0.0,1.0,0.01);
 uniform float uvSwaySpeed : hint_range(0.0,1.0,0.01);
 uniform float uvSwayAmp : hint_range(0.0,1.0,0.01);
-uniform float uvWaveSpeed : hint_range(0.0,0.3,0.001);
-uniform float uvWaveAmp : hint_range(0.0,0.3,0.001);
+uniform float uvWaveSpeed1 : hint_range(0.0,0.8,0.001);
+uniform float uvWaveSpeed2 : hint_range(0.0,8,0.01);
+uniform float uvWaveAmp : hint_range(0.0,0.8,0.001);
 
 void fragment()
 {
 	float uvSwayX = uvSwayAmp*sin(TIME*uvSwaySpeed);
-	float uvWaveX = uvWaveAmp*sin(TIME*uvWaveSpeed*UV.y);
+	float uvWaveX = uvWaveAmp*sin(TIME*uvWaveSpeed1+UV.y*uvWaveSpeed2);
 	float uvScrollY = -uvScrollSpeedY*TIME;
 	vec2 uvScrolled = UV + vec2(uvSwayX + uvWaveX, uvScrollY);
-	vec4 colorControl = mod(texture(albedoBaseChannel, uvScrolled) + TIME/2.0, 0.69);
+	vec4 colorControl = mod(texture(albedoBaseChannel, uvScrolled*2.0) + TIME/2.0, 0.69);
 	
 	vec4 colorOut = mix(colorTint1, colorTint2, colorControl.r);
 	

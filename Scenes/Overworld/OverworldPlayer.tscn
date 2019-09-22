@@ -5,6 +5,7 @@
 [ext_resource path="res://GFX/overworld/characters/sven_walk_1.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.39908, 7.02621 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
