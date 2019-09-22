@@ -154,7 +154,7 @@ func tick_character(character: Character, team: int):
 			# AI: Pick a random character on the other team to attack
 			var rand_index = randi()%len(_characters_by_team[other_team])
 			var target_character: Character = _characters_by_team[other_team][rand_index]
-			attack(character, target_character, character.get_weapon())
+			attack(character, target_character, character.get_weapon(), character.get_weapon().get_element())
 			reset_character_timer(character)
 
 # External entry for attacking with the player, called from the player UI
@@ -162,7 +162,18 @@ func player_attack(monster_index: int):
 	# TODO: Pass along the element of the enemy, not the player weapon (only do this for the player)
 	var player_character: Character = _characters_by_team[0][0]
 	var target_character: Character = _characters_by_team[1][monster_index]
-	attack(player_character, target_character, player_character.get_weapon())
+	# Find least elemental resistance of the target actor 
+	var least_element: int = -1
+	var least_elemental_resistance: float = 100.0
+	for element in element_database.Element.keys():
+		if element != element_database.Element.NONE:
+			var resist: float = target_character.get_element_resist(element)
+			if resist < least_elemental_resistance:
+				least_element = element
+				least_elemental_resistance = resist
+	
+	
+	attack(player_character, target_character, player_character.get_weapon(), least_element)
 	reset_character_timer(player_character)
 
 # Reset a character's timer to a max value that depends on the character's speed stat
@@ -170,11 +181,10 @@ func reset_character_timer(character: Character):
 	_character_timers[character] = 100.0 - character.get_current_value_for_stat("speed")
 
 # Attack a character with another character, using an item
-func attack(src_character: Character, target_character: Character, item: Item):
+func attack(src_character: Character, target_character: Character, item: Item, element: int):
 	print(src_character.get_name() + " attacked " + target_character.get_name())
 	
 	# Apply weapon item effects + pass along the element attack of the weapon element on the src character
-	var element = item.get_element()
 	var src_element_attack: float = src_character.get_element_attack(element)
 	
 	# The HUD should be notified if the effect has raised or lowered any stats
@@ -251,7 +261,7 @@ func send_lower_stat_message(character: Character):
 
 func use_item_on_player(item_name: String):
 	var player: Character = _characters_by_team[0][0]
-	attack(player, player, item_database.items[item_name])
+	attack(player, player, item_database.items[item_name], item_database.items[item_name].get_element())
 	inventory.remove_item(item_name)
 	reset_character_timer(player)
 
@@ -259,7 +269,7 @@ func use_item_on_player(item_name: String):
 func use_item_on_enemy(item_name: String, enemy_index: int):
 	var player: Character = _characters_by_team[0][0]
 	var enemy: Character = _characters_by_team[1][enemy_index]
-	attack(player, enemy, item_database.items[item_name])
+	attack(player, enemy, item_database.items[item_name], item_database.items[item_name].get_element())
 	inventory.remove_item(item_name)
 	reset_character_timer(player)
 
