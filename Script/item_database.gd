@@ -144,15 +144,15 @@ var items : Dictionary = {
 	# Blue Screen of Death Weapon, default weapon for the Blue Screen of Death
 	"Your Anus": Item.new("Your Anus", ElementDatabase.Element.NONE,
 		[
-			Effect.new({"hp": -1.0}, true, 0)
+			Effect.new({"speed": 20.0}, true, 0)
 		],
 		Item.ItemType.EQUIPPABLE,
 		""
 	),
 	# Godot Fisting Weapon, default weapon for the Godot Boss
-	"Godot Fisting Weapon": Item.new("Godot Fisting Weapon", ElementDatabase.Element.glitch,
+	"Godot Fisting Weapon": Item.new("Godot Fisting Weapon", ElementDatabase.Element.memory,
 		[
-			Effect.new({"speed": 10}, true, 0)
+			Effect.new({"hp": -2.8}, true, 0)
 		],
 		Item.ItemType.EQUIPPABLE,
 		""
