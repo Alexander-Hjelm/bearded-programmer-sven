@@ -19,7 +19,7 @@ var _characters : Dictionary = {
 			"element_attack_memory": 20.0,
 			"element_attack_OS": 20.0,
 			"element_attack_glitch": 20.0,
-			"element_attack_NONE": 100.0
+			"element_attack_NONE": 100.0,
 		},
 		{
 			"Weapon": "Player Weapon"
