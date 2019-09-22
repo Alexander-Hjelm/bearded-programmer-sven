@@ -25,14 +25,44 @@ shader_param/albedoBaseChannel = ExtResource( 7 )
 [node name="OverworldPlayer" parent="." instance=ExtResource( 1 )]
 speed = 75.0
 
-[node name="OverworldMonsterSegfault2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 577.382, -202.004 )
-
 [node name="OverworldMonsterSegfault4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 557.58, -286.693 )
+position = Vector2( 581.676, -905.68 )
+
+[node name="OverworldMonsterSegfault12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 695.616, -1017.41 )
+
+[node name="OverworldMonsterSegfault15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 939.666, -1315.13 )
+
+[node name="OverworldMonsterSegfault20" parent="." instance=ExtResource( 2 )]
+position = Vector2( 598.583, -1612.1 )
+
+[node name="OverworldMonsterSegfault24" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1150.64, -1606.22 )
+
+[node name="OverworldMonsterSegfault25" parent="." instance=ExtResource( 2 )]
+position = Vector2( 900.991, -1768.33 )
 
 [node name="OverworldMonsterSegfault3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 525.081, -418.809 )
+
+[node name="OverworldMonsterSegfault9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 629.803, -735.542 )
+
+[node name="OverworldMonsterSegfault10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 383.939, -939.063 )
+
+[node name="OverworldMonsterSegfault14" parent="." instance=ExtResource( 3 )]
+position = Vector2( 868.365, -1244.86 )
+
+[node name="OverworldMonsterSegfault21" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1069.05, -1621.23 )
+
+[node name="OverworldMonsterSegfault22" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1066.84, -1593.49 )
+
+[node name="OverworldMonsterSegfault23" parent="." instance=ExtResource( 3 )]
+position = Vector2( 669.89, -1611.67 )
 
 [node name="OverworldMonsterSegfault" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0.0363464, -197.633 )
@@ -45,6 +75,27 @@ position = Vector2( 348.462, -289.666 )
 
 [node name="OverworldMonsterSegfault7" parent="." instance=ExtResource( 4 )]
 position = Vector2( 400.52, -413.165 )
+
+[node name="OverworldMonsterSegfault8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 423.107, -574.868 )
+
+[node name="OverworldMonsterSegfault11" parent="." instance=ExtResource( 4 )]
+position = Vector2( 364.208, -891.13 )
+
+[node name="OverworldMonsterSegfault13" parent="." instance=ExtResource( 4 )]
+position = Vector2( 894.21, -1020.51 )
+
+[node name="OverworldMonsterSegfault16" parent="." instance=ExtResource( 4 )]
+position = Vector2( 905.236, -1374.82 )
+
+[node name="OverworldMonsterSegfault17" parent="." instance=ExtResource( 4 )]
+position = Vector2( 736.165, -1629.16 )
+
+[node name="OverworldMonsterSegfault18" parent="." instance=ExtResource( 4 )]
+position = Vector2( 734.694, -1599.76 )
+
+[node name="OverworldMonsterSegfault19" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1208.83, -1612.99 )
 
 [node name="OverworldCamera" type="Camera2D" parent="."]
 editor/display_folded = true
