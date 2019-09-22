@@ -52,7 +52,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.8 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -92,6 +92,7 @@ tracks/5/keys = {
 [node name="GenericAtkSwingFX" index="0" instance=ExtResource( 1 )]
 
 [node name="AnimatedSprite" parent="." index="0"]
+visible = false
 frames = ExtResource( 2 )
 frame = 9
 playing = true
