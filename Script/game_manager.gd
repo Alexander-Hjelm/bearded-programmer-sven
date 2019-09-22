@@ -106,3 +106,7 @@ func _on_battle_over():
 
 func is_overworld_running() -> bool:
 	return _overworld_running
+
+func restore_player_hp():
+	_player_character.add_permanent_stat_offset("hp", 100.0)
+	HUD.show_pop_up_message("Restored HP to full!")
