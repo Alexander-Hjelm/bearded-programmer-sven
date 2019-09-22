@@ -567,7 +567,7 @@ Lead Programmer + PixiArt- Alexander Hjelm
 Cell Animations Music/SFX and Sh# - Robert Arnborg" ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=3]
 resource_name = "WTF"
 tracks/0/type = "value"
 tracks/0/path = NodePath("../MainGame/SvenLabel:text")
@@ -589,7 +589,7 @@ Now play the game, Sven, Programmer, Warrior.
 May the Merge be with you." ]
 }
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 1, 1 )
 border_width_left = 10
 border_width_top = 10
@@ -597,24 +597,24 @@ border_width_right = 10
 border_width_bottom = 10
 shadow_color = Color( 0.380392, 1, 1, 0.6 )
 shadow_size = 10
-
-[sub_resource type="StyleBoxFlat" id=4]
 
 [sub_resource type="StyleBoxFlat" id=5]
 
-[sub_resource type="Theme" id=6]
-Panel/styles/panel = SubResource( 3 )
-Panel/styles/panelf = SubResource( 4 )
-Panel/styles/panelnc = SubResource( 5 )
+[sub_resource type="StyleBoxFlat" id=6]
 
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="Theme" id=7]
+Panel/styles/panel = SubResource( 4 )
+Panel/styles/panelf = SubResource( 5 )
+Panel/styles/panelnc = SubResource( 6 )
+
+[sub_resource type="DynamicFontData" id=8]
 font_path = "res://Fonts/Retro Gaming.ttf"
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=9]
 size = 100
-font_data = SubResource( 7 )
+font_data = SubResource( 8 )
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0, 0, 1, 1 )
 border_width_left = 10
 border_width_top = 10
@@ -623,21 +623,21 @@ border_width_bottom = 10
 shadow_color = Color( 0.380392, 1, 1, 0.6 )
 shadow_size = 10
 
-[sub_resource type="StyleBoxFlat" id=10]
-
 [sub_resource type="StyleBoxFlat" id=11]
 
-[sub_resource type="Theme" id=12]
-Panel/styles/panel = SubResource( 9 )
-Panel/styles/panelf = SubResource( 10 )
-Panel/styles/panelnc = SubResource( 11 )
+[sub_resource type="StyleBoxFlat" id=12]
 
-[sub_resource type="DynamicFontData" id=13]
+[sub_resource type="Theme" id=13]
+Panel/styles/panel = SubResource( 10 )
+Panel/styles/panelf = SubResource( 11 )
+Panel/styles/panelnc = SubResource( 12 )
+
+[sub_resource type="DynamicFontData" id=14]
 font_path = "res://Fonts/Retro Gaming.ttf"
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=15]
 size = 100
-font_data = SubResource( 13 )
+font_data = SubResource( 14 )
 
 [node name="TheIntroScene" type="Node2D"]
 script = ExtResource( 1 )
@@ -673,7 +673,7 @@ volume_db = -12.0
 autoplay = "TheIntroAnim"
 anims/IntroDone = SubResource( 1 )
 anims/TheIntroAnim = SubResource( 2 )
-anims/WTF = SubResource( 15 )
+anims/WTF = SubResource( 3 )
 
 [node name="GamePanel" type="Panel" parent="TheCanvas/TheIntro"]
 visible = false
@@ -681,7 +681,7 @@ margin_left = 523.446
 margin_top = 324.11
 margin_right = 1382.45
 margin_bottom = 773.11
-theme = SubResource( 6 )
+theme = SubResource( 7 )
 
 [node name="SvenLabel" type="Label" parent="TheCanvas/TheIntro/GamePanel"]
 margin_left = 123.0
@@ -706,7 +706,7 @@ margin_left = -26.4457
 margin_top = 182.89
 margin_right = 882.554
 margin_bottom = 310.89
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "MERGE ERROR!!!"
 
@@ -723,7 +723,7 @@ margin_left = 523.446
 margin_top = 324.11
 margin_right = 1382.45
 margin_bottom = 773.11
-theme = SubResource( 12 )
+theme = SubResource( 13 )
 
 [node name="SvenLabel" type="Label" parent="TheCanvas/MainGame"]
 margin_left = 33.554
@@ -747,7 +747,7 @@ margin_left = -26.4457
 margin_top = 182.89
 margin_right = 882.554
 margin_bottom = 310.89
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "MERGE ERROR!!!"
 
