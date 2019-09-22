@@ -11,8 +11,8 @@ uniform vec4 colorTint2 : hint_color;
 uniform float uvScrollSpeedY : hint_range(0.0,1.0,0.01);
 uniform float uvSwaySpeed : hint_range(0.0,1.0,0.01);
 uniform float uvSwayAmp : hint_range(0.0,1.0,0.01);
-uniform float uvWaveSpeed : hint_range(0.0,0.1,0.001);
-uniform float uvWaveAmp : hint_range(0.0,0.1,0.001);
+uniform float uvWaveSpeed : hint_range(0.0,0.3,0.001);
+uniform float uvWaveAmp : hint_range(0.0,0.3,0.001);
 
 void fragment()
 {

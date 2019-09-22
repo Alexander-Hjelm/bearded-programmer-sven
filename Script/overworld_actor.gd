@@ -10,14 +10,10 @@ func _ready():
 
 func set_velocity(vx, vy):	
 	# Animation
-	if abs(vx) > 0.1 and not abs(vy) > 0.1:
-		animated_sprite.play("walkSide")
-	elif (vy) > 0.1:
-		animated_sprite.play("walkDown")
-	elif (vy) < -0.1:
-		animated_sprite.play("walkUp")
 	if abs(vy) < 0.1 and abs(vx) < 0.1:
 		animated_sprite.play("idle")
+	else:
+		animated_sprite.play("walk")
 	
 	set_linear_velocity(speed*Vector2(vx, vy).normalized())
 	

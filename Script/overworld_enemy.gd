@@ -1,5 +1,7 @@
 class_name OverworldEnemy extends OverworldActor
 
+export(Array, String) var enounter_enemy_names = []
+
 var _follow_target: Node2D
 
 func _ready():
@@ -14,10 +16,10 @@ func _process(delta):
 		set_velocity(v.x, v.y)
 
 func _on_body_enter_big(body):
-	if body.name == "PlayerOverworld":
+	if body.name == "OverworldPlayer":
 		_follow_target = body
 
 func _on_body_enter_small(body):
-	if body.name == "PlayerOverworld":
+	if body.name == "OverworldPlayer":
 		# TODO: Start combat encounter here
 		pass
