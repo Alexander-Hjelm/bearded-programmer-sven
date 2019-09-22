@@ -14,10 +14,12 @@ var _characters : Dictionary = {
 			"element_resist_memory": 10.0,
 			"element_resist_OS": 10.0,
 			"element_resist_glitch": 10.0,
+			"element_resist_NONE": 0.0,
 			
 			"element_attack_memory": 20.0,
 			"element_attack_OS": 20.0,
 			"element_attack_glitch": 20.0,
+			"element_attack_NONE": 100.0
 		},
 		{
 			"Weapon": "Player Weapon"
@@ -29,7 +31,7 @@ var _characters : Dictionary = {
 		"Segfault",
 		"res://Scenes/Actor/Antagonists/Monsters/SegFault/SegFault.tscn",
 		{
-			"hp": 6.0,
+			"hp": 3.0,
 			"mp": 5.0,
 			"speed": 40.0,
 			
@@ -58,7 +60,7 @@ var _characters : Dictionary = {
 		"Stack Overflow",
 		"res://Scenes/Actor/Antagonists/Monsters/StackOverflow/StackOverflow.tscn",
 		{
-			"hp": 7.0,
+			"hp": 4.0,
 			"mp": 5.0,
 			"speed": 40.0,
 
@@ -87,7 +89,7 @@ var _characters : Dictionary = {
 		"Blue Screen of Death",
 		"res://Scenes/Actor/Antagonists/Monsters/BlueScreen/BlueScreen.tscn",
 		{
-			"hp": 8.0,
+			"hp": 4.0,
 			"mp": 5.0,
 			"speed": 40.0,
 			

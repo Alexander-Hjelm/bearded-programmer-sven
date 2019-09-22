@@ -120,7 +120,7 @@ var items : Dictionary = {
 	# Segfault Weapon, default weapon for the Segfault
 	"Segfault Weapon": Item.new("Segfault Weapon", ElementDatabase.Element.glitch,
 		[
-			Effect.new({"hp": -2.0}, true, 0)
+			Effect.new({"hp": -1.4}, true, 0)
 		],
 		Item.ItemType.EQUIPPABLE,
 		""
@@ -128,7 +128,7 @@ var items : Dictionary = {
 	# Stack Overflow Weapon, default weapon for the Stack Overflow
 	"Stack Overflow Weapon": Item.new("Stack Overflow Weapon", ElementDatabase.Element.memory,
 		[
-			Effect.new({"hp": -2.0}, true, 0)
+			Effect.new({"hp": -1.8}, true, 0)
 		],
 		Item.ItemType.EQUIPPABLE,
 		""
@@ -136,7 +136,7 @@ var items : Dictionary = {
 	# Blue Screen of Death Weapon, default weapon for the Blue Screen of Death
 	"Blue Screen of Death Weapon": Item.new("Blue Screen of Death Weapon", ElementDatabase.Element.OS,
 		[
-			Effect.new({"hp": -2.0}, true, 0)
+			Effect.new({"hp": -1.8}, true, 0)
 		],
 		Item.ItemType.EQUIPPABLE,
 		""
