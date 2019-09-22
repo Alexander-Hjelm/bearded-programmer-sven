@@ -14,6 +14,12 @@ var state
 
 enum anim_state_types {IDLE, ATTACK, HURT, DEATH, BOOSTSTAT, LOWERSTAT}
 
+export var play_standard_encounter_music = false
+
+func _ready():
+	if play_standard_encounter_music:
+		DaMusicManager.play_combat_music_1()
+
 # Set the animation state
 func change_anim_state(new_state):
 	state = new_state

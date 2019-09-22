@@ -51,14 +51,15 @@ script = ExtResource( 2 )
 attack_fx_1 = ExtResource( 3 )
 hurt_fx = ExtResource( 4 )
 attack_left = true
+play_standard_encounter_music = true
 
 [node name="CloudAnim" parent="." index="0" instance=ExtResource( 5 )]
-frame = 6
+frame = 9
 
 [node name="AnimatedSprite" parent="." index="1"]
 frames = ExtResource( 6 )
 animation = "idle"
-frame = 2
+frame = 3
 playing = true
 
 [node name="SpriteAnim" parent="." index="2"]

@@ -494,10 +494,9 @@ text = "MERGE ERROR!!!"
 [node name="ColorRect2" type="ColorRect" parent="TheCanvas"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 0.445679
-margin_top = 0.110168
-margin_right = 1048.45
-margin_bottom = 634.11
+margin_top = -3.0
+margin_right = 1048.0
+margin_bottom = 631.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="MainGame" type="Panel" parent="TheCanvas"]
@@ -513,11 +512,11 @@ margin_top = 46.0
 margin_right = 838.554
 margin_bottom = 281.0
 theme = ExtResource( 2 )
-text = "Sven's Quest - 
+text = "Bearded Programmer Sven - 
 
 A Game by Alexander Hjelm and Robert Arnborg
 
-Lead Programmer - Alexander Hjelm
+Lead Programmer + PixiArt- Alexander Hjelm
 
 Cell Animations Music/SFX and Sh# - Robert Arnborg"
 align = 1

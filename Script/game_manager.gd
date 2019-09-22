@@ -91,6 +91,9 @@ func _on_battle_over():
 	_overworld_running = true
 	Global.combat_camera.current = false
 	Global.overworld_camera.current = true
+	#Save combat music pos and play overworld MUSIC
+	DaMusicManager.combat_music_position = DaMusicManager.get_playback_position()
+	DaMusicManager.play_overworld_music()
 
 func is_overworld_running() -> bool:
 	return _overworld_running

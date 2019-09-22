@@ -10,9 +10,12 @@ onready var SFX1 = $SFX1
 onready var SFX2 = $SFX2
 onready var SFX3 = $SFX3
 
+var combat_music_position : float = 0.0
+var overworld_music_position : float = 0.0
+
 func play_combat_music_1():
 	stream = combat_music_1
-	play()
+	play(combat_music_position)
 
 
 func play_intro_music():
@@ -22,7 +25,7 @@ func play_intro_music():
 
 func play_overworld_music():
 	stream = overworld_music
-	play()
+	play(overworld_music_position)
 
 
 func play_boss_music():

@@ -44,15 +44,16 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[node name="StackOverflow" instance=ExtResource( 1 )]
+[node name="StackOverflow" index="0" instance=ExtResource( 1 )]
 attack_fx_1 = ExtResource( 2 )
 hurt_fx = ExtResource( 3 )
 attack_left = true
+play_standard_encounter_music = true
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = ExtResource( 4 )
 animation = "idle"
-frame = 29
+frame = 21
 playing = true
 
 [node name="SpriteAnim" parent="." index="1"]
