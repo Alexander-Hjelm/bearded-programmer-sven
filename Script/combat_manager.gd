@@ -118,6 +118,7 @@ func tick():
 # Randomize an item from a characters item_drops, and add it to the inventory
 func drop_item(dropping_character: Character):
 	var item_drops: Dictionary = dropping_character.get_item_drops()
+	randomize()
 	var r: float = randf()
 	var counted: float = 0.0
 	for item in item_drops.keys():

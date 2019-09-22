@@ -35,7 +35,7 @@ func _init(name: String, resource_path: String, base_stats: Dictionary, item_nam
 		self._item_names_by_slot[item_slot] = item_names_by_slot[item_slot]
 	
 	# Copy over item drops
-	for item_name in _item_drops.keys():
+	for item_name in item_drops.keys():
 		self._item_drops[item_name] = item_drops[item_name]
 	
 	# Initialize base stats to 0
