@@ -5,7 +5,7 @@ var _tick_delta: float = 0.05
 var _tick_timer: Timer
 
 # A timer that enforces a wait time after the combat encounter is won/lost
-var _battle_over_wait: float = 1.0
+var _battle_over_wait: float = 4.0
 var _battle_over_timer: Timer
 
 # All possible combat encounters that will play out, in order
