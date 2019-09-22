@@ -3,6 +3,10 @@ extends Node
 enum sven_morph_state_types {HUMAN,SEG, SEGTV, SEGSTACK, STACK, STACKTV, TV, FULLMORPH}
 var sven_current_morph_state = sven_morph_state_types.HUMAN
 
+var has_tv = false
+var has_seg = false
+var has_stack = false
+
 var sven_the_bad_programmer
 var godot_boss
 
