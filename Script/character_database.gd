@@ -122,13 +122,13 @@ var _characters : Dictionary = {
 			"mp": 5.0,
 			"speed": 50.0,
 			
-			"element_resist_memory": 55.0,
+			"element_resist_memory": 40.0,
 			"element_resist_OS": 55.0,
 			"element_resist_glitch": 55.0,
 			
-			"element_attack_memory": 0.0,
+			"element_attack_memory": 100.0,
 			"element_attack_OS": 0.0,
-			"element_attack_glitch": 100.0
+			"element_attack_glitch": 0.0
 		},
 		{
 			"Head": "Your Anus",
