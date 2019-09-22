@@ -80,31 +80,38 @@ func set_merge_on_sven():
 		match monster_merge_type:
 			morphstate_monster.SEG:
 				Global.has_seg = true
+				if Global.has_stack:
+					Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.SEGSTACK)
+					Global.sven_current_morph_state = Global.sven_morph_state_types.SEGSTACK
+				if Global.has_tv:
+					Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.SEGTV)
+					Global.sven_current_morph_state = Global.sven_morph_state_types.SEGTV
+				if !Global.has_tv and !Global.has_stack:
+					Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.SEG)
+					Global.sven_current_morph_state = Global.sven_morph_state_types.SEG
 			morphstate_monster.TV:
 				Global.has_tv = true
+				if Global.has_stack:
+					Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.STACKTV)
+					Global.sven_current_morph_state = Global.sven_morph_state_types.STACKTV
+				if Global.has_seg:
+					Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.SEGTV)
+					Global.sven_current_morph_state = Global.sven_morph_state_types.SEGTV
+				if !Global.has_seg and !Global.has_stack:
+					Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.TV)
+					Global.sven_current_morph_state = Global.sven_morph_state_types.TV
 			morphstate_monster.STACK:
 				Global.has_stack = true
+				if Global.has_seg:
+					Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.SEGSTACK)
+					Global.sven_current_morph_state = Global.sven_morph_state_types.SEGSTACK
+				if Global.has_tv:
+					Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.STACKTV)
+					Global.sven_current_morph_state = Global.sven_morph_state_types.STACKTV
+				if !Global.has_seg and !Global.has_tv:
+					Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.STACK)
+					Global.sven_current_morph_state = Global.sven_morph_state_types.STACK
 		
-		if Global.has_seg:
-			Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.SEG)
-			Global.sven_current_morph_state = Global.sven_morph_state_types.SEG
-			if Global.has_stack:
-				Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.SEGSTACK)
-				Global.sven_current_morph_state = Global.sven_morph_state_types.SEGSTACK
-			if Global.has_tv:
-				Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.SEGTV)
-				Global.sven_current_morph_state = Global.sven_morph_state_types.SEGTV
-		
-		if Global.has_stack:
-			Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.STACK)
-			Global.sven_current_morph_state = Global.sven_morph_state_types.STACK
-			if Global.has_tv:
-				Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.STACKTV)
-				Global.sven_current_morph_state = Global.sven_morph_state_types.STACKTV
-		
-		if Global.has_tv:
-			Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.TV)
-			Global.sven_current_morph_state = Global.sven_morph_state_types.TV
 		
 		if Global.has_tv and Global.has_stack and Global.has_seg:
 			Global.sven_the_bad_programmer.change_morph_state(Global.sven_morph_state_types.FULLMORPH)

@@ -8,8 +8,7 @@ func game_over():
 	Overworld.hide()
 	CombatScene.hide()
 	show()
-	DaMusicManager.stop()
-
+	DaMusicManager.stop_all_music()
 
 func _on_Button_pressed():
 	$AnimationPlayer.play("quit")

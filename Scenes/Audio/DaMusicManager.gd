@@ -36,3 +36,10 @@ func play_boss_music():
 
 func play_encounter_sfx():
 	SFX1._play_random_sfx()
+
+
+func stop_all_music():
+	stop()
+	SFX1.stop()
+	SFX2.stop()
+	SFX3.stop()
