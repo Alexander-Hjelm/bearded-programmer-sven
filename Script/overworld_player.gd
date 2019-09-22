@@ -1,5 +1,8 @@
 class_name OverworldPlayer extends OverworldActor
 
+func _ready():
+	Global.overworld_player = self
+
 func _process(delta):
 	# Character movement
 	var vx = 0.0

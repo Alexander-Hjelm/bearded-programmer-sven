@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/character_database.gd"
 }, {
+"base": "Camera2D",
+"class": "CombatCamera",
+"language": "GDScript",
+"path": "res://Script/combat_camera.gd"
+}, {
 "base": "Node2D",
 "class": "CombatManager",
 "language": "GDScript",
@@ -59,6 +64,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/overworld_actor.gd"
 }, {
+"base": "Camera2D",
+"class": "OverworldCamera",
+"language": "GDScript",
+"path": "res://Script/overworld_camera.gd"
+}, {
 "base": "OverworldActor",
 "class": "OverworldEnemy",
 "language": "GDScript",
@@ -73,6 +83,7 @@ _global_script_class_icons={
 "AnimatedActor": "",
 "Character": "",
 "CharacterDatabase": "",
+"CombatCamera": "",
 "CombatManager": "",
 "Effect": "",
 "ElementDatabase": "",
@@ -80,6 +91,7 @@ _global_script_class_icons={
 "Item": "",
 "ItemDatabase": "",
 "OverworldActor": "",
+"OverworldCamera": "",
 "OverworldEnemy": "",
 "OverworldPlayer": ""
 }

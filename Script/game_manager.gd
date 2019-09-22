@@ -64,6 +64,9 @@ func start_combat_encounter(enemy_names: Array):
 	CombatScene.visible = true
 	Overworld.visible = false
 	_overworld_running = false
+	
+	Global.combat_camera.current = true
+	Global.overworld_camera.current = false
 
 # Tick the combat manager
 func _on_tick():
@@ -86,6 +89,8 @@ func _on_battle_over():
 	CombatScene.visible = false
 	Overworld.visible = true
 	_overworld_running = true
+	Global.combat_camera.current = false
+	Global.overworld_camera.current = true
 
 func is_overworld_running() -> bool:
 	return _overworld_running
