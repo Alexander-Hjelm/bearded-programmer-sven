@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://TheIntroScene.gd" type="Script" id=1]
 [ext_resource path="res://Themes/BattleTheme.tres" type="Theme" id=2]
@@ -12,7 +12,144 @@
 [ext_resource path="res://Audio/SFX/Explosions/explosion_small_no_tail_03.wav" type="AudioStream" id=10]
 [ext_resource path="res://GFX/SexyDatingGirl.png" type="Texture" id=11]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=7]
+resource_name = "IntroDone"
+tracks/0/type = "value"
+tracks/0/path = NodePath("TheTerminalText:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "" ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("TheIntroSFX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("GamePanel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("GamePanel/MERGE ERROR:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../MainGame/SvenLabel:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../MainGame/SvenLabel:rect_rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../MainGame/Button:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../ColorRect2:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../MainGame:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../MainGame/Button:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=8]
 resource_name = "TheIntroAnim"
 length = 15.0
 tracks/0/type = "value"
@@ -394,7 +531,7 @@ tracks/10/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 1, 1 )
 border_width_left = 10
 border_width_top = 10
@@ -403,21 +540,46 @@ border_width_bottom = 10
 shadow_color = Color( 0.380392, 1, 1, 0.6 )
 shadow_size = 10
 
+[sub_resource type="StyleBoxFlat" id=2]
+
 [sub_resource type="StyleBoxFlat" id=3]
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="Theme" id=4]
+Panel/styles/panel = SubResource( 1 )
+Panel/styles/panelf = SubResource( 2 )
+Panel/styles/panelnc = SubResource( 3 )
 
-[sub_resource type="Theme" id=5]
-Panel/styles/panel = SubResource( 2 )
-Panel/styles/panelf = SubResource( 3 )
-Panel/styles/panelnc = SubResource( 4 )
-
-[sub_resource type="DynamicFontData" id=6]
+[sub_resource type="DynamicFontData" id=5]
 font_path = "res://Fonts/Retro Gaming.ttf"
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 size = 100
-font_data = SubResource( 6 )
+font_data = SubResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0, 1, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+shadow_color = Color( 0.380392, 1, 1, 0.6 )
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id=10]
+
+[sub_resource type="StyleBoxFlat" id=11]
+
+[sub_resource type="Theme" id=12]
+Panel/styles/panel = SubResource( 9 )
+Panel/styles/panelf = SubResource( 10 )
+Panel/styles/panelnc = SubResource( 11 )
+
+[sub_resource type="DynamicFontData" id=13]
+font_path = "res://Fonts/Retro Gaming.ttf"
+
+[sub_resource type="DynamicFont" id=14]
+size = 100
+font_data = SubResource( 13 )
 
 [node name="TheIntroScene" type="Node2D"]
 script = ExtResource( 1 )
@@ -425,7 +587,6 @@ script = ExtResource( 1 )
 [node name="TheCanvas" type="CanvasLayer" parent="."]
 
 [node name="TheIntro" type="Control" parent="TheCanvas"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -444,9 +605,6 @@ margin_top = -500.5
 margin_right = 919.0
 margin_bottom = 500.5
 theme = ExtResource( 2 )
-text = "MSDOUCH Version 3.11
-
-C:/RUNGAME$$$.EXE"
 
 [node name="TheIntroSFX" type="AudioStreamPlayer" parent="TheCanvas/TheIntro"]
 stream = ExtResource( 3 )
@@ -454,7 +612,8 @@ volume_db = -12.0
 
 [node name="TheIntroAnim" type="AnimationPlayer" parent="TheCanvas/TheIntro"]
 autoplay = "TheIntroAnim"
-anims/TheIntroAnim = SubResource( 1 )
+anims/IntroDone = SubResource( 7 )
+anims/TheIntroAnim = SubResource( 8 )
 
 [node name="GamePanel" type="Panel" parent="TheCanvas/TheIntro"]
 visible = false
@@ -462,7 +621,7 @@ margin_left = 523.446
 margin_top = 324.11
 margin_right = 1382.45
 margin_bottom = 773.11
-theme = SubResource( 5 )
+theme = SubResource( 4 )
 
 [node name="SvenLabel" type="Label" parent="TheCanvas/TheIntro/GamePanel"]
 margin_left = 123.0
@@ -487,11 +646,12 @@ margin_left = -26.4457
 margin_top = 182.89
 margin_right = 882.554
 margin_bottom = 310.89
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "MERGE ERROR!!!"
 
 [node name="ColorRect2" type="ColorRect" parent="TheCanvas"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -3.0
@@ -504,7 +664,7 @@ margin_left = 523.446
 margin_top = 324.11
 margin_right = 1382.45
 margin_bottom = 773.11
-theme = SubResource( 5 )
+theme = SubResource( 12 )
 
 [node name="SvenLabel" type="Label" parent="TheCanvas/MainGame"]
 margin_left = 0.554321
@@ -527,7 +687,7 @@ margin_left = -26.4457
 margin_top = 182.89
 margin_right = 882.554
 margin_bottom = 310.89
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "MERGE ERROR!!!"
 
