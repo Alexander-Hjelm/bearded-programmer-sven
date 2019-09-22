@@ -143,6 +143,15 @@ func add_effect(effect: Effect, element: int, src_actor_element_attack: float) -
 	# Deep copy the incoming effect and apply the element factor to it,
 	# reducing any incoming stat damage
 	var effect_copy = effect.deep_copy()
+	
+	# Make damn sure the effect is an exact copy
+	# Should not be here, gdscript is just stupid
+	for stat in effect_copy.get_stat_effects():
+		if effect.get_stat_effects().has(stat):
+			effect_copy.get_stat_effects()[stat] = effect.get_stat_effects()[stat]
+		else:
+			effect_copy.get_stat_effects().erase(stat)
+	
 	var stat_effects: Dictionary = effect_copy.get_stat_effects()
 	for stat in stat_effects.keys():
 		if stat_effects[stat] < 0.0:
