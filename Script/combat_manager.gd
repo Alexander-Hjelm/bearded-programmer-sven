@@ -165,7 +165,8 @@ func player_attack(monster_index: int):
 	# Find least elemental resistance of the target actor 
 	var least_element: int = -1
 	var least_elemental_resistance: float = 100.0
-	for element in element_database.Element.keys():
+	for element_name in element_database.Element.keys():
+		var element: int = element_database.Element[element_name]
 		if element != element_database.Element.NONE:
 			var resist: float = target_character.get_element_resist(element)
 			if resist < least_elemental_resistance:
