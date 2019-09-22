@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/UI/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://TheIntroScene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Themes/BattleTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Audio/SFX/UI/hospital_beep_alarm_01.wav" type="AudioStream" id=4]
+[ext_resource path="res://Audio/SFX/UI/sci-fi_alarm_warning_loop_02.wav" type="AudioStream" id=5]
+[ext_resource path="res://Audio/SFX/Explosions/explosion_small_no_tail_01.wav" type="AudioStream" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 1, 1 )
@@ -28,6 +31,76 @@ font_path = "res://Fonts/Retro Gaming.ttf"
 [sub_resource type="DynamicFont" id=6]
 size = 100
 font_data = SubResource( 5 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "quit"
+length = 5.0
+tracks/0/type = "audio"
+tracks/0/path = NodePath("SFX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 6 )
+} ],
+"times": PoolRealArray( 0, 0.3, 0.6, 1, 1.5, 1.9, 2.6, 2.8 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/MainGame/MERGE ERROR:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6, 0.8, 1, 1.2, 1.5, 1.7, 1.9, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true, false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/MainGame:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource( 1 )
@@ -70,4 +143,11 @@ margin_right = 526.554
 margin_bottom = 391.89
 theme = ExtResource( 3 )
 text = "Remerge Game"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/quit = SubResource( 7 )
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
 [connection signal="pressed" from="CanvasLayer/MainGame/Button" to="." method="_on_Button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
