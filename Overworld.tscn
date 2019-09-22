@@ -124,6 +124,7 @@ enounter_enemy_names = [ "Segfault", "Segfault" ]
 [node name="OverworldCamera" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.3, 0.3 )
+process_mode = 0
 script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="OverworldCamera"]
