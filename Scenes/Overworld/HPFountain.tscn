@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Script/hp_fountain.gd" type="Script" id=1]
 [ext_resource path="res://GFX/overworld/level/fountain_1.png" type="Texture" id=2]
 [ext_resource path="res://GFX/overworld/level/fountain_2.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/UI/GFX/Panel1.tres" type="StyleBox" id=4]
+[ext_resource path="res://Audio/SFX/GetStuff/collect_item_21.wav" type="AudioStream" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -104,7 +105,6 @@ script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -125,3 +125,6 @@ margin_right = 65.9377
 margin_bottom = -12.4738
 theme = SubResource( 11 )
 text = "Full HP Restored!"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
