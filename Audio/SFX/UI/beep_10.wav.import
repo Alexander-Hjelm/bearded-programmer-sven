@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/beep_10.wav-098afac5b5d91a9dd133f8345240406e.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/UI/beep_10.wav"
+dest_files=[ "res://.import/beep_10.wav-098afac5b5d91a9dd133f8345240406e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
