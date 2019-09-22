@@ -740,6 +740,7 @@ Merge with your brain to read screen for information.
 Now play the game, Sven, Programmer, Warrior. 
 May the Merge be with you."
 align = 1
+valign = 1
 
 [node name="MERGE ERROR" type="Label" parent="TheCanvas/MainGame"]
 visible = false

@@ -106,6 +106,7 @@ _global_script_class_icons={
 
 config/name="bearded-programmer-sven"
 run/main_scene="res://TheIntroScene.tscn"
+boot_splash/image="res://GFX/TheBeard_01.png"
 config/icon="res://icon.png"
 
 [autoload]
