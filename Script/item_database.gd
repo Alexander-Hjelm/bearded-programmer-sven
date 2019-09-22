@@ -88,7 +88,7 @@ var items : Dictionary = {
 	# Segway, feet item used by the segfault
 	"Segway": Item.new("Segway", ElementDatabase.Element.glitch,
 		[
-			Effect.new({"speed": 0.2}, true, 0)
+			Effect.new({"speed": 20}, true, 0)
 		],
 		Item.ItemType.EQUIPPABLE,
 		""
@@ -120,7 +120,7 @@ var items : Dictionary = {
 	# Segfault Weapon, default weapon for the Segfault
 	"Segfault Weapon": Item.new("Segfault Weapon", ElementDatabase.Element.glitch,
 		[
-			Effect.new({"hp": -1.0}, true, 0)
+			Effect.new({"hp": -2.0}, true, 0)
 		],
 		Item.ItemType.EQUIPPABLE,
 		""
@@ -128,7 +128,7 @@ var items : Dictionary = {
 	# Stack Overflow Weapon, default weapon for the Stack Overflow
 	"Stack Overflow Weapon": Item.new("Stack Overflow Weapon", ElementDatabase.Element.memory,
 		[
-			Effect.new({"hp": -1.0}, true, 0)
+			Effect.new({"hp": -2.0}, true, 0)
 		],
 		Item.ItemType.EQUIPPABLE,
 		""
@@ -136,13 +136,13 @@ var items : Dictionary = {
 	# Blue Screen of Death Weapon, default weapon for the Blue Screen of Death
 	"Blue Screen of Death Weapon": Item.new("Blue Screen of Death Weapon", ElementDatabase.Element.OS,
 		[
-			Effect.new({"hp": -1.0}, true, 0)
+			Effect.new({"hp": -2.0}, true, 0)
 		],
 		Item.ItemType.EQUIPPABLE,
 		""
 	),
 	# Blue Screen of Death Weapon, default weapon for the Blue Screen of Death
-	"Your Anus": Item.new("Your Anus", ElementDatabase.Element.memory,
+	"Your Anus": Item.new("Your Anus", ElementDatabase.Element.NONE,
 		[
 			Effect.new({"hp": -1.0}, true, 0)
 		],
@@ -150,9 +150,9 @@ var items : Dictionary = {
 		""
 	),
 	# Godot Fisting Weapon, default weapon for the Godot Boss
-	"Godot Fisting Weapon": Item.new("Godot Fisting Weapon", ElementDatabase.Element.memory,
+	"Godot Fisting Weapon": Item.new("Godot Fisting Weapon", ElementDatabase.Element.glitch,
 		[
-			Effect.new({"hp": -1.0}, true, 0)
+			Effect.new({"speed": 10}, true, 0)
 		],
 		Item.ItemType.EQUIPPABLE,
 		""

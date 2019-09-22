@@ -10,8 +10,14 @@ var _characters : Dictionary = {
 			"hp": 20.0,
 			"mp": 5.0,
 			"speed": 40.0,
+			
+			"element_resist_memory": 10.0,
+			"element_resist_OS": 10.0,
 			"element_resist_glitch": 10.0,
-			"element_attack_glitch": 100.0,
+			
+			"element_attack_memory": 20.0,
+			"element_attack_OS": 20.0,
+			"element_attack_glitch": 20.0,
 		},
 		{
 			"Weapon": "Player Weapon"
@@ -26,8 +32,14 @@ var _characters : Dictionary = {
 			"hp": 6.0,
 			"mp": 5.0,
 			"speed": 40.0,
-			"element_resist_glitch": 1.0,
-			"element_attack_glitch": 5.0
+			
+			"element_resist_memory": 80.0,
+			"element_resist_OS": 80.0,
+			"element_resist_glitch": 10.0,
+			
+			"element_attack_memory": 0.0,
+			"element_attack_OS": 0.0,
+			"element_attack_glitch": 100.0
 		},
 		{
 			"Feet": "Segway",
@@ -49,7 +61,14 @@ var _characters : Dictionary = {
 			"hp": 7.0,
 			"mp": 5.0,
 			"speed": 40.0,
-			"element_resist_glitch": 2.0
+
+			"element_resist_memory": 10.0,
+			"element_resist_OS": 80.0,
+			"element_resist_glitch": 80.0,
+			
+			"element_attack_memory": 100.0,
+			"element_attack_OS": 0.0,
+			"element_attack_glitch": 0.0
 		},
 		{
 			"Body": "Trash Can",
@@ -71,8 +90,14 @@ var _characters : Dictionary = {
 			"hp": 8.0,
 			"mp": 5.0,
 			"speed": 40.0,
-			"element_attack_glitch": 100.0,
-			"element_resist_glitch": 3.0
+			
+			"element_resist_memory": 80.0,
+			"element_resist_OS": 10.0,
+			"element_resist_glitch": 80.0,
+			
+			"element_attack_memory": 0.0,
+			"element_attack_OS": 100.0,
+			"element_attack_glitch": 0.0
 		},
 		{
 			"Head": "Monitor",
@@ -94,8 +119,14 @@ var _characters : Dictionary = {
 			"hp": 20.0,
 			"mp": 5.0,
 			"speed": 50.0,
-			"element_attack_glitch": 100.0,
-			"element_resist_glitch": 3.0
+			
+			"element_resist_memory": 55.0,
+			"element_resist_OS": 55.0,
+			"element_resist_glitch": 55.0,
+			
+			"element_attack_memory": 0.0,
+			"element_attack_OS": 0.0,
+			"element_attack_glitch": 100.0
 		},
 		{
 			"Head": "Your Anus",
