@@ -13,9 +13,9 @@
 [ext_resource path="res://Script/combat_camera.gd" type="Script" id=11]
 [ext_resource path="res://Scenes/Overworld/HPFountain.tscn" type="PackedScene" id=12]
 
-[sub_resource type="CanvasItemMaterial" id=2]
+[sub_resource type="CanvasItemMaterial" id=1]
 
-[sub_resource type="ShaderMaterial" id=3]
+[sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 8 )
 shader_param/colorTint = Color( 0.235294, 0, 0, 1 )
 shader_param/colorCycleSpeed = null
@@ -24,7 +24,7 @@ shader_param/albedoBaseChannel = ExtResource( 9 )
 [node name="Overworld" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
-material = SubResource( 2 )
+material = SubResource( 1 )
 z_index = -50
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
@@ -54,13 +54,12 @@ enounter_enemy_names = [ "Blue Screen of Death", "Blue Screen of Death" ]
 position = Vector2( 1150.64, -1606.22 )
 enounter_enemy_names = [ "Blue Screen of Death", "Segfault" ]
 
+[node name="GodotBoss" parent="." instance=ExtResource( 4 )]
+position = Vector2( 904.069, -2168.45 )
+
 [node name="OverworldMonsterSegfault25" parent="." instance=ExtResource( 3 )]
-editor/display_folded = true
 position = Vector2( 900.991, -1768.33 )
 enounter_enemy_names = [ "Blue Screen of Death", "Segfault", "Stack Overflow" ]
-
-[node name="OverworldMonsterSegfault" parent="OverworldMonsterSegfault25" instance=ExtResource( 4 )]
-position = Vector2( 3.07788, -400.121 )
 
 [node name="OverworldMonsterSegfault3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 525.081, -418.809 )
@@ -130,7 +129,7 @@ script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="OverworldCamera"]
 show_behind_parent = true
-material = SubResource( 3 )
+material = SubResource( 2 )
 position = Vector2( 4.08821, 0.551741 )
 scale = Vector2( 48.3977, 28.9996 )
 z_index = -100
