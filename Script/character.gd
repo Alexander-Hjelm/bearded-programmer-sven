@@ -127,7 +127,8 @@ func add_effect(effect: Effect, element: int, src_actor_element_attack: float) -
 	# Check the source actor's element damage against the target actor's element defense	
 	# If the target actor's element resist is less than source actor's element attack,
 	# do not apply the effect
-	if src_actor_element_attack <= get_element_resist(element):
+	var element_resist = get_element_resist(element)
+	if src_actor_element_attack <= element_resist:
 		print("The attack was deflected")
 		return 0
 	

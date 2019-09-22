@@ -96,7 +96,7 @@ var items : Dictionary = {
 	# Trash Can, body item used by the Stack Overflow
 	"Trash Can": Item.new("Trash Can", ElementDatabase.Element.NONE,
 		[
-			Effect.new({"element_resist_memory": 20.0}, true, 0)
+			Effect.new({"speed": 1.0}, true, 0)
 		],
 		Item.ItemType.EQUIPPABLE,
 		""
@@ -104,7 +104,7 @@ var items : Dictionary = {
 	# Monitor, head item used by the Blue Screen of Death
 	"Monitor": Item.new("Monitor", ElementDatabase.Element.NONE,
 		[
-			Effect.new({"element_resist_OS": 20.0}, true, 0)
+			Effect.new({"speed": 1.0}, true, 0)
 		],
 		Item.ItemType.EQUIPPABLE,
 		""
