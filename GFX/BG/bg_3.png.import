@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg_godot.png-7c6ffdeeb84c9671d56c9ab96c9bb331.stex"
+path="res://.import/bg_3.png-ad1cd979c7c30ca189befe67a35b664b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GFX/BG/bg_godot.png"
-dest_files=[ "res://.import/bg_godot.png-7c6ffdeeb84c9671d56c9ab96c9bb331.stex" ]
+source_file="res://GFX/BG/bg_3.png"
+dest_files=[ "res://.import/bg_3.png-ad1cd979c7c30ca189befe67a35b664b.stex" ]
 
 [params]
 
