@@ -4,6 +4,10 @@ extends Node2D
 var is_restart_game = false
 
 
+func _input(event):
+	if Input.is_action_just_pressed("ui_select") or Input.is_action_just_pressed("ui_accept"):
+		$TheCanvas/TheIntro/TheIntroAnim.play("IntroDone")
+
 func _ready():
 	if is_restart_game:
 		$TheCanvas/TheIntro/TheIntroAnim.play("IntroDone")

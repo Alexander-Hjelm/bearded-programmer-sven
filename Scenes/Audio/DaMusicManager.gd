@@ -13,6 +13,7 @@ onready var SFX3 = $SFX3
 var combat_music_position : float = 0.0
 var overworld_music_position : float = 0.0
 
+
 func play_combat_music_1():
 	stream = combat_music_1
 	play(combat_music_position)
